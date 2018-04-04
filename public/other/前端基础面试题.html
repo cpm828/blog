@@ -1,0 +1,1085 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Other," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pimi's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前端基础面试题，实习生面试题">
+<meta name="keywords" content="Other">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础面试题">
+<meta property="og:url" content="http://pimichen.com/other/前端基础面试题.html">
+<meta property="og:site_name" content="Pimi&#39;s Blog">
+<meta property="og:description" content="前端基础面试题，实习生面试题">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-06-21T05:02:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础面试题">
+<meta name="twitter:description" content="前端基础面试题，实习生面试题">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '7U5GLOOLPQ',
+      apiKey: 'e0a6c17904f018e6db32e5350f5d8df4',
+      indexName: 'pimiblog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"没有查到与「${query}」相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pimichen.com/other/前端基础面试题.html"/>
+
+
+
+
+
+
+
+<style>
+.input-label{
+  vertical-align:middle;
+  font-size:18px;
+  height: 30px;
+  line-height: 1em;
+}
+.input-secret{
+  width:120px;
+  height: 30px;
+  line-height: 30px;
+  font-size:18px;
+  border: 1px solid #ccc;
+  vertical-align:middle;
+  outline:none;
+  padding:0 5px;
+  box-sizing:border-box;
+  border-radius:5px;
+  -webkit-appearance: none;
+}
+.submit-btn{
+  display:inline-block;
+  height: 30px;
+  line-height:1em;
+  font-size:18px;
+  text-align:center;
+  margin-left:10px;
+  border: 1px solid #ccc;
+  background-color:transparent;
+  vertical-align:middle;
+  border-radius:5px;
+}
+.hidden-box{
+  display:none;
+}
+</style>
+<script>
+window.onload = function(){
+  var secretBox = document.getElementById('secret-box');
+  if (secretBox === null) return;
+  var contentNode = document.getElementsByClassName('post-body')[0];
+  var blogNodes = contentNode.children;
+  var asideNavTitle = document.getElementsByClassName('sidebar-nav-toc')[0];
+  var asideNavContent = document.getElementsByClassName('post-toc-content')[0];
+  asideNavTitle.style.display = 'none';
+  asideNavContent.style.display = 'none';
+  for(var i = 0; i < blogNodes.length; i++) {
+    if (blogNodes[i].getAttribute('id') !== 'secret-box') {
+      blogNodes[i].style.display = 'none';
+    }
+  }
+
+  var inputSecret = document.getElementById('input-secret');
+  var submitBtn = document.getElementById('submit-btn');
+  var blogSecret = 7728828;
+
+  submitBtn.onclick = activeEvent;
+  inputSecret.onkeydown = function (event) {
+    event = event || window.event;
+    if (event.keyCode == 13) {
+      activeEvent();
+    }
+  }
+  function activeEvent () {
+    if (inputSecret.value.replace(/\s+/g, '') == blogSecret) {
+      for(var i = 0; i < blogNodes.length; i++) {
+        blogNodes[i].style.display = 'block';
+      }
+      asideNavTitle.style.display = 'inline-block';
+      asideNavContent.style.display = 'block';
+      secretBox.style.display = 'none';
+    } else{
+      alert('密码错误，请重试！');
+    }
+  }
+}
+</script>
+
+
+  <title> 前端基础面试题 | Pimi's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100562378-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6818b43932ba418bf608f04dbecd5258";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pimi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A lazy youth, a lousy age.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pimichen.com/other/前端基础面试题.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pimi Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mine/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pimi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端基础面试题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-30T16:49:56+08:00">
+                2017-05-30
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-06-21T13:02:05+08:00">
+                2017-06-21
+              </time>
+            
+
+            
+          </span>
+
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span>阅读次数</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" >1</span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  前端基础面试题，实习生面试题
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="secret-box" id="secret-box"><br>  <label for="input-secret" class="input-label">请输入密码：</label><input type="password" class="input-secret" id="input-secret"><button class="submit-btn" id="submit-btn">提交</button><br></div>
+
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><h3 id="meta-keywords-description-含义"><a href="#meta-keywords-description-含义" class="headerlink" title="meta keywords description 含义"></a>meta keywords description 含义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;</div><div class="line">  </div><div class="line">&lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
+<p>description是对网站的描述<br>keywords是一些网站的关键字<br>两者都是便于搜索引擎搜索</p>
+<h3 id="移动端meta"><a href="#移动端meta" class="headerlink" title="移动端meta"></a>移动端meta</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,user-scalable=no&quot;&gt;</div><div class="line"></div><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=0.5, minimum-scale=0.5,maximum-scale=0.5,user-scalable=no&quot;&gt;</div><div class="line"></div><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=0.3333333333333333, minimum-scale=0.3333333333333333,maximum-scale=0.3333333333333333,user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
+<p>在移动端开发时，我们会发现手机的dpr可能都不一致，有些是1，chrome预览器就是1，有些手机是2，有些手机是3，这和手机的retina屏有关，所以我们不能单纯将scale值写死，应该根据dpr的值来设置，即用1.0 / dpr的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 设置viewport属性，安卓4.5以下均设置为1.0，其余通过计算取得</div><div class="line">var ua = window.navigator.userAgent.toLowerCase();</div><div class="line">var dpr = window.devicePixelRatio;</div><div class="line">var scaleValue = 1.0 / dpr;</div><div class="line">var metaEl = document.createElement(&apos;meta&apos;);</div><div class="line">metaEl.setAttribute(&apos;name&apos;, &apos;viewport&apos;);</div><div class="line">if (ua.substr(ua.indexOf(&apos;android&apos;) + 8, 3) &lt; 4.5) metaEl.setAttribute(&apos;content&apos;, &apos;initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&apos;);</div><div class="line">else metaEl.setAttribute(&apos;content&apos;, &apos;initial-scale=&apos; + scaleValue + &apos;, maximum-scale=&apos; + scaleValue + &apos;, minimum-scale=&apos; + scaleValue + &apos;, user-scalable=no&apos;);</div><div class="line">document.getElementsByTagName(&apos;head&apos;)[0].appendChild(metaEl);</div></pre></td></tr></table></figure>
+<h3 id="title和alt的区别"><a href="#title和alt的区别" class="headerlink" title="title和alt的区别"></a>title和alt的区别</h3><p>title是鼠标hover时显示的提示性文字<br>alt是当图片不显示时显示的文字（alt只给图片使用）</p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="css权重值"><a href="#css权重值" class="headerlink" title="css权重值"></a>css权重值</h3><p>!important &gt; 内嵌样式 &gt; id &gt; class &gt; 标签样式 &gt; *</p>
+<h3 id="css隐藏的方法"><a href="#css隐藏的方法" class="headerlink" title="css隐藏的方法"></a>css隐藏的方法</h3><ul>
+<li><code>display: none;</code><br>隐藏，脱离文档流，不占据任何位置</li>
+<li><code>visiblity: hidden;</code><br>隐藏，不脱离文档流，看不见，摸得着，但没有任何事件属性（事件触发）</li>
+<li><code>opacity: 0;</code><br>隐藏，不脱离文档流，看不见，摸得着，有时间属性（事件触发）</li>
+</ul>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><ul>
+<li><code>box-sizing: content-box;</code><br>默认的盒模型，即指content宽，实际宽度 = connent宽 + padding宽 + border宽 + margin宽</li>
+<li><code>box-sizing: padding-box;</code><br>即是connent宽 + padding宽，实际宽度 = connent宽 + border宽 + margin宽</li>
+<li><code>box-sizing: border-box;</code><br>最常用盒模型，即connent宽 + padding宽 + border宽，实际宽度 = connent宽 + margin宽</li>
+</ul>
+<p>实际开发中，我们都使用个第三种盒模型，给html设置<code>html{ box-sizing: border-box; }</code>, 其余设置<code>*{ box-sizing: inherit; }</code></p>
+<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><ul>
+<li><p>postion方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.outer-div&#123;</div><div class="line">  position: relative;</div><div class="line">&#125;</div><div class="line">.inner-div&#123;</div><div class="line">  position: absolute;</div><div class="line">  left: 50%;</div><div class="line">  top: 50%;</div><div class="line">  transform: translate(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>flex布局方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">display: flex;</div><div class="line">justify-content; center;</div><div class="line">align-items: center;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><p>number、string、boolean、object、function、underfined</p>
+<h3 id="常用刷新页面的方法"><a href="#常用刷新页面的方法" class="headerlink" title="常用刷新页面的方法"></a>常用刷新页面的方法</h3><ul>
+<li>window.location.href = window.location.href<br>跳转后可返回</li>
+<li>widnow.location.repalce()<br>跳转后不能返回，即删除了历史记录</li>
+<li>history.go()<br>前进或后退几个页面</li>
+</ul>
+<h3 id="localStorage和sessionStorage的区别"><a href="#localStorage和sessionStorage的区别" class="headerlink" title="localStorage和sessionStorage的区别"></a>localStorage和sessionStorage的区别</h3><p>相同点：都使用setItem(‘abc’, ‘<em>*</em>‘)设置数据和getItem(‘abc’)读取数据，且都只能存储字符串，不能直接存储对象<br>不同的：localStorage的有效期是永久，除非用户手动关闭，sessionStorage的有效期是关闭浏览器之前</p>
+<h3 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h3><ul>
+<li>push: 尾部添加</li>
+<li>pop: 尾部删除</li>
+<li>unshift: 头部添加</li>
+<li>shift: 头部删除</li>
+<li>splice: 删除或添加</li>
+</ul>
+<h3 id="split和join方法"><a href="#split和join方法" class="headerlink" title="split和join方法"></a>split和join方法</h3><ul>
+<li>split: 将字符串拆分成数组</li>
+<li>join: 将数组组合成字符串</li>
+</ul>
+<h3 id="事件冒泡、事件委托"><a href="#事件冒泡、事件委托" class="headerlink" title="事件冒泡、事件委托"></a>事件冒泡、事件委托</h3><ul>
+<li>事件冒泡：子级 触发 父级<br>e.stopPropagation() / return false</li>
+<li>事件委托：父级 触发 子级<br>$(‘’).click(‘ul’, ‘li’, function () {})</li>
+<li>事件默认行为<br>preventDefault() / return false</li>
+</ul>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> newArray = []; <span class="comment">//一个新的临时数组</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; myArray.length; i++)&#123; <span class="comment">//遍历当前数组</span></div><div class="line">    <span class="comment">//如果当前数组的第i项已经保存进了临时数组，那么跳过，</span></div><div class="line">    <span class="comment">//否则把当前项push到临时数组里面</span></div><div class="line">    <span class="keyword">if</span> (newArray.indexOf(myArray[i]) == <span class="number">-1</span>)&#123; <span class="comment">//在新数组中查找原数组的每一项是否存在</span></div><div class="line">      newArray.push(myArray[i]); <span class="comment">//如果不存在就加到新数组中</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// return newArray;</span></div><div class="line">  alert(<span class="string">"新的数组："</span> + newArray);</div><div class="line">&#125;</div><div class="line">aaa();</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Pimi Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://pimichen.com/other/前端基础面试题.html" title="前端基础面试题">http://pimichen.com/other/前端基础面试题.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/other/" rel="tag"># Other</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/javascript/js脚本实现复制剪切.html" rel="next" title="js脚本实现复制剪切效果">
+                <i class="fa fa-chevron-left"></i> js脚本实现复制剪切效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/tools/mac常用快捷键.html" rel="prev" title="Mac 常用快捷键">
+                Mac 常用快捷键 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/mine/avatar.jpg"
+               alt="Pimi Chen" />
+          <p class="site-author-name" itemprop="name">Pimi Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description">天道酬勤，上善若水</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">148</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cpm828" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/Pimi" target="_blank" title="Segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/pimi0828" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Pimi.Chen" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html"><span class="nav-number">1.</span> <span class="nav-text">html</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-keywords-description-含义"><span class="nav-number">1.1.</span> <span class="nav-text">meta keywords description 含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端meta"><span class="nav-number">1.2.</span> <span class="nav-text">移动端meta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#title和alt的区别"><span class="nav-number">1.3.</span> <span class="nav-text">title和alt的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css"><span class="nav-number">2.</span> <span class="nav-text">css</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css权重值"><span class="nav-number">2.1.</span> <span class="nav-text">css权重值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css隐藏的方法"><span class="nav-number">2.2.</span> <span class="nav-text">css隐藏的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒模型"><span class="nav-number">2.3.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平垂直居中"><span class="nav-number">2.4.</span> <span class="nav-text">水平垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript"><span class="nav-number">3.</span> <span class="nav-text">javascript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js数据类型"><span class="nav-number">3.1.</span> <span class="nav-text">js数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用刷新页面的方法"><span class="nav-number">3.2.</span> <span class="nav-text">常用刷新页面的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage和sessionStorage的区别"><span class="nav-number">3.3.</span> <span class="nav-text">localStorage和sessionStorage的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组方法"><span class="nav-number">3.4.</span> <span class="nav-text">数组方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split和join方法"><span class="nav-number">3.5.</span> <span class="nav-text">split和join方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件冒泡、事件委托"><span class="nav-number">3.6.</span> <span class="nav-text">事件冒泡、事件委托</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组去重"><span class="nav-number">3.7.</span> <span class="nav-text">数组去重</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pimi Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span>网站UV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span>网站PV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+<div class="theme-copyright-info">
+  <a href="http://www.miitbeian.gov.cn">京ICP备17021126号</a>
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top" style="display:none;">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent" class="fa-percent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/heart/heart.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
