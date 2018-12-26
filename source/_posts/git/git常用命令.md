@@ -99,7 +99,7 @@ stash  暂存
 
 push    将分支推送成为远端上的分支
 //git push <remote> [branch]
-//git push origin master:master    //将master分支下的本地修改push到master分支下（当前在其他分支时可使用，若当前已经在master分支，则使用 git push即可）
+//git push origin master:master    //将master分支下的本地修改push到master分支下（可初始化时提交未修改的分支，当前在其他分支时可使用，若当前已经在master分支，则使用 git push即可）
 
 pull    下载数据
 //git pull    从远端的服务器上下载数据，实现同步更新
@@ -113,6 +113,7 @@ remote    远程分支
 //git remote -v    查看远程
 //git remote rm origin    删除远程
 //git remote add origin Url    设置远程
+//git remote prune origin    清理远程无效分支
 
 config    配置别名（配置目录在主目录下.gitconfig中，如不需要，删除记录即可）
 //git config --global alias.st status（将git status 配置成git st）

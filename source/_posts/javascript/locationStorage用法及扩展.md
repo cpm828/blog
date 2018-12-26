@@ -25,25 +25,25 @@ window.localStorage.getItem('name')
 localStorage只能存储字符串，对于一次性需要存储大量的数据，建议存储为json对象，但使用localStorage必须先经过JSON.stringify()转换成字符串和JSON.parse()解析字符串方可成功，故封装了一个函数local.js，如下：
 
 ```js
-const {localStorage, JSON} = window
+const {localStorage, JSON} = window;
 const storage = {
   set (key, val = {}) {
-    let _value = JSON.stringify(val)
-    localStorage.setItem(key, _value)
+    let _value = JSON.stringify(val);
+    localStorage.setItem(key, _value);
   },
   get (key) {
-    const _value = localStorage.getItem(key)
-    return _value === null ? {} : JSON.parse(_value)  // 存空对象和没有存都返回空对象
+    const _value = localStorage.getItem(key);
+    return _value === null ? {} : JSON.parse(_value);  // 存空对象和没有存都返回空对象
   },
   remove (...keys) {
-    keys.forEach(key => localStorage.removeItem(key))
+    keys.forEach(key => localStorage.removeItem(key));
   },
   clear () {
-    localStorage.clear()
+    localStorage.clear();
   }
-}
+};
 
-export default storage
+export default storage;
 ```
 
 使用如下：
@@ -56,11 +56,11 @@ let obj = {
   tommorow: '周六'
 }
 
-local.set('obj', obj) // 存
-local.get('obj') // 取
-local.get('obj').today // 取
-local.remove('obj', 'abc') // 删出俩个
-local.clear() // 清空
+local.set('obj', obj); // 存
+local.get('obj'); // 取
+local.get('obj').today; // 取
+local.remove('obj', 'abc'); // 删出俩个
+local.clear(); // 清空
 ```
 
 sessionStorage与之类似， 只是把所有的localStorage换成sessionStorage就行了

@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,23 +66,23 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="JavaScript," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Pimi's Blog" type="application/atom+xml" />
+  <meta name="keywords" content="JavaScript,">
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+  <link rel="alternate" href="/atom.xml" title="Pimi's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -118,8 +118,8 @@
     },
     algolia: {
       applicationID: '7U5GLOOLPQ',
-      apiKey: 'e0a6c17904f018e6db32e5350f5d8df4',
-      indexName: 'pimiblog',
+      apiKey: '217b43ed2d3cb495895c71b272d78d13',
+      indexName: 'pimi_blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"搜索...","hits_empty":"没有查到与「${query}」相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
     }
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://pimichen.com/javascript/初识模块化加载requirejs.html"/>
+  <link rel="canonical" href="http://pimichen.com/javascript/初识模块化加载requirejs.html">
 
 
 
@@ -218,7 +218,7 @@ window.onload = function(){
   <title> 初识requirejs | Pimi's Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -262,13 +262,13 @@ window.onload = function(){
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Pimi's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -298,7 +298,7 @@ window.onload = function(){
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -308,7 +308,7 @@ window.onload = function(){
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -318,7 +318,7 @@ window.onload = function(){
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -328,7 +328,7 @@ window.onload = function(){
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -338,7 +338,7 @@ window.onload = function(){
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
             公益
           </a>
@@ -351,7 +351,7 @@ window.onload = function(){
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -410,16 +410,16 @@ window.onload = function(){
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://pimichen.com/javascript/初识模块化加载requirejs.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pimi Chen">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/mine/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Pimi's Blog">
     </span>
 
@@ -484,7 +484,7 @@ window.onload = function(){
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
             <span>阅读次数</span>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" >1</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv">1</span>
             </span>
           
 
@@ -509,42 +509,42 @@ window.onload = function(){
       
         <p>在浏览器中可以作为js文件的模块加载器，也可以用在Node和Rhino环境。</p>
 <h2 id="初识requirejs"><a href="#初识requirejs" class="headerlink" title="初识requirejs"></a>初识requirejs</h2><p>先看一个小demo：</p>
-<p>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"a.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>body<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>a.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"it works"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fun1();</div><div class="line"></div><div class="line"><span class="comment">// 或 使用块作用域来申明function防止污染全局变量</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">"it works"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    fun1();</div><div class="line">&#125;)()</div></pre></td></tr></table></figure></p>
+<p>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"a.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>body<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>a.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"it works"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun1();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或 使用块作用域来申明function防止污染全局变量</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"it works"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fun1();</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
 <p>运行结果：<br>alert执行的时候，页面上的span元素还未显示。这是因为js阻塞浏览器渲染，导致body内容未能被读取。</p>
-<p>requirejs写法:<br>先去<a href="http://requirejs.org" target="_blank" rel="external">require官网</a>下载js<br>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"require.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">            <span class="built_in">require</span>([<span class="string">"a"</span>]);</span></div><div class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>body<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>a.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func1</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      alert(<span class="string">'it works'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    func1();</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>requirejs写法:<br>先去<a href="http://requirejs.org" target="_blank" rel="noopener">require官网</a>下载js<br>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"require.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="built_in">require</span>([<span class="string">"a"</span>]);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>body<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>a.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func1</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(<span class="string">'it works'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    func1();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>运行结果：<br>alert执行的时候，页面能正常显示body了</p>
-<p>这个时候可以知道require的优点：<br>1.防止js加载阻塞页面渲染<br>2.管理模块之间的依赖性，便于代码的编写和维护，防止出现如下丑陋的场景。这种写法需要将依赖最大的放在最后加载，如j.js依赖前面的js，就必须放到最后，当关系很复杂时，极难维护。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"a.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"b.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"c.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"d.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"e.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"f.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"g.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"h.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"i.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"j.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>这个时候可以知道require的优点：<br>1.防止js加载阻塞页面渲染<br>2.管理模块之间的依赖性，便于代码的编写和维护，防止出现如下丑陋的场景。这种写法需要将依赖最大的放在最后加载，如j.js依赖前面的js，就必须放到最后，当关系很复杂时，极难维护。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"a.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"b.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"c.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"d.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"e.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"f.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"g.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"h.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"i.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"j.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <h2 id="基本API"><a href="#基本API" class="headerlink" title="基本API"></a>基本API</h2><p>require会定义三个变量：define、require、requirejs，require = requirejs，一般使用require更简短</p>
 <ul>
 <li><p>define 用来定义一个模块<br>define后面也可以增加参数[“jqueyr”],即保证jquery加载完成后读取该js文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">define([&quot;jquery&quot;], function ($) &#123;</div><div class="line">    console.log(&apos;it is loaded&apos;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define([&quot;jquery&quot;], function ($) &#123;</span><br><span class="line">    console.log(&apos;it is loaded&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>require 加载依赖模块，并执行加载后的回调函数</p>
 </li>
 </ul>
-<p>require([“js/a.js”, “js/b.js”])的第一个参数时一个数组，即加载的脚本，第二个参数时callback，处理加载完毕后的回调<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">"js/a.js"</span>, <span class="string">"js/b.js"</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h2 id="加载文件"><a href="#加载文件" class="headerlink" title="加载文件"></a>加载文件</h2><p>使用require()来加载模块的使用只能加载本地js，但如果需要加载服务器、其他网站或CDN，就需要用require.config来配置加载<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    paths: &#123;</div><div class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>], <span class="comment">// 或省略中括号</span></div><div class="line">        <span class="string">"bootstrap"</span>: [<span class="string">"https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap"</span>]</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"js/a.js"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</div><div class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>require([“js/a.js”, “js/b.js”])的第一个参数时一个数组，即加载的脚本，第二个参数时callback，处理加载完毕后的回调<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">"js/a.js"</span>, <span class="string">"js/b.js"</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="加载文件"><a href="#加载文件" class="headerlink" title="加载文件"></a>加载文件</h2><p>使用require()来加载模块的使用只能加载本地js，但如果需要加载服务器、其他网站或CDN，就需要用require.config来配置加载<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>], <span class="comment">// 或省略中括号</span></span><br><span class="line">        <span class="string">"bootstrap"</span>: [<span class="string">"https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"js/a.js"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>require.config 用来配置加载位置，给模块起一个更短更好记的名字，配置别名之后就可以再require中使用别名了。<br>注意：require中的可以带.js后缀；paths中的路径不能带.js后缀，否则会报错，paths中的每个别名对应的js如果只有一个时可以省略中括号；</p>
 <p>require.config 中也可以用来配置本地的js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    paths: &#123;</div><div class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>],</div><div class="line">        <span class="string">"bootstrap"</span>: [<span class="string">"https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap"</span>],</div><div class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"a"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</div><div class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>最终渲染成下面这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span> <span class="keyword">async</span>=<span class="string">""</span> data-requirecontext=<span class="string">"_"</span> data-requiremodule=<span class="string">"jquery"</span> src=<span class="string">"http://cdn.bootcss.com/jquery/2.2.4/jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span> <span class="keyword">async</span>=<span class="string">""</span> data-requirecontext=<span class="string">"_"</span> data-requiremodule=<span class="string">"a"</span> src=<span class="string">"./a.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>通过require.config配置模块名称时可以配置多个路径，比如配置一个CDN路径，再配一个本地的库<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    paths: &#123;</div><div class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>, <span class="string">'js/jquery'</span>],</div><div class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"a"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</div><div class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>当paths中都是本地路径时，可以指定一个baseUrl表示目录<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    baseUrl: <span class="string">"js/lib"</span>,</div><div class="line">    paths: &#123;</div><div class="line">        <span class="string">"jquery"</span>: jquery<span class="string">',</span></div><div class="line"><span class="string">        "a": "a"</span></div><div class="line"><span class="string">    &#125;</span></div><div class="line"><span class="string">&#125;);</span></div><div class="line"><span class="string">require(["jquery", "a"], function ($) &#123;</span></div><div class="line"><span class="string">    $(function () &#123;</span></div><div class="line"><span class="string">        console.log('</span>load finished<span class="string">');</span></div><div class="line"><span class="string">    &#125;)</span></div><div class="line"><span class="string">&#125;);</span></div></pre></td></tr></table></figure></p>
-<p>上例中require的callback中的参数$是jquery模块的输出变量，如果依赖多个模块，可以依次写入多个参数。将需要输出的模块写在前面，位置不能错乱。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"underscore"</span>, <span class="string">"js/a"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$, _</span>) </span>&#123;</div><div class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        _.each([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], alert);</div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><p>require.config配置如果在每个页面中都加入，显然会十分不雅，requirejs提供了一种叫”主数据“的功能，我们首先创建一个main.js：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    paths: &#123;</div><div class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>, <span class="string">'js/jquery'</span>],</div><div class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>然后在页面中使用下面的方式来使用requirejs：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script data-main=<span class="string">"js/main src="</span>js/<span class="built_in">require</span>.js<span class="string">"&gt;&lt;/script&gt;</span></div></pre></td></tr></table></figure></p>
-<p>data-main属性表示指定的js将在加载完require.js后处理，我们把require.config的配置加入到data-main后，就可以使每一个页面都使用这个配置，然后页面中就可以直接使用require来加载所有的短模块名<br>data-main还有一个功能，当script标签指定data-main属性时，require会默认将data-main指定的js为根路径。如上面的data-main=”js/main”设定后，我们在直接使用require([“jquery”])，而不是require([“js/jquery”])，require会自动加载js/jquery这个文件，而不是jquery.js。<br>相当于默认配置了：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    baseUrl: <span class="string">'js'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>],</span><br><span class="line">        <span class="string">"bootstrap"</span>: [<span class="string">"https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap"</span>],</span><br><span class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"a"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>最终渲染成下面这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span> <span class="keyword">async</span>=<span class="string">""</span> data-requirecontext=<span class="string">"_"</span> data-requiremodule=<span class="string">"jquery"</span> src=<span class="string">"http://cdn.bootcss.com/jquery/2.2.4/jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span> <span class="keyword">async</span>=<span class="string">""</span> data-requirecontext=<span class="string">"_"</span> data-requiremodule=<span class="string">"a"</span> src=<span class="string">"./a.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>通过require.config配置模块名称时可以配置多个路径，比如配置一个CDN路径，再配一个本地的库<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>, <span class="string">'js/jquery'</span>],</span><br><span class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"a"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当paths中都是本地路径时，可以指定一个baseUrl表示目录<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    baseUrl: <span class="string">"js/lib"</span>,</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: jquery<span class="string">',</span></span><br><span class="line"><span class="string">        "a": "a"</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;);</span></span><br><span class="line"><span class="string">require(["jquery", "a"], function ($) &#123;</span></span><br><span class="line"><span class="string">    $(function () &#123;</span></span><br><span class="line"><span class="string">        console.log('</span>load finished<span class="string">');</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure></p>
+<p>上例中require的callback中的参数$是jquery模块的输出变量，如果依赖多个模块，可以依次写入多个参数。将需要输出的模块写在前面，位置不能错乱。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"underscore"</span>, <span class="string">"js/a"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$, _</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        _.each([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], alert);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><p>require.config配置如果在每个页面中都加入，显然会十分不雅，requirejs提供了一种叫”主数据“的功能，我们首先创建一个main.js：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>, <span class="string">'js/jquery'</span>],</span><br><span class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>然后在页面中使用下面的方式来使用requirejs：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script data-main=<span class="string">"js/main src="</span>js/<span class="built_in">require</span>.js<span class="string">"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>data-main属性表示指定的js将在加载完require.js后处理，我们把require.config的配置加入到data-main后，就可以使每一个页面都使用这个配置，然后页面中就可以直接使用require来加载所有的短模块名<br>data-main还有一个功能，当script标签指定data-main属性时，require会默认将data-main指定的js为根路径。如上面的data-main=”js/main”设定后，我们在直接使用require([“jquery”])，而不是require([“js/jquery”])，require会自动加载js/jquery这个文件，而不是jquery.js。<br>相当于默认配置了：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    baseUrl: <span class="string">'js'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><p>通过require加载的模块一般都要符合AMD规范及使用define来申明模块，但是部分时候需要加载非AMD规范的js，这时候就需要用到另一个功能：shim，中文意思”垫“.</p>
-<p>1、非AMD模块输出，例如，在老版本的jquery中，是没有继承AMD规范的，所以不能只能require([“jquery”])，这个时候就需要用到 shim，比如要使用underscore类库，但是它并没有实现AMD规范，可以这样配置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">requier.config(&#123;</div><div class="line">    shim: &#123;</div><div class="line">        <span class="string">"underscore"</span>: &#123;</div><div class="line">            <span class="keyword">export</span>: <span class="string">"_"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>这样配置后，我们就可以再其他模块中引用underscore模块：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">"underscore"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">_</span>) </span>&#123;</div><div class="line">    _.each([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], alert)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>2、插件形式的非AMD模块，我们经常会用到jquery的插件，而这些插件基本都不符合AMD规范比如，jquery的form插件，这时候就需要将form插件”垫“到jquery中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    shim: &#123;</div><div class="line">        <span class="string">"underscore"</span> : &#123;</div><div class="line">            exports : <span class="string">"_"</span>;</div><div class="line">        &#125;,</div><div class="line">        <span class="string">"jquery.form"</span> : &#123;</div><div class="line">            deps : [<span class="string">"jquery"</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>也可以简写成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    shim: &#123;</div><div class="line">        <span class="string">"underscore"</span> : &#123;</div><div class="line">            exports : <span class="string">"_"</span>;</div><div class="line">        &#125;,</div><div class="line">        <span class="string">"jquery.form"</span> : [<span class="string">"jquery"</span>]</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>1、非AMD模块输出，例如，在老版本的jquery中，是没有继承AMD规范的，所以不能只能require([“jquery”])，这个时候就需要用到 shim，比如要使用underscore类库，但是它并没有实现AMD规范，可以这样配置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">requier.config(&#123;</span><br><span class="line">    shim: &#123;</span><br><span class="line">        <span class="string">"underscore"</span>: &#123;</span><br><span class="line">            <span class="keyword">export</span>: <span class="string">"_"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>这样配置后，我们就可以再其他模块中引用underscore模块：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">"underscore"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">_</span>) </span>&#123;</span><br><span class="line">    _.each([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], alert)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>2、插件形式的非AMD模块，我们经常会用到jquery的插件，而这些插件基本都不符合AMD规范比如，jquery的form插件，这时候就需要将form插件”垫“到jquery中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    shim: &#123;</span><br><span class="line">        <span class="string">"underscore"</span> : &#123;</span><br><span class="line">            exports : <span class="string">"_"</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"jquery.form"</span> : &#123;</span><br><span class="line">            deps : [<span class="string">"jquery"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>也可以简写成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    shim: &#123;</span><br><span class="line">        <span class="string">"underscore"</span> : &#123;</span><br><span class="line">            exports : <span class="string">"_"</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"jquery.form"</span> : [<span class="string">"jquery"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>exports表明该模块外部调用时的名称，deps数组表示该模块的依赖</p>
-<p>这样配置之后我们就可以使用加载插件后的jquery了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config([<span class="string">"jquery"</span>, <span class="string">"jquery.form"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="string">"#form"</span>).ajaxSubmit(&#123;...&#125;);</div><div class="line">    &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样配置之后我们就可以使用加载插件后的jquery了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config([<span class="string">"jquery"</span>, <span class="string">"jquery.form"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"#form"</span>).ajaxSubmit(&#123;...&#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>来源：<a href="http://www.runoob.com/w3cnote/requirejs-tutorial-1.html" target="_blank" rel="external">runoob文档</a></p>
+<p>来源：<a href="http://www.runoob.com/w3cnote/requirejs-tutorial-1.html" target="_blank" rel="noopener">runoob文档</a></p>
 </blockquote>
 
       
@@ -632,7 +632,7 @@ window.onload = function(){
       
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox">
-  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async = "async" ></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async="async"></script>
 </div>
 
       
@@ -671,7 +671,7 @@ window.onload = function(){
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -681,10 +681,8 @@ window.onload = function(){
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/mine/avatar.jpg"
-               alt="Pimi Chen" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/mine/avatar.jpg" alt="Pimi Chen">
           <p class="site-author-name" itemprop="name">Pimi Chen</p>
            
               <p class="site-description motion-element" itemprop="description">天道酬勤，上善若水</p>
@@ -695,7 +693,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">148</span>
+                <span class="site-state-item-count">164</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -708,7 +706,7 @@ window.onload = function(){
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -738,7 +736,7 @@ window.onload = function(){
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://segmentfault.com/u/Pimi" target="_blank" title="Segmentfault">
+                <a href="https://segmentfault.com/u/pimi" target="_blank" title="Segmentfault">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -826,7 +824,7 @@ window.onload = function(){
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2017 - 
   <span itemprop="copyrightYear">2018</span>

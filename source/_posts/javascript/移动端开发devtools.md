@@ -43,3 +43,6 @@ DEMO:
 
 
 >非常感谢[liriliri](https://github.com/liriliri)提供的[eruda](https://github.com/liriliri/eruda)工具，非常赞
+
+
+相同功能的工具：[Tencent vConsole](https://github.com/Tencent/vConsole/blob/dev/README_CN.md)

@@ -9,8 +9,9 @@ tags:
 ## 基本操作
 Command-X             剪切（剪切文字）
 Command-C、Command-Option-V  剪切 粘贴（文件）
-Command-C             拷贝（Copy）　　
-Command-V             粘贴　
+Command-C             拷贝（相当于windows的复制，MacOS的复制为先拷贝再粘贴两部操作）　　
+Command-V             粘贴
+Command-Option-V      粘贴（删除源文件）　
 Command-Z             撤销
 Command-Shift-Z       撤销的逆向操作
 Command-A             全选　　

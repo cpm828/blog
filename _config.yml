@@ -82,9 +82,9 @@ deploy:
 # algolia search
 algolia:
   applicationID: '7U5GLOOLPQ'
-  apiKey: 'e0a6c17904f018e6db32e5350f5d8df4'
+  apiKey: '217b43ed2d3cb495895c71b272d78d13'
   adminApiKey: '1db38e90c6109949dff16372208a19c3'
-  indexName: 'pimiblog'
+  indexName: 'pimi_blog'
   chunkSize: 5000
 
 # local search
