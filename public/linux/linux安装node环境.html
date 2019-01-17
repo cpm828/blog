@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,41 +66,41 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Linux," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Pimi's Blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+  <meta name="keywords" content="Linux,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Pimi's Blog" type="application/atom+xml">
 
-<meta name="description" content="tmux的一些常用操作">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="linux配置node环境、npm等">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tmux相关操作">
-<meta property="og:url" content="http://pimichen.com/linux/tmux操作.html">
+<meta property="og:title" content="Linux安装node环境">
+<meta property="og:url" content="http://blog.pimichen.com/linux/linux安装node环境.html">
 <meta property="og:site_name" content="Pimi&#39;s Blog">
-<meta property="og:description" content="tmux的一些常用操作">
+<meta property="og:description" content="linux配置node环境、npm等">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-04-30T15:35:59.000Z">
+<meta property="og:updated_time" content="2019-01-16T13:52:13.083Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tmux相关操作">
-<meta name="twitter:description" content="tmux的一些常用操作">
+<meta name="twitter:title" content="Linux安装node环境">
+<meta name="twitter:description" content="linux配置node环境、npm等">
 
 
 
@@ -118,8 +118,8 @@
     },
     algolia: {
       applicationID: '7U5GLOOLPQ',
-      apiKey: 'e0a6c17904f018e6db32e5350f5d8df4',
-      indexName: 'pimiblog',
+      apiKey: '217b43ed2d3cb495895c71b272d78d13',
+      indexName: 'pimi_blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"搜索...","hits_empty":"没有查到与「${query}」相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
     }
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://pimichen.com/linux/tmux操作.html"/>
+  <link rel="canonical" href="http://blog.pimichen.com/linux/linux安装node环境.html">
 
 
 
@@ -215,10 +215,10 @@ window.onload = function(){
 </script>
 
 
-  <title> tmux相关操作 | Pimi's Blog </title>
+  <title> Linux安装node环境 | Pimi's Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -262,13 +262,13 @@ window.onload = function(){
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Pimi's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -298,7 +298,7 @@ window.onload = function(){
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -308,7 +308,7 @@ window.onload = function(){
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -318,7 +318,7 @@ window.onload = function(){
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -328,7 +328,7 @@ window.onload = function(){
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -338,7 +338,7 @@ window.onload = function(){
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
             公益
           </a>
@@ -351,7 +351,7 @@ window.onload = function(){
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -410,16 +410,16 @@ window.onload = function(){
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://pimichen.com/linux/tmux操作.html">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.pimichen.com/linux/linux安装node环境.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pimi Chen">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/mine/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Pimi's Blog">
     </span>
 
@@ -432,7 +432,7 @@ window.onload = function(){
             
             
               
-                tmux相关操作
+                Linux安装node环境
               
             
           </h1>
@@ -447,8 +447,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T00:00:00+08:00">
-                2017-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T21:47:37+08:00">
+                2019-01-16
               </time>
             
 
@@ -463,8 +463,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-04-30T23:35:59+08:00">
-                2017-04-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-16T21:52:13+08:00">
+                2019-01-16
               </time>
             
 
@@ -484,7 +484,7 @@ window.onload = function(){
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
             <span>阅读次数</span>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" >1</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv">1</span>
             </span>
           
 
@@ -492,7 +492,7 @@ window.onload = function(){
 
           
               <div class="post-description">
-                  tmux的一些常用操作
+                  linux配置node环境、npm等
               </div>
           
 
@@ -507,8 +507,10 @@ window.onload = function(){
       
 
       
-        <p>tmux快捷键（已经修改了默认配置）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">tmux 终端快捷键设置：</div><div class="line">cat ~/.tmux.conf    查看</div><div class="line">sudo vim ~/.tmux.conf    修改</div><div class="line"></div><div class="line">使用tmux开启多个终端，快捷键如下：</div><div class="line">tmux    进入tmux</div><div class="line"></div><div class="line">我的快捷键使用（通过cat ~/.tmux.conf设置）:</div><div class="line">Ctrl + A 、 -    横向分屏</div><div class="line">Ctrl + A 、 |    竖向分屏</div><div class="line"><span class="built_in">exit</span>    关闭当前窗口</div><div class="line">Ctrl + A 、D    <span class="comment"># 将多个终端放入后台隐藏，显示一个终端</span></div><div class="line">tmux at    <span class="comment"># 重新切换回多个终端状态</span></div><div class="line">Ctrl + A、（up、down、left、right）    <span class="comment"># 在多个终端中切换输入</span></div><div class="line">Ctrl + A +（up、down、left、right）    <span class="comment"># 改变当前终端的大小</span></div><div class="line">Ctrl + A、[ 、（up、down、left、right）    <span class="comment"># 在当前终端可以滚Z</span></div><div class="line">Ctrl + A、Z    <span class="comment"># 当前终端最大化最小化</span></div><div class="line">Ctrl + A、C    <span class="comment"># 当前窗口分屏（全屏）</span></div><div class="line">Ctrl + A、，   <span class="comment"># 更改窗口地步名称</span></div></pre></td></tr></table></figure></p>
-<p>修改配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 编码</span></div><div class="line">setw -g utf8 on</div><div class="line"><span class="built_in">set</span> -g status-utf8 on</div><div class="line"></div><div class="line"><span class="comment"># 基础设置</span></div><div class="line"><span class="built_in">set</span> -g default-terminal <span class="string">"screen-256color"</span></div><div class="line"><span class="built_in">set</span> -g display-time 3000</div><div class="line"><span class="built_in">set</span> -g escape-time 0</div><div class="line"><span class="built_in">set</span> -g <span class="built_in">history</span>-limit 65535</div><div class="line"><span class="built_in">set</span> -g base-index 1</div><div class="line"><span class="built_in">set</span> -g pane-base-index 1</div><div class="line"></div><div class="line"><span class="comment"># 前缀绑定 (Ctrl+a)</span></div><div class="line"><span class="built_in">set</span> -g prefix ^a</div><div class="line">unbind ^b</div><div class="line"><span class="built_in">bind</span> a send-prefix</div><div class="line"></div><div class="line"><span class="comment"># 分割窗口</span></div><div class="line">unbind <span class="string">'"'</span></div><div class="line"><span class="built_in">bind</span> - splitw -v</div><div class="line">unbind %</div><div class="line"><span class="built_in">bind</span> | splitw -h</div><div class="line"></div><div class="line"><span class="comment"># 选中窗口</span></div><div class="line"><span class="built_in">bind</span>-key k select-pane -U</div><div class="line"><span class="built_in">bind</span>-key j select-pane -D</div><div class="line"><span class="built_in">bind</span>-key h select-pane -L</div><div class="line"><span class="built_in">bind</span>-key l select-pane -R</div><div class="line"></div><div class="line"><span class="comment"># copy-mode 将快捷键设置为 vi 模式</span></div><div class="line">setw -g mode-keys vi</div><div class="line"></div><div class="line"><span class="comment"># 启用鼠标(Tmux v2.1 之前)</span></div><div class="line">setw -g mode-mouse on</div><div class="line"><span class="built_in">set</span> -g mouse-select-pane on</div><div class="line"><span class="built_in">set</span> -g mouse-resize-pane on</div><div class="line"><span class="built_in">set</span> -g mouse-select-window on</div><div class="line"></div><div class="line"><span class="comment"># Ubuntu 支持复制</span></div><div class="line"><span class="built_in">bind</span> -t vi-copy y copy-pipe <span class="string">"xclip -sel clip -i"</span></div><div class="line"></div><div class="line"><span class="comment"># 启用鼠标(Tmux v2.1)</span></div><div class="line"><span class="comment">#setw -g mouse on</span></div><div class="line"><span class="comment"># to enable mouse scroll, see https://github.com/tmux/tmux/issues/145#issuecomment-150736967</span></div><div class="line"><span class="comment">#bind -n WheelUpPane if-shell -F -t = "#&#123;mouse_any_flag&#125;" "send-keys -M" "if -Ft= '#&#123;pane_in_mode&#125;' 'send-keys -M' 'copy-mode -e'"</span></div><div class="line"></div><div class="line"><span class="comment"># 更新配置文件</span></div><div class="line"><span class="built_in">bind</span> r <span class="built_in">source</span>-file ~/.tmux.conf \; display <span class="string">"已更新"</span></div></pre></td></tr></table></figure></p>
+        <p>1 安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x64.tar.xz  <span class="comment"># 二进制地址（from node website）</span></span><br></pre></td></tr></table></figure></p>
+<p>2 解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v8.11.3-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line">tar -xvf node-v8.11.3-linux-x64.tar</span><br></pre></td></tr></table></figure></p>
+<p>3 重命名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v8.11.3-linux-x64 node</span><br></pre></td></tr></table></figure></p>
+<p>4 创建软链接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/<span class="built_in">local</span>/node/bin/node /usr/bin/node</span><br><span class="line"></span><br><span class="line">node --version</span><br><span class="line"></span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/node/bin/npm /usr/bin/npm</span><br><span class="line"></span><br><span class="line">npm --version</span><br><span class="line"></span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/node/bin/npx /usr/bin/npx</span><br><span class="line"></span><br><span class="line">npx --version</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -537,7 +539,7 @@ window.onload = function(){
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://pimichen.com/linux/tmux操作.html" title="tmux相关操作">http://pimichen.com/linux/tmux操作.html</a>
+      <a href="http://blog.pimichen.com/linux/linux安装node环境.html" title="Linux安装node环境">http://blog.pimichen.com/linux/linux安装node环境.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -566,8 +568,8 @@ window.onload = function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/javascript/innerText和textContent的异同.html" rel="next" title="innerText和textContent的异同">
-                <i class="fa fa-chevron-left"></i> innerText和textContent的异同
+              <a href="/javascript/js执行机制.html" rel="next" title="js执行机制">
+                <i class="fa fa-chevron-left"></i> js执行机制
               </a>
             
           </div>
@@ -575,10 +577,6 @@ window.onload = function(){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/other/前端面试知识点.html" rel="prev" title="前端面试知识点">
-                前端面试知识点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -595,7 +593,7 @@ window.onload = function(){
       
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox">
-  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async = "async" ></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async="async"></script>
 </div>
 
       
@@ -635,10 +633,8 @@ window.onload = function(){
       
 
       <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/mine/avatar.jpg"
-               alt="Pimi Chen" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/mine/avatar.jpg" alt="Pimi Chen">
           <p class="site-author-name" itemprop="name">Pimi Chen</p>
            
               <p class="site-description motion-element" itemprop="description">天道酬勤，上善若水</p>
@@ -649,7 +645,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">148</span>
+                <span class="site-state-item-count">165</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -662,7 +658,7 @@ window.onload = function(){
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -692,7 +688,7 @@ window.onload = function(){
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://segmentfault.com/u/Pimi" target="_blank" title="Segmentfault">
+                <a href="https://segmentfault.com/u/pimi" target="_blank" title="Segmentfault">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -764,10 +760,10 @@ window.onload = function(){
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

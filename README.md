@@ -1,9 +1,16 @@
-Title: Pimi's Blog
+* Title: Pimi’s Blog
 
-Email: pimi0828@gmail.com / 1019242875@qq.com
+* Contact Me: 
+  - Gmail: pimi0828@gmail.com
+  - QQ Mail: 1019242875@qq.com
 
-Create_time: 2017-03-30
+* Create Time: 2017-03-30
 
-Github: https://github.com/cpm828/pmblog
+* Repository
+  - Github: https://github.com/cpm828/pmblog
+  - Coding: https://coding.net/u/pimi/p/pimi.coding.me
 
-Website: https://pimichen.com
+* Access Link: 
+  - Website: http://blog.pimichen.com
+  - Github: https://cpm828.github.io
+  - Coding: https://pimi.coding.me

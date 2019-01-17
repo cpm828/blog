@@ -5,9 +5,9 @@
   <subtitle>A lazy youth, a lousy age.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://pimichen.com/"/>
-  <updated>2018-12-24T06:59:32.407Z</updated>
-  <id>http://pimichen.com/</id>
+  <link href="http://blog.pimichen.com/"/>
+  <updated>2019-01-16T13:52:13.083Z</updated>
+  <id>http://blog.pimichen.com/</id>
   
   <author>
     <name>Pimi Chen</name>
@@ -17,9 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux安装node环境</title>
+    <link href="http://blog.pimichen.com/linux/linux%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83.html"/>
+    <id>http://blog.pimichen.com/linux/linux安装node环境.html</id>
+    <published>2019-01-16T13:47:37.033Z</published>
+    <updated>2019-01-16T13:52:13.083Z</updated>
+    
+    <content type="html"><![CDATA[<p>1 安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x64.tar.xz  <span class="comment"># 二进制地址（from node website）</span></span><br></pre></td></tr></table></figure></p><p>2 解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v8.11.3-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line">tar -xvf node-v8.11.3-linux-x64.tar</span><br></pre></td></tr></table></figure></p><p>3 重命名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v8.11.3-linux-x64 node</span><br></pre></td></tr></table></figure></p><p>4 创建软链接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/<span class="built_in">local</span>/node/bin/node /usr/bin/node</span><br><span class="line"></span><br><span class="line">node --version</span><br><span class="line"></span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/node/bin/npm /usr/bin/npm</span><br><span class="line"></span><br><span class="line">npm --version</span><br><span class="line"></span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/node/bin/npx /usr/bin/npx</span><br><span class="line"></span><br><span class="line">npx --version</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      linux配置node环境、npm等
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://blog.pimichen.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>js执行机制</title>
-    <link href="http://pimichen.com/javascript/js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6.html"/>
-    <id>http://pimichen.com/javascript/js执行机制.html</id>
+    <link href="http://blog.pimichen.com/javascript/js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6.html"/>
+    <id>http://blog.pimichen.com/javascript/js执行机制.html</id>
     <published>2018-12-24T06:47:50.075Z</published>
     <updated>2018-12-24T06:59:32.407Z</updated>
     
@@ -32,14 +52,14 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>jquery封装插件</title>
-    <link href="http://pimichen.com/jquery/jquery%E5%B0%81%E8%A3%85%E6%8F%92%E4%BB%B6.html"/>
-    <id>http://pimichen.com/jquery/jquery封装插件.html</id>
+    <link href="http://blog.pimichen.com/jquery/jquery%E5%B0%81%E8%A3%85%E6%8F%92%E4%BB%B6.html"/>
+    <id>http://blog.pimichen.com/jquery/jquery封装插件.html</id>
     <published>2018-12-17T06:43:21.021Z</published>
     <updated>2018-12-17T07:42:09.906Z</updated>
     
@@ -52,16 +72,16 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
-      <category term="jQuery" scheme="http://pimichen.com/tags/jquery/"/>
+      <category term="jQuery" scheme="http://blog.pimichen.com/tags/jquery/"/>
     
   </entry>
   
   <entry>
     <title>windows系统端口占用解决办法</title>
-    <link href="http://pimichen.com/tools/windows%E7%94%B5%E8%84%91%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95.html"/>
-    <id>http://pimichen.com/tools/windows电脑端口占用解决办法.html</id>
+    <link href="http://blog.pimichen.com/tools/windows%E7%94%B5%E8%84%91%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95.html"/>
+    <id>http://blog.pimichen.com/tools/windows电脑端口占用解决办法.html</id>
     <published>2018-11-05T02:52:38.485Z</published>
     <updated>2018-11-05T02:56:27.854Z</updated>
     
@@ -74,14 +94,14 @@
     </summary>
     
     
-      <category term="Tools" scheme="http://pimichen.com/tags/tools/"/>
+      <category term="Tools" scheme="http://blog.pimichen.com/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>js动态插入link标签</title>
-    <link href="http://pimichen.com/javascript/js%E5%8A%A8%E6%80%81%E6%8F%92%E5%85%A5css%E6%A0%B7%E5%BC%8F%E6%A0%87%E7%AD%BE.html"/>
-    <id>http://pimichen.com/javascript/js动态插入css样式标签.html</id>
+    <link href="http://blog.pimichen.com/javascript/js%E5%8A%A8%E6%80%81%E6%8F%92%E5%85%A5css%E6%A0%B7%E5%BC%8F%E6%A0%87%E7%AD%BE.html"/>
+    <id>http://blog.pimichen.com/javascript/js动态插入css样式标签.html</id>
     <published>2018-09-29T08:06:03.971Z</published>
     <updated>2018-09-29T08:07:19.468Z</updated>
     
@@ -94,14 +114,14 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>js判断字符串是否是时间格式</title>
-    <link href="http://pimichen.com/javascript/js%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E6%98%AF%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F.html"/>
-    <id>http://pimichen.com/javascript/js判断字符串是否是时间格式.html</id>
+    <link href="http://blog.pimichen.com/javascript/js%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E6%98%AF%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F.html"/>
+    <id>http://blog.pimichen.com/javascript/js判断字符串是否是时间格式.html</id>
     <published>2018-09-29T06:42:35.555Z</published>
     <updated>2018-09-29T06:43:09.237Z</updated>
     
@@ -114,16 +134,16 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>canvas将图片和文本合成图片</title>
-    <link href="http://pimichen.com/javascript/canvas%E5%90%88%E6%88%90%E5%9B%BE%E7%89%87%E5%92%8C%E6%96%87%E6%9C%AC.html"/>
-    <id>http://pimichen.com/javascript/canvas合成图片和文本.html</id>
+    <link href="http://blog.pimichen.com/javascript/canvas%E5%90%88%E6%88%90%E5%9B%BE%E7%89%87%E5%92%8C%E6%96%87%E6%9C%AC.html"/>
+    <id>http://blog.pimichen.com/javascript/canvas合成图片和文本.html</id>
     <published>2018-09-14T10:04:11.790Z</published>
-    <updated>2018-09-14T10:10:15.538Z</updated>
+    <updated>2018-12-27T03:18:48.998Z</updated>
     
     <content type="html"><![CDATA[<p>需求为：将一张图片和用户输入的文字（居中显示，且超出指定宽度显示…）合成一张新的图片</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"posterCanvas"</span> <span class="attr">width</span>=<span class="string">"240"</span> <span class="attr">height</span>=<span class="string">"180"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">用户输入的文本：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"inputText"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"convertBtn"</span>&gt;</span>合成图片<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> convertBtn = <span class="built_in">document</span>.getElementById(<span class="string">'convertBtn'</span>);</span><br><span class="line">  convertBtn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    drawCanvasDefaultPoster();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">drawCanvasDefaultPoster</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> inputText = <span class="built_in">document</span>.getElementById(<span class="string">'inputText'</span>),</span><br><span class="line">      posterCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'posterCanvas'</span>),</span><br><span class="line">      posterContext = posterCanvas.getContext(<span class="string">'2d'</span>),</span><br><span class="line">      posterCanvasWidth = posterCanvas.width,</span><br><span class="line">      posterCanvasHeight = posterCanvas.height,</span><br><span class="line">      posterDefaultImg = <span class="keyword">new</span> Image();</span><br><span class="line"></span><br><span class="line">    posterDefaultImg.src = <span class="string">'https://cdn-portrait.test.17zuoye.net//public/skin/teacher_coursewarev2/images/upload_example.png'</span>;</span><br><span class="line">    posterDefaultImg.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      posterContext.drawImage(posterDefaultImg, <span class="number">0</span>, <span class="number">0</span>, posterCanvasWidth, posterCanvasHeight); <span class="comment">// 填充图片</span></span><br><span class="line"></span><br><span class="line">      posterContext.font = <span class="string">'16px MicrosoftYaHei'</span>; <span class="comment">// 填充title</span></span><br><span class="line">      posterContext.textAlign = <span class="string">'center'</span>;</span><br><span class="line">      <span class="comment">// posterContext.fillText(inputText.value, 120, 114); // 如不处理限制文本宽度，直接绘制即可</span></span><br><span class="line">      <span class="keyword">var</span> wordWidth = <span class="number">0</span>; <span class="comment">// 字符宽度</span></span><br><span class="line">      <span class="keyword">var</span> inputValue = inputText.value; <span class="comment">// 操作的title</span></span><br><span class="line">      <span class="keyword">if</span> (posterContext.measureText(inputValue).width &lt; <span class="number">190</span>) &#123; <span class="comment">// title小于最大宽度，直接绘制</span></span><br><span class="line">          posterContext.fillText(inputValue, <span class="number">120</span>, <span class="number">114</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; <span class="comment">// title大于最大宽度则需要截取绘制</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; inputValue.length; i++) &#123; <span class="comment">// 遍历，根据当前的文本长度是否大于指定宽度，来截取</span></span><br><span class="line">              wordWidth += posterContext.measureText(inputValue[i]).width; <span class="comment">// 逐渐追加的文本宽度</span></span><br><span class="line">              <span class="keyword">if</span> (wordWidth &gt; <span class="number">190</span>) &#123; <span class="comment">// 指定（190 + '...'）</span></span><br><span class="line">                  posterContext.fillText(inputValue.substring(<span class="number">0</span>, i) + <span class="string">'...'</span>, <span class="number">120</span>, <span class="number">114</span>);</span><br><span class="line">                  <span class="keyword">break</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> base64Url = posterCanvas.toDataURL(<span class="string">'image/jpeg'</span>, <span class="number">1.0</span>); <span class="comment">// toBase64</span></span><br><span class="line">      <span class="comment">// 此处取到base64就可以用了，如传给后端等</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="comment">// 如何限定宽度： https://blog.csdn.net/lishihong108/article/details/52483867?ref=myread</span></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -134,14 +154,14 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>移动端吸顶效果</title>
-    <link href="http://pimichen.com/javascript/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html"/>
-    <id>http://pimichen.com/javascript/移动端吸顶效果.html</id>
+    <link href="http://blog.pimichen.com/javascript/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%90%B8%E9%A1%B6%E6%95%88%E6%9E%9C.html"/>
+    <id>http://blog.pimichen.com/javascript/移动端吸顶效果.html</id>
     <published>2018-08-21T07:59:46.365Z</published>
     <updated>2018-12-20T02:38:48.990Z</updated>
     
@@ -154,16 +174,16 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
-      <category term="jQuery" scheme="http://pimichen.com/tags/jquery/"/>
+      <category term="jQuery" scheme="http://blog.pimichen.com/tags/jquery/"/>
     
   </entry>
   
   <entry>
     <title>js判断css属性兼容性</title>
-    <link href="http://pimichen.com/javascript/js%E5%88%A4%E6%96%ADcss%E5%B1%9E%E6%80%A7%E5%85%BC%E5%AE%B9%E6%80%A7.html"/>
-    <id>http://pimichen.com/javascript/js判断css属性兼容性.html</id>
+    <link href="http://blog.pimichen.com/javascript/js%E5%88%A4%E6%96%ADcss%E5%B1%9E%E6%80%A7%E5%85%BC%E5%AE%B9%E6%80%A7.html"/>
+    <id>http://blog.pimichen.com/javascript/js判断css属性兼容性.html</id>
     <published>2018-07-11T02:59:48.780Z</published>
     <updated>2018-12-20T02:42:59.593Z</updated>
     
@@ -176,16 +196,16 @@
     </summary>
     
     
-      <category term="CSS" scheme="http://pimichen.com/tags/css/"/>
+      <category term="CSS" scheme="http://blog.pimichen.com/tags/css/"/>
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>markdown文件夹说明</title>
-    <link href="http://pimichen.com/other/markdown%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%B4%E6%98%8E.html"/>
-    <id>http://pimichen.com/other/markdown文件夹说明.html</id>
+    <link href="http://blog.pimichen.com/other/markdown%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%B4%E6%98%8E.html"/>
+    <id>http://blog.pimichen.com/other/markdown文件夹说明.html</id>
     <published>2018-07-02T08:24:48.468Z</published>
     <updated>2018-07-12T09:40:04.178Z</updated>
     
@@ -198,18 +218,18 @@
     </summary>
     
     
-      <category term="Other" scheme="http://pimichen.com/tags/other/"/>
+      <category term="Other" scheme="http://blog.pimichen.com/tags/other/"/>
     
   </entry>
   
   <entry>
     <title>css媒体查询</title>
-    <link href="http://pimichen.com/css/css%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2.html"/>
-    <id>http://pimichen.com/css/css媒体查询.html</id>
+    <link href="http://blog.pimichen.com/css/css%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2.html"/>
+    <id>http://blog.pimichen.com/css/css媒体查询.html</id>
     <published>2018-06-06T08:40:34.132Z</published>
-    <updated>2018-06-06T08:45:38.123Z</updated>
+    <updated>2019-01-11T02:54:24.437Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* iPhone4 */</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">320px</span>) and (device-height: <span class="number">480px</span>) and (-webkit-device-pixel-ratio: <span class="number">2</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhone5 */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">320px</span>) and (device-height: <span class="number">568px</span>) and (-webkit-device-pixel-ratio: <span class="number">2</span>) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhone6、iPhone7、iPhone8 */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-height:<span class="number">375px</span>) and (device-height: <span class="number">667px</span>) and (-webkit-device-pixel-ratio: <span class="number">2</span>) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhone6Plus、iPhone7Plus、iPhone8Plus */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">414px</span>) and (device-height: <span class="number">736px</span>) and (-webkit-device-pixel-ratio: <span class="number">3</span>) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhoneX */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">375px</span>) and (device-height: <span class="number">812px</span>) and (-webkit-device-pixel-ratio: <span class="number">3</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* iPhone4 */</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">320px</span>) and (device-height: <span class="number">480px</span>) and (-webkit-device-pixel-ratio: <span class="number">2</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhone5 */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">320px</span>) and (device-height: <span class="number">568px</span>) and (-webkit-device-pixel-ratio: <span class="number">2</span>) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhone6、iPhone7、iPhone8 */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-height:<span class="number">375px</span>) and (device-height: <span class="number">667px</span>) and (-webkit-device-pixel-ratio: <span class="number">2</span>) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhone6Plus、iPhone7Plus、iPhone8Plus */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">414px</span>) and (device-height: <span class="number">736px</span>) and (-webkit-device-pixel-ratio: <span class="number">3</span>) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhoneX */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">375px</span>) and (device-height: <span class="number">812px</span>) and (-webkit-device-pixel-ratio: <span class="number">3</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhoneX */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">375px</span>) and (device-height: <span class="number">812px</span>) and (-webkit-device-pixel-ratio: <span class="number">3</span>) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhoneXR */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">414px</span>) and (device-height: <span class="number">896px</span>) and (-webkit-device-pixel-ratio: <span class="number">2</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhoneXs */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">375px</span>) and (device-height: <span class="number">812px</span>) and (-webkit-device-pixel-ratio: <span class="number">3</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iPhoneXs Max */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (device-width: <span class="number">414px</span>) and (device-height: <span class="number">896px</span>) and (-webkit-device-pixel-ratio: <span class="number">3</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -218,14 +238,14 @@
     </summary>
     
     
-      <category term="CSS" scheme="http://pimichen.com/tags/css/"/>
+      <category term="CSS" scheme="http://blog.pimichen.com/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>jquery上传文件</title>
-    <link href="http://pimichen.com/jquery/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6.html"/>
-    <id>http://pimichen.com/jquery/上传文件.html</id>
+    <link href="http://blog.pimichen.com/jquery/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6.html"/>
+    <id>http://blog.pimichen.com/jquery/上传文件.html</id>
     <published>2018-04-26T02:21:15.227Z</published>
     <updated>2018-04-26T07:04:24.306Z</updated>
     
@@ -238,14 +258,14 @@
     </summary>
     
     
-      <category term="jQuery" scheme="http://pimichen.com/tags/jquery/"/>
+      <category term="jQuery" scheme="http://blog.pimichen.com/tags/jquery/"/>
     
   </entry>
   
   <entry>
     <title>freemarker继承</title>
-    <link href="http://pimichen.com/freemarker/freemarker%E7%BB%A7%E6%89%BF.html"/>
-    <id>http://pimichen.com/freemarker/freemarker继承.html</id>
+    <link href="http://blog.pimichen.com/freemarker/freemarker%E7%BB%A7%E6%89%BF.html"/>
+    <id>http://blog.pimichen.com/freemarker/freemarker继承.html</id>
     <published>2018-04-17T08:25:38.097Z</published>
     <updated>2018-04-17T09:05:53.007Z</updated>
     
@@ -258,14 +278,14 @@
     </summary>
     
     
-      <category term="FreeMarker" scheme="http://pimichen.com/tags/freemarker/"/>
+      <category term="FreeMarker" scheme="http://blog.pimichen.com/tags/freemarker/"/>
     
   </entry>
   
   <entry>
     <title>node安装的小型服务器</title>
-    <link href="http://pimichen.com/node/node%E5%B0%8F%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8.html"/>
-    <id>http://pimichen.com/node/node小型服务器.html</id>
+    <link href="http://blog.pimichen.com/node/node%E5%B0%8F%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%99%A8.html"/>
+    <id>http://blog.pimichen.com/node/node小型服务器.html</id>
     <published>2018-04-16T03:01:15.838Z</published>
     <updated>2018-06-03T07:49:03.365Z</updated>
     
@@ -278,14 +298,14 @@
     </summary>
     
     
-      <category term="Node" scheme="http://pimichen.com/tags/node/"/>
+      <category term="Node" scheme="http://blog.pimichen.com/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>ES7 求幂运算</title>
-    <link href="http://pimichen.com/es7/es7-%E6%B1%82%E5%B9%82%E8%BF%90%E7%AE%97.html"/>
-    <id>http://pimichen.com/es7/es7-求幂运算.html</id>
+    <link href="http://blog.pimichen.com/es7/es7-%E6%B1%82%E5%B9%82%E8%BF%90%E7%AE%97.html"/>
+    <id>http://blog.pimichen.com/es7/es7-求幂运算.html</id>
     <published>2018-04-04T07:32:57.578Z</published>
     <updated>2018-04-04T09:15:30.884Z</updated>
     
@@ -298,14 +318,14 @@
     </summary>
     
     
-      <category term="ES7" scheme="http://pimichen.com/tags/es7/"/>
+      <category term="ES7" scheme="http://blog.pimichen.com/tags/es7/"/>
     
   </entry>
   
   <entry>
     <title>ES7 includes方法</title>
-    <link href="http://pimichen.com/es7/es7-includes%E6%96%B9%E6%B3%95.html"/>
-    <id>http://pimichen.com/es7/es7-includes方法.html</id>
+    <link href="http://blog.pimichen.com/es7/es7-includes%E6%96%B9%E6%B3%95.html"/>
+    <id>http://blog.pimichen.com/es7/es7-includes方法.html</id>
     <published>2018-04-04T07:32:37.230Z</published>
     <updated>2018-04-04T08:58:56.054Z</updated>
     
@@ -318,14 +338,14 @@
     </summary>
     
     
-      <category term="ES7" scheme="http://pimichen.com/tags/es7/"/>
+      <category term="ES7" scheme="http://blog.pimichen.com/tags/es7/"/>
     
   </entry>
   
   <entry>
     <title>js检测浏览器是否出于放缩状态</title>
-    <link href="http://pimichen.com/javascript/js%E6%A3%80%E6%B5%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%90%A6%E5%87%BA%E4%BA%8E%E6%94%BE%E7%BC%A9%E7%8A%B6%E6%80%81.html"/>
-    <id>http://pimichen.com/javascript/js检测浏览器是否出于放缩状态.html</id>
+    <link href="http://blog.pimichen.com/javascript/js%E6%A3%80%E6%B5%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%90%A6%E5%87%BA%E4%BA%8E%E6%94%BE%E7%BC%A9%E7%8A%B6%E6%80%81.html"/>
+    <id>http://blog.pimichen.com/javascript/js检测浏览器是否出于放缩状态.html</id>
     <published>2018-03-16T03:25:33.263Z</published>
     <updated>2018-03-16T03:28:45.482Z</updated>
     
@@ -338,14 +358,14 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>前端算法集合</title>
-    <link href="http://pimichen.com/javascript/%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88.html"/>
-    <id>http://pimichen.com/javascript/前端算法集合.html</id>
+    <link href="http://blog.pimichen.com/javascript/%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88.html"/>
+    <id>http://blog.pimichen.com/javascript/前端算法集合.html</id>
     <published>2017-12-26T11:09:55.043Z</published>
     <updated>2018-12-25T11:14:17.947Z</updated>
     
@@ -358,14 +378,14 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://blog.pimichen.com/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>React官方CDN</title>
-    <link href="http://pimichen.com/react/react%E5%AE%98%E6%96%B9cdn.html"/>
-    <id>http://pimichen.com/react/react官方cdn.html</id>
+    <link href="http://blog.pimichen.com/react/react%E5%AE%98%E6%96%B9cdn.html"/>
+    <id>http://blog.pimichen.com/react/react官方cdn.html</id>
     <published>2017-12-25T10:32:50.263Z</published>
     <updated>2017-12-25T10:33:17.408Z</updated>
     
@@ -378,14 +398,14 @@
     </summary>
     
     
-      <category term="React" scheme="http://pimichen.com/tags/react/"/>
+      <category term="React" scheme="http://blog.pimichen.com/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>vue-router懒加载</title>
-    <link href="http://pimichen.com/vue/vue-router%E8%B5%96%E5%8A%A0%E8%BD%BD%E5%86%99%E6%B3%95.html"/>
-    <id>http://pimichen.com/vue/vue-router赖加载写法.html</id>
+    <link href="http://blog.pimichen.com/vue/vue-router%E8%B5%96%E5%8A%A0%E8%BD%BD%E5%86%99%E6%B3%95.html"/>
+    <id>http://blog.pimichen.com/vue/vue-router赖加载写法.html</id>
     <published>2017-12-22T09:44:25.215Z</published>
     <updated>2017-12-22T09:50:40.258Z</updated>
     
@@ -398,27 +418,7 @@
     </summary>
     
     
-      <category term="Vue" scheme="http://pimichen.com/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初识requirejs</title>
-    <link href="http://pimichen.com/javascript/%E5%88%9D%E8%AF%86%E6%A8%A1%E5%9D%97%E5%8C%96%E5%8A%A0%E8%BD%BDrequirejs.html"/>
-    <id>http://pimichen.com/javascript/初识模块化加载requirejs.html</id>
-    <published>2017-12-20T09:57:12.826Z</published>
-    <updated>2017-12-21T03:06:01.274Z</updated>
-    
-    <content type="html"><![CDATA[<p>在浏览器中可以作为js文件的模块加载器，也可以用在Node和Rhino环境。</p><h2 id="初识requirejs"><a href="#初识requirejs" class="headerlink" title="初识requirejs"></a>初识requirejs</h2><p>先看一个小demo：</p><p>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"a.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>body<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p>a.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"it works"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun1();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或 使用块作用域来申明function防止污染全局变量</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"it works"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fun1();</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p><p>运行结果：<br>alert执行的时候，页面上的span元素还未显示。这是因为js阻塞浏览器渲染，导致body内容未能被读取。</p><p>requirejs写法:<br>先去<a href="http://requirejs.org" target="_blank" rel="noopener">require官网</a>下载js<br>index.html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"require.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="built_in">require</span>([<span class="string">"a"</span>]);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>body<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p>a.js:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func1</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(<span class="string">'it works'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    func1();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>运行结果：<br>alert执行的时候，页面能正常显示body了</p><p>这个时候可以知道require的优点：<br>1.防止js加载阻塞页面渲染<br>2.管理模块之间的依赖性，便于代码的编写和维护，防止出现如下丑陋的场景。这种写法需要将依赖最大的放在最后加载，如j.js依赖前面的js，就必须放到最后，当关系很复杂时，极难维护。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"a.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"b.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"c.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"d.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"e.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"f.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"g.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"h.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"i.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"j.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p><h2 id="基本API"><a href="#基本API" class="headerlink" title="基本API"></a>基本API</h2><p>require会定义三个变量：define、require、requirejs，require = requirejs，一般使用require更简短</p><ul><li><p>define 用来定义一个模块<br>define后面也可以增加参数[“jqueyr”],即保证jquery加载完成后读取该js文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define([&quot;jquery&quot;], function ($) &#123;</span><br><span class="line">    console.log(&apos;it is loaded&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li><li><p>require 加载依赖模块，并执行加载后的回调函数</p></li></ul><p>require([“js/a.js”, “js/b.js”])的第一个参数时一个数组，即加载的脚本，第二个参数时callback，处理加载完毕后的回调<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">"js/a.js"</span>, <span class="string">"js/b.js"</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2 id="加载文件"><a href="#加载文件" class="headerlink" title="加载文件"></a>加载文件</h2><p>使用require()来加载模块的使用只能加载本地js，但如果需要加载服务器、其他网站或CDN，就需要用require.config来配置加载<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>], <span class="comment">// 或省略中括号</span></span><br><span class="line">        <span class="string">"bootstrap"</span>: [<span class="string">"https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"js/a.js"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>require.config 用来配置加载位置，给模块起一个更短更好记的名字，配置别名之后就可以再require中使用别名了。<br>注意：require中的可以带.js后缀；paths中的路径不能带.js后缀，否则会报错，paths中的每个别名对应的js如果只有一个时可以省略中括号；</p><p>require.config 中也可以用来配置本地的js</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>],</span><br><span class="line">        <span class="string">"bootstrap"</span>: [<span class="string">"https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap"</span>],</span><br><span class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"a"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>最终渲染成下面这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span> <span class="keyword">async</span>=<span class="string">""</span> data-requirecontext=<span class="string">"_"</span> data-requiremodule=<span class="string">"jquery"</span> src=<span class="string">"http://cdn.bootcss.com/jquery/2.2.4/jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span> <span class="keyword">async</span>=<span class="string">""</span> data-requirecontext=<span class="string">"_"</span> data-requiremodule=<span class="string">"a"</span> src=<span class="string">"./a.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p><p>通过require.config配置模块名称时可以配置多个路径，比如配置一个CDN路径，再配一个本地的库<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>, <span class="string">'js/jquery'</span>],</span><br><span class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"a"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'load finished'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>当paths中都是本地路径时，可以指定一个baseUrl表示目录<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    baseUrl: <span class="string">"js/lib"</span>,</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: jquery<span class="string">',</span></span><br><span class="line"><span class="string">        "a": "a"</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;);</span></span><br><span class="line"><span class="string">require(["jquery", "a"], function ($) &#123;</span></span><br><span class="line"><span class="string">    $(function () &#123;</span></span><br><span class="line"><span class="string">        console.log('</span>load finished<span class="string">');</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure></p><p>上例中require的callback中的参数$是jquery模块的输出变量，如果依赖多个模块，可以依次写入多个参数。将需要输出的模块写在前面，位置不能错乱。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>, <span class="string">"underscore"</span>, <span class="string">"js/a"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$, _</span>) </span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        _.each([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], alert);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><p>require.config配置如果在每个页面中都加入，显然会十分不雅，requirejs提供了一种叫”主数据“的功能，我们首先创建一个main.js：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: [<span class="string">"https://cdn.bootcss.com/jquery/2.2.4/jquery"</span>, <span class="string">'js/jquery'</span>],</span><br><span class="line">        <span class="string">"a"</span>: <span class="string">"js/a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>然后在页面中使用下面的方式来使用requirejs：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script data-main=<span class="string">"js/main src="</span>js/<span class="built_in">require</span>.js<span class="string">"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></p><p>data-main属性表示指定的js将在加载完require.js后处理，我们把require.config的配置加入到data-main后，就可以使每一个页面都使用这个配置，然后页面中就可以直接使用require来加载所有的短模块名<br>data-main还有一个功能，当script标签指定data-main属性时，require会默认将data-main指定的js为根路径。如上面的data-main=”js/main”设定后，我们在直接使用require([“jquery”])，而不是require([“js/jquery”])，require会自动加载js/jquery这个文件，而不是jquery.js。<br>相当于默认配置了：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    baseUrl: <span class="string">'js'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><p>通过require加载的模块一般都要符合AMD规范及使用define来申明模块，但是部分时候需要加载非AMD规范的js，这时候就需要用到另一个功能：shim，中文意思”垫“.</p><p>1、非AMD模块输出，例如，在老版本的jquery中，是没有继承AMD规范的，所以不能只能require([“jquery”])，这个时候就需要用到 shim，比如要使用underscore类库，但是它并没有实现AMD规范，可以这样配置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">requier.config(&#123;</span><br><span class="line">    shim: &#123;</span><br><span class="line">        <span class="string">"underscore"</span>: &#123;</span><br><span class="line">            <span class="keyword">export</span>: <span class="string">"_"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>这样配置后，我们就可以再其他模块中引用underscore模块：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">"underscore"</span>], <span class="function"><span class="keyword">function</span> (<span class="params">_</span>) </span>&#123;</span><br><span class="line">    _.each([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], alert)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>2、插件形式的非AMD模块，我们经常会用到jquery的插件，而这些插件基本都不符合AMD规范比如，jquery的form插件，这时候就需要将form插件”垫“到jquery中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    shim: &#123;</span><br><span class="line">        <span class="string">"underscore"</span> : &#123;</span><br><span class="line">            exports : <span class="string">"_"</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"jquery.form"</span> : &#123;</span><br><span class="line">            deps : [<span class="string">"jquery"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>也可以简写成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    shim: &#123;</span><br><span class="line">        <span class="string">"underscore"</span> : &#123;</span><br><span class="line">            exports : <span class="string">"_"</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"jquery.form"</span> : [<span class="string">"jquery"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>exports表明该模块外部调用时的名称，deps数组表示该模块的依赖</p><p>这样配置之后我们就可以使用加载插件后的jquery了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config([<span class="string">"jquery"</span>, <span class="string">"jquery.form"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"#form"</span>).ajaxSubmit(&#123;...&#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><blockquote><p>来源：<a href="http://www.runoob.com/w3cnote/requirejs-tutorial-1.html" target="_blank" rel="noopener">runoob文档</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      初识JS模块化工具requirejs
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="http://pimichen.com/tags/javascript/"/>
+      <category term="Vue" scheme="http://blog.pimichen.com/tags/vue/"/>
     
   </entry>
   

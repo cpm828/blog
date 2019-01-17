@@ -133,6 +133,8 @@ branch    分支
 //git merge <name>    合并某分支到当前分支
 //git branch -d <name>    删除本地分支
 //git push origin :master   删除远程分支(或git push origin --delete master，只删除远程分支，本地不会删除)
+
+// git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n    查看分支创建者和创建时间
 ```
 
 
