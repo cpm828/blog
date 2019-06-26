@@ -8,5 +8,5 @@ tags: # 标签分类
 
 js中viewport的各个宽高值如下：
 
-<img src="../images/html/viewport.png" class="full-image" />
+<img src="../images/html/viewport.png" />
 

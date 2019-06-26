@@ -304,7 +304,7 @@ methods: {
 ## 复杂组件通信
 复杂的组件通信应当考虑使用vuex来通信
 > vuex官方介绍：http://vuex.vuejs.org/zh-cn/intro.html
-> 个人：http://pimichen.com/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html
+> 个人：http://blog.pimichen.com/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html
 
 
 > 注：$dispatch和$broadcast在vue2.0中已经被移除

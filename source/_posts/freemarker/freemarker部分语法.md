@@ -35,17 +35,20 @@ testE: {
 
 在ftl中页面中我们可以这样获取：
 ```ftl
-${testA} // 直接获取
+"${testA}" // 直接获取
 
-${testA!} // 获取，取不到时为空串，空序列或空哈希表（arr or object）
+"${testA!}" // 获取，取不到时为空串，空序列或空哈希表（arr or object）
 
-${testA!''} // 获取，取不到时为空字符串
+"${testA!''}" // 获取，取不到时为空字符串
 
-${testA!'test'} // 获取，取不到位test字符串
+"${testA!'test'}" // 获取，取不到位test字符串
 
-${testD.eData!false} // 获取testD里面的eData，取不到为false;取到testD，取不到eData，为false;取不到testD会出问题
+"${testD.eData!false}" // 获取testD里面的eData，取不到为false;取到testD，取不到eData，为false;取不到testD会出问题
 
-${(testD.eData)!false} // 获取testD里面的eData，取不到testD或testD.eData，均为false
+"${(testD.eData)!false}" // 获取testD里面的eData，取不到testD或testD.eData，均为false
+
+${(testA!false)?string}  // 获取布尔值
+
 
 // 判断testA存在时
 <#if testA>

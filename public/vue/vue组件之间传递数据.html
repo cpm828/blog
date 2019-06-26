@@ -18,6 +18,8 @@
 
 
 
+  <meta name="google-site-verification" content="QpR2UtOlwMERxir6cPqI74sPMIvl4B0KbVZgg14OELA">
+
 
 
 
@@ -97,7 +99,7 @@
 <meta property="og:site_name" content="Pimi&#39;s Blog">
 <meta property="og:description" content="vue各组件之间传递简单的数据，父对子、子对父、兄弟之间通信">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T06:36:03.639Z">
+<meta property="og:updated_time" content="2019-02-18T08:39:51.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue组件传递数据">
 <meta name="twitter:description" content="vue各组件之间传递简单的数据，父对子、子对父、兄弟之间通信">
@@ -463,8 +465,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-07T14:36:03+08:00">
-                2017-12-07
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-18T16:39:51+08:00">
+                2019-02-18
               </time>
             
 
@@ -548,7 +550,7 @@ window.onload = function(){
 <p>父组件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Todos</span></span><br><span class="line"></span><br><span class="line">created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  eventHub.$on(<span class="string">'add-todo'</span>, <span class="keyword">this</span>.addTodo)</span><br><span class="line">  eventHub.$on(<span class="string">'delete-todo'</span>, <span class="keyword">this</span>.deleteTodo)</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 最好在组件销毁前</span></span><br><span class="line"><span class="comment">// 清除事件监听</span></span><br><span class="line">beforeDestroy: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  eventHub.$off(<span class="string">'add-todo'</span>, <span class="keyword">this</span>.addTodo)</span><br><span class="line">  eventHub.$off(<span class="string">'delete-todo'</span>, <span class="keyword">this</span>.deleteTodo)</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  addTodo: <span class="function"><span class="keyword">function</span> (<span class="params">newTodo</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.todos.push(newTodo)</span><br><span class="line">  &#125;,</span><br><span class="line">  deleteTodo: <span class="function"><span class="keyword">function</span> (<span class="params">todoId</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.todos = <span class="keyword">this</span>.todos.filter(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> todo.id !== todoId</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="复杂组件通信"><a href="#复杂组件通信" class="headerlink" title="复杂组件通信"></a>复杂组件通信</h2><p>复杂的组件通信应当考虑使用vuex来通信</p>
 <blockquote>
-<p>vuex官方介绍：<a href="http://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="noopener">http://vuex.vuejs.org/zh-cn/intro.html</a><br>个人：<a href="http://pimichen.com/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html">http://pimichen.com/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html</a></p>
+<p>vuex官方介绍：<a href="http://vuex.vuejs.org/zh-cn/intro.html" target="_blank" rel="noopener">http://vuex.vuejs.org/zh-cn/intro.html</a><br>个人：<a href="http://blog.pimichen.com/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html">http://blog.pimichen.com/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html</a></p>
 </blockquote>
 <blockquote>
 <p>注：$dispatch和$broadcast在vue2.0中已经被移除</p>
@@ -610,8 +612,8 @@ window.onload = function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/css/文本溢出显示....html" rel="next" title="文本溢出显示...">
-                <i class="fa fa-chevron-left"></i> 文本溢出显示...
+              <a href="/vue/vue开发调试.html" rel="next" title="vue开发调试">
+                <i class="fa fa-chevron-left"></i> vue开发调试
               </a>
             
           </div>
@@ -620,8 +622,8 @@ window.onload = function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/jquery/实现置顶和置底.html" rel="prev" title="实现置顶和置底效果">
-                实现置顶和置底效果 <i class="fa fa-chevron-right"></i>
+              <a href="/jquery/锚链接平滑滚动.html" rel="prev" title="锚链接平滑滚动">
+                锚链接平滑滚动 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -700,7 +702,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">165</span>
+                <span class="site-state-item-count">170</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -792,6 +794,14 @@ window.onload = function(){
                   <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/JacksonTian/fks" title="FE Knowledge" target="_blank">FE Knowledge</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/jikeytang/front-end-collect" title="FE Collect" target="_blank">FE Collect</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -856,7 +866,7 @@ window.onload = function(){
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
@@ -880,7 +890,7 @@ window.onload = function(){
 
         
 <div class="theme-copyright-info">
-  <a href="http://www.miitbeian.gov.cn">京ICP备17021126号</a>
+  <a href="http://www.miitbeian.gov.cn">京ICP备19005272号</a>
 </div>
 
 

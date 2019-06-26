@@ -18,6 +18,8 @@
 
 
 
+  <meta name="google-site-verification" content="QpR2UtOlwMERxir6cPqI74sPMIvl4B0KbVZgg14OELA">
+
 
 
 
@@ -97,7 +99,7 @@
 <meta property="og:site_name" content="Pimi&#39;s Blog">
 <meta property="og:description" content="freemarker部分语法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-03T09:46:40.636Z">
+<meta property="og:updated_time" content="2019-01-18T13:37:25.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="freemarker部分语法">
 <meta name="twitter:description" content="freemarker部分语法">
@@ -463,8 +465,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-03T17:46:40+08:00">
-                2017-11-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-18T21:37:25+08:00">
+                2019-01-18
               </time>
             
 
@@ -508,7 +510,7 @@ window.onload = function(){
 
       
         <p>假设后端往ftl模板中注入了下列值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">testA: <span class="string">'1111'</span></span><br><span class="line"></span><br><span class="line">testB: &#123;</span><br><span class="line">  bDataOne: <span class="string">'b1'</span>,</span><br><span class="line">  bDateTwo: <span class="string">'b2'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testC: [</span><br><span class="line">  &#123;</span><br><span class="line">    cDateOne: <span class="string">'c11'</span></span><br><span class="line">    cDateTwo: <span class="string">'c12'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    cDateOne: <span class="string">'c21'</span></span><br><span class="line">    cDateTwo: <span class="string">'c22'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">testD: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">testE: &#123;</span><br><span class="line">  eData: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在ftl中页面中我们可以这样获取：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">$&#123;testA&#125; // 直接获取</span><br><span class="line"></span><br><span class="line">$&#123;testA!&#125; // 获取，取不到时为空串，空序列或空哈希表（arr or object）</span><br><span class="line"></span><br><span class="line">$&#123;testA!&apos;&apos;&#125; // 获取，取不到时为空字符串</span><br><span class="line"></span><br><span class="line">$&#123;testA!&apos;test&apos;&#125; // 获取，取不到位test字符串</span><br><span class="line"></span><br><span class="line">$&#123;testD.eData!false&#125; // 获取testD里面的eData，取不到为false;取到testD，取不到eData，为false;取不到testD会出问题</span><br><span class="line"></span><br><span class="line">$&#123;(testD.eData)!false&#125; // 获取testD里面的eData，取不到testD或testD.eData，均为false</span><br><span class="line"></span><br><span class="line">// 判断testA存在时</span><br><span class="line">&lt;#if testA&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testA存在时</span><br><span class="line">&lt;#if testA??&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testA存在时</span><br><span class="line">&lt;#if testA?has_content&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testA为&apos;1111&apos;时</span><br><span class="line">&lt;#if testA === &apos;1111&apos;&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testD为false存在时，如果取不到就用false</span><br><span class="line">&lt;#if testD!false&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testB及testB.bDataOne存在时</span><br><span class="line">&lt;#if testB?? &amp;&amp; testB.bDataOne??&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 渲染列表testC</span><br><span class="line">&lt;#list testC as c&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;$&#123;c.cDateOne!&#125;&lt;/span&gt;和&lt;span&gt;$&#123;c.cDateTwo!&#125;&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">&lt;/#list&gt;</span><br><span class="line"></span><br><span class="line">// data属性存储testD</span><br><span class="line">&lt;p data-isShow=&quot;$&#123;(testD!false)?string(&apos;yes&apos;, &apos;no&apos;)&#125;&quot;&gt; // testD为true时，属性记录为yes，为false时或取不到时为false</span><br><span class="line"></span><br><span class="line">// data属性存储testE.eData</span><br><span class="line">&lt;p data-isShow=&quot;$&#123;((testE.eData)!false)?string(&apos;yes&apos;, &apos;no&apos;)&#125;&quot;&gt; // testD为true时，属性记录为yes，为false时或取不到时为false</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>在ftl中页面中我们可以这样获取：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&quot;$&#123;testA&#125;&quot; // 直接获取</span><br><span class="line"></span><br><span class="line">&quot;$&#123;testA!&#125;&quot; // 获取，取不到时为空串，空序列或空哈希表（arr or object）</span><br><span class="line"></span><br><span class="line">&quot;$&#123;testA!&apos;&apos;&#125;&quot; // 获取，取不到时为空字符串</span><br><span class="line"></span><br><span class="line">&quot;$&#123;testA!&apos;test&apos;&#125;&quot; // 获取，取不到位test字符串</span><br><span class="line"></span><br><span class="line">&quot;$&#123;testD.eData!false&#125;&quot; // 获取testD里面的eData，取不到为false;取到testD，取不到eData，为false;取不到testD会出问题</span><br><span class="line"></span><br><span class="line">&quot;$&#123;(testD.eData)!false&#125;&quot; // 获取testD里面的eData，取不到testD或testD.eData，均为false</span><br><span class="line"></span><br><span class="line">$&#123;(testA!false)?string&#125;  // 获取布尔值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 判断testA存在时</span><br><span class="line">&lt;#if testA&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testA存在时</span><br><span class="line">&lt;#if testA??&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testA存在时</span><br><span class="line">&lt;#if testA?has_content&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testA为&apos;1111&apos;时</span><br><span class="line">&lt;#if testA === &apos;1111&apos;&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testD为false存在时，如果取不到就用false</span><br><span class="line">&lt;#if testD!false&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 判断testB及testB.bDataOne存在时</span><br><span class="line">&lt;#if testB?? &amp;&amp; testB.bDataOne??&gt;</span><br><span class="line">  ***</span><br><span class="line">&lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">// 渲染列表testC</span><br><span class="line">&lt;#list testC as c&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;$&#123;c.cDateOne!&#125;&lt;/span&gt;和&lt;span&gt;$&#123;c.cDateTwo!&#125;&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">&lt;/#list&gt;</span><br><span class="line"></span><br><span class="line">// data属性存储testD</span><br><span class="line">&lt;p data-isShow=&quot;$&#123;(testD!false)?string(&apos;yes&apos;, &apos;no&apos;)&#125;&quot;&gt; // testD为true时，属性记录为yes，为false时或取不到时为false</span><br><span class="line"></span><br><span class="line">// data属性存储testE.eData</span><br><span class="line">&lt;p data-isShow=&quot;$&#123;((testE.eData)!false)?string(&apos;yes&apos;, &apos;no&apos;)&#125;&quot;&gt; // testD为true时，属性记录为yes，为false时或取不到时为false</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -647,7 +649,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">165</span>
+                <span class="site-state-item-count">170</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -739,6 +741,14 @@ window.onload = function(){
                   <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/JacksonTian/fks" title="FE Knowledge" target="_blank">FE Knowledge</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/jikeytang/front-end-collect" title="FE Collect" target="_blank">FE Collect</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -787,7 +797,7 @@ window.onload = function(){
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
@@ -811,7 +821,7 @@ window.onload = function(){
 
         
 <div class="theme-copyright-info">
-  <a href="http://www.miitbeian.gov.cn">京ICP备17021126号</a>
+  <a href="http://www.miitbeian.gov.cn">京ICP备19005272号</a>
 </div>
 
 

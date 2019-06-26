@@ -25,12 +25,12 @@ tags: # 标签分类
 ## Catalog
 
 
-1.  [CommonJS & Node](#commonjs--node)
-3.  [History](#history)
-4.  [RequireJS & AMD](#requirejs--amd)
-5.  [SeaJS & CMD](#seajs--cmd)
-6.  [AMD vs CMD](#amd-vs-cmd)
-7.  [WebPack](#webpack)
+1.  [CommonJS & Node](#CommonJS-amp-Node)
+3.  [History](#History)
+4.  [RequireJS & AMD](#RequireJS-amp-AMD)
+5.  [SeaJS & CMD](#SeaJS-amp-CMD)
+6.  [AMD vs CMD](#AMD-amp-CMD)
+7.  [WebPack](#Webpack)
 
 
 

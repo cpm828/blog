@@ -28,7 +28,7 @@ authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
-copyrightrecord: 京ICP备17021126号
+copyrightrecord: 京ICP备19005272号
 copyrightrecordlink: http://www.miitbeian.gov.cn
 
 
@@ -221,7 +221,8 @@ links_layout: inline
 links:
   阮一峰: http://www.ruanyifeng.com/blog/
   张鑫旭: http://www.zhangxinxu.com/
-
+  FE Knowledge: https://github.com/JacksonTian/fks
+  FE Collect: https://github.com/jikeytang/front-end-collect
 
 # ---------------------------------------------------------------
 # Post Settings
@@ -358,7 +359,7 @@ add_this_id: ra-58f05a85a1099dc5
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: QpR2UtOlwMERxir6cPqI74sPMIvl4B0KbVZgg14OELA
 
 # Google Analytics
 google_analytics: UA-100562378-1
