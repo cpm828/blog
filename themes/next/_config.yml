@@ -221,8 +221,8 @@ links_layout: inline
 links:
   阮一峰: http://www.ruanyifeng.com/blog/
   张鑫旭: http://www.zhangxinxu.com/
-  FE Knowledge: https://github.com/JacksonTian/fks
-  FE Collect: https://github.com/jikeytang/front-end-collect
+  cpm-ui: https://github.com/cpm828/cpm-ui
+  pimi blog: https://github.com/cpm828/cpm828.github.io
 
 # ---------------------------------------------------------------
 # Post Settings
