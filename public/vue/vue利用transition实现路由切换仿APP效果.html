@@ -91,23 +91,20 @@
 
 
 
-<meta name="description" content="vue编译后的文件目录结构变化">
+<meta name="description" content="vue利用transition实现路由切换仿APP效果">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue编译后的文件目录结构">
-<meta property="og:url" content="http://blog.pimichen.com/vue/vue编译后的文件目录结构.html">
+<meta property="og:title" content="vue利用transition实现路由切换仿APP效果">
+<meta property="og:url" content="http://blog.pimichen.com/vue/vue利用transition实现路由切换仿APP效果.html">
 <meta property="og:site_name" content="Pimi&#39;s Blog">
-<meta property="og:description" content="vue编译后的文件目录结构变化">
+<meta property="og:description" content="vue利用transition实现路由切换仿APP效果">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.pimichen.com/images/vue/vue_build1.png">
-<meta property="og:image" content="http://blog.pimichen.com/images/vue/vue_build3.png">
-<meta property="og:image" content="http://blog.pimichen.com/images/vue/vue_build4.png">
-<meta property="og:image" content="http://blog.pimichen.com/images/vue/vue_build2.png">
-<meta property="og:updated_time" content="2017-04-30T15:35:59.000Z">
+<meta property="og:image" content="http://blog.pimichen.com/images/vue/vue-transition.gif">
+<meta property="og:updated_time" content="2019-09-18T14:58:06.972Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue编译后的文件目录结构">
-<meta name="twitter:description" content="vue编译后的文件目录结构变化">
-<meta name="twitter:image" content="http://blog.pimichen.com/images/vue/vue_build1.png">
+<meta name="twitter:title" content="vue利用transition实现路由切换仿APP效果">
+<meta name="twitter:description" content="vue利用transition实现路由切换仿APP效果">
+<meta name="twitter:image" content="http://blog.pimichen.com/images/vue/vue-transition.gif">
 
 
 
@@ -135,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.pimichen.com/vue/vue编译后的文件目录结构.html">
+  <link rel="canonical" href="http://blog.pimichen.com/vue/vue利用transition实现路由切换仿APP效果.html">
 
 
 
@@ -222,7 +219,7 @@ window.onload = function(){
 </script>
 
 
-  <title> vue编译后的文件目录结构 | Pimi's Blog </title>
+  <title> vue利用transition实现路由切换仿APP效果 | Pimi's Blog </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -418,7 +415,7 @@ window.onload = function(){
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.pimichen.com/vue/vue编译后的文件目录结构.html">
+    <link itemprop="mainEntityOfPage" href="http://blog.pimichen.com/vue/vue利用transition实现路由切换仿APP效果.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pimi Chen">
@@ -439,7 +436,7 @@ window.onload = function(){
             
             
               
-                vue编译后的文件目录结构
+                vue利用transition实现路由切换仿APP效果
               
             
           </h1>
@@ -454,8 +451,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T23:35:59+08:00">
-                2017-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T22:58:06+08:00">
+                2019-09-18
               </time>
             
 
@@ -470,8 +467,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-04-30T23:35:59+08:00">
-                2017-04-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-18T22:58:06+08:00">
+                2019-09-18
               </time>
             
 
@@ -499,7 +496,7 @@ window.onload = function(){
 
           
               <div class="post-description">
-                  vue编译后的文件目录结构变化
+                  vue利用transition实现路由切换仿APP效果
               </div>
           
 
@@ -514,13 +511,13 @@ window.onload = function(){
       
 
       
-        <p>当我们使用vue-cli脚手架时，执行<code>npm run build</code>之后会在根目录生成一个dist文件，如下图</p>
-<p><img src="../images/vue/vue_build1.png" width="100px"></p>
-<p>对应的配置文件，根目录下config/index.js中，如下图</p>
-<p><img src="../images/vue/vue_build3.png" width="300px"></p>
-<p>但是当我我们将编译后的文件放在后端的目录下时，目录结构并不一定还是这样，所以我们需要根据实际情况来设置编译的文件目录结构</p>
-<p>比如我们需要将静态文件进行一层嵌套，我的配置为：<br><img src="../images/vue/vue_build4.png" width="300px"></p>
-<p>对应的编译后的目录为：<br><img src="../images/vue/vue_build2.png" width="100px"></p>
+        <p>在使用iOS APP时，我们经常能看见原生的切换效果体验非常顺滑。切换下一页时，动画从右往左。返回上一页时，动画从左往右。</p>
+<p>使用vue的transition过渡动画也可以实现这一效果，效果图如下：</p>
+<p><img src="../images/vue/vue-transition.gif"></p>
+<p>router/index.js源码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 参考：https://blog.csdn.net/bbsyi/article/details/78195378</span></span><br><span class="line"><span class="comment">// 给Router扩展一个goBack方法，需要后退是调用this.$router.goBack()</span></span><br><span class="line">Router.prototype.goBack = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.goNext = <span class="number">0</span> <span class="comment">// 扩展一个变量记录后退</span></span><br><span class="line">  <span class="keyword">this</span>.go(<span class="number">-1</span>) <span class="comment">// 后退</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    ...firstEntries, <span class="comment">// 略</span></span><br><span class="line">    ...homeEntries,</span><br><span class="line">    ...discoverEntries,</span><br><span class="line">    ...orderEntries,</span><br><span class="line">    ...userEntries,</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'*'</span>,</span><br><span class="line">      redirect: &#123;</span><br><span class="line">        name: <span class="string">'Home'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>APP.vue源码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;rFlexFixed&gt;</span><br><span class="line">      &lt;rTitlebar slot=<span class="string">"header"</span> theme=<span class="string">"a"</span> :title=<span class="string">"currentRouteInfo.meta.title"</span> @onback=<span class="string">"goBack"</span> v-if=<span class="string">"showBar"</span>&gt;&lt;/rTitlebar&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class=<span class="string">"main-content"</span>&gt;</span><br><span class="line">        &lt;transition :name=<span class="string">"transitionName"</span> :mode=<span class="string">"modeName"</span>&gt;</span><br><span class="line">          &lt;router-view class=<span class="string">"page-wrap"</span>/&gt;</span><br><span class="line">        &lt;/transition&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;pFooter slot=<span class="string">"footer"</span> :currentRouteName=<span class="string">"currentRouteInfo.name"</span> v-if=<span class="string">"!showBar"</span>&gt;&lt;/pFooter&gt;</span><br><span class="line">    &lt;/rFlexFixed&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import pFooter from <span class="string">'@/components/pFooter'</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">'App'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    pFooter</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      showBar: <span class="literal">false</span>, // 是否显示titleBar</span><br><span class="line">      currentRouteInfo: &#123;&#125;, // 当前页的信息</span><br><span class="line">      transitionName: <span class="string">''</span>,</span><br><span class="line">      modeName: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="string">'$route'</span> (to, from)  &#123;</span><br><span class="line">      this.showBar = ![<span class="string">'Home'</span>, <span class="string">'Discover'</span>, <span class="string">'Order'</span>, <span class="string">'User'</span>].includes(to.name)</span><br><span class="line">      this.currentRouteInfo = to</span><br><span class="line"></span><br><span class="line">      // 控制过渡动效</span><br><span class="line">      <span class="keyword">if</span> (from.fullPath === <span class="string">'/'</span> || to.params.tab) &#123; // 首次载入和tab间切换</span><br><span class="line">        this.transitionName = <span class="string">'router-fade'</span></span><br><span class="line">        this.modeName = <span class="string">'out-in'</span> // 控制一个页面先离开，另一个页面再进入</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!this.<span class="variable">$router</span>.goNext) &#123; // 后退</span><br><span class="line">        this.transitionName = <span class="string">'router-out'</span></span><br><span class="line">        this.modeName = <span class="string">''</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; // 前进</span><br><span class="line">        this.transitionName = <span class="string">'router-in'</span></span><br><span class="line">        this.modeName = <span class="string">''</span></span><br><span class="line">      &#125;</span><br><span class="line">      this.<span class="variable">$router</span>.goNext = 1 // 默认为前进</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">goBack</span></span> () &#123;</span><br><span class="line">      this.<span class="variable">$router</span>.goBack()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">"scss"</span>&gt;</span><br><span class="line"><span class="comment">#app &#123;</span></span><br><span class="line">  font-family: <span class="string">'Avenir'</span>, Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: <span class="comment">#2c3e50;</span></span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  .main-content&#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .page-wrap&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    overflow-y: scroll;</span><br><span class="line">    &amp;::-webkit-scrollbar&#123;display: none;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 主导航切换</span><br><span class="line">// 淡入淡出动画</span><br><span class="line">.router-fade-enter-active, .router-fade-leave-active &#123;</span><br><span class="line">  transition: opacity .3s ease-out;</span><br><span class="line">&#125;</span><br><span class="line">.router-fade-enter, .router-fade-leave-active &#123;</span><br><span class="line">  opacity: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 二级页面左右切换</span><br><span class="line">// router-out表示返回上一页（右到左），router-in表示前进下一页（左到右）</span><br><span class="line">.router-in-enter-active,</span><br><span class="line">.router-in-leave-active,</span><br><span class="line">.router-out-enter-active,</span><br><span class="line">.router-out-leave-active&#123;</span><br><span class="line">  transition: all 0.3s ease-out;</span><br><span class="line">&#125;</span><br><span class="line">.router-in-leave-active,</span><br><span class="line">.router-out-enter&#123;</span><br><span class="line">  opacity: 0;</span><br><span class="line">  transform: translate3d(-100%, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line">.router-in-enter,</span><br><span class="line">.router-out-leave-active&#123;</span><br><span class="line">  opacity: 0;</span><br><span class="line">  transform: translate3d(100%, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>主导航切换使用fade效果，二级页面间切换使用左右切换效果。</p>
+<p>本例中，我们将titleBar放置在了APP.vue，对于实际的项目，可能需要将titleBar放置的页面中，便于更好的控制titleBar</p>
 
       
     </div>
@@ -549,7 +546,7 @@ window.onload = function(){
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://blog.pimichen.com/vue/vue编译后的文件目录结构.html" title="vue编译后的文件目录结构">http://blog.pimichen.com/vue/vue编译后的文件目录结构.html</a>
+      <a href="http://blog.pimichen.com/vue/vue利用transition实现路由切换仿APP效果.html" title="vue利用transition实现路由切换仿APP效果">http://blog.pimichen.com/vue/vue利用transition实现路由切换仿APP效果.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -578,8 +575,8 @@ window.onload = function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/css/css盒模型.html" rel="next" title="CSS盒模型">
-                <i class="fa fa-chevron-left"></i> CSS盒模型
+              <a href="/other/前端常见的面试题.html" rel="next" title="前端常见的面试题">
+                <i class="fa fa-chevron-left"></i> 前端常见的面试题
               </a>
             
           </div>
@@ -587,10 +584,6 @@ window.onload = function(){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/vue/vue渲染后端传递的带换行符的字符串.html" rel="prev" title="vue渲染后端带标签或换行符的字符">
-                vue渲染后端带标签或换行符的字符 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -659,7 +652,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">169</span>
+                <span class="site-state-item-count">167</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
