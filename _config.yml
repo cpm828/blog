@@ -75,7 +75,7 @@ deploy:
   repo:
 - type: git
   repo:
-    # github: git@github.com:cpm828/cpm828.github.io.git
+    github: git@github.com:cpm828/cpm828.github.io.git
     coding: git@git.coding.net:pimi/pimi.coding.me.git
   branch: master
 

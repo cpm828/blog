@@ -366,9 +366,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[js执行机制]]></title>
-    <url>%2Fjavascript%2Fjs%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6.html</url>
-    <content type="text"><![CDATA[抛出问题，输出下列程序：1234567891011121314setTimeout(function()&#123; console.log(&apos;定时器开始啦&apos;)&#125;);new Promise(function(resolve)&#123; console.log(&apos;马上执行for循环啦&apos;); for(var i = 0; i &lt; 10000; i++)&#123; i == 99 &amp;&amp; resolve(); &#125;&#125;).then(function()&#123; console.log(&apos;执行then函数啦&apos;)&#125;);console.log(&apos;代码执行结束&apos;); 1234马上执行for循环啦代码执行结束执行then函数啦定时器开始啦 内部执行机制查看掘金 ssssyoki]]></content>
+    <title><![CDATA[js检测浏览器是否出于放缩状态]]></title>
+    <url>%2Fjavascript%2Fjs%E6%A3%80%E6%B5%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%90%A6%E5%87%BA%E4%BA%8E%E6%94%BE%E7%BC%A9%E7%8A%B6%E6%80%81.html</url>
+    <content type="text"><![CDATA[先来说说浏览器提供的标准检测接口，window.devicePixelRatio 是设备上物理像素和设备独立像素的比例，该属性就可以用于检测网页是否被缩放了。在普通的 PC 浏览器上，在默认无缩放的情况下其默认值是 1。目前Firefox、chrome等都得到了很好的支持。 好吧，接下来该说说 IE 的处理方法了。IE 提供了 window.screen.deviceXDPI 和 window.screen.logicalXDPI 两个属性，deviceXDPI 就是对应的设备上的物理像素，而 logicalXDPI 就是对应了设备独立像素的比例。估计标准的检测接口也只是基于 IE 这种方法的一种改进。这两个属性在 windows XP+ 以上的系统上的默认值都是 96，因为系统默认的就是 96dpi 。 对于以上两种都不支持的浏览器，还可以利用window.outerWidth 和 window.innerWidth 这两个属性。outerWidth 返回的是窗口元素的外部实际宽度，innerWidth 返回的是窗口元素的内部实际宽度，这两个宽度都包含了滚动条在内的宽度。 123456789101112131415161718192021function detectZoom ()&#123; var ratio = 0, screen = window.screen, ua = navigator.userAgent.toLowerCase(); if (window.devicePixelRatio !== undefined) &#123; ratio = window.devicePixelRatio; &#125; else if (~ua.indexOf('msie')) &#123; if (screen.deviceXDPI &amp;&amp; screen.logicalXDPI) &#123; ratio = screen.deviceXDPI / screen.logicalXDPI; &#125; &#125; else if (window.outerWidth !== undefined &amp;&amp; window.innerWidth !== undefined) &#123; ratio = window.outerWidth / window.innerWidth; &#125; if (ratio)&#123; ratio = Math.round(ratio * 100); &#125; return ratio;&#125;; detectZoom 函数的返回值如果是 100 就是默认缩放级别，大于 100 则是放大了，小于 100 则是缩小了。]]></content>
       <tags>
         <tag>JavaScript</tag>
       </tags>
@@ -382,9 +382,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[js检测浏览器是否出于放缩状态]]></title>
-    <url>%2Fjavascript%2Fjs%E6%A3%80%E6%B5%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%90%A6%E5%87%BA%E4%BA%8E%E6%94%BE%E7%BC%A9%E7%8A%B6%E6%80%81.html</url>
-    <content type="text"><![CDATA[先来说说浏览器提供的标准检测接口，window.devicePixelRatio 是设备上物理像素和设备独立像素的比例，该属性就可以用于检测网页是否被缩放了。在普通的 PC 浏览器上，在默认无缩放的情况下其默认值是 1。目前Firefox、chrome等都得到了很好的支持。 好吧，接下来该说说 IE 的处理方法了。IE 提供了 window.screen.deviceXDPI 和 window.screen.logicalXDPI 两个属性，deviceXDPI 就是对应的设备上的物理像素，而 logicalXDPI 就是对应了设备独立像素的比例。估计标准的检测接口也只是基于 IE 这种方法的一种改进。这两个属性在 windows XP+ 以上的系统上的默认值都是 96，因为系统默认的就是 96dpi 。 对于以上两种都不支持的浏览器，还可以利用window.outerWidth 和 window.innerWidth 这两个属性。outerWidth 返回的是窗口元素的外部实际宽度，innerWidth 返回的是窗口元素的内部实际宽度，这两个宽度都包含了滚动条在内的宽度。 123456789101112131415161718192021function detectZoom ()&#123; var ratio = 0, screen = window.screen, ua = navigator.userAgent.toLowerCase(); if (window.devicePixelRatio !== undefined) &#123; ratio = window.devicePixelRatio; &#125; else if (~ua.indexOf('msie')) &#123; if (screen.deviceXDPI &amp;&amp; screen.logicalXDPI) &#123; ratio = screen.deviceXDPI / screen.logicalXDPI; &#125; &#125; else if (window.outerWidth !== undefined &amp;&amp; window.innerWidth !== undefined) &#123; ratio = window.outerWidth / window.innerWidth; &#125; if (ratio)&#123; ratio = Math.round(ratio * 100); &#125; return ratio;&#125;; detectZoom 函数的返回值如果是 100 就是默认缩放级别，大于 100 则是放大了，小于 100 则是缩小了。]]></content>
+    <title><![CDATA[js执行机制]]></title>
+    <url>%2Fjavascript%2Fjs%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6.html</url>
+    <content type="text"><![CDATA[抛出问题，输出下列程序：1234567891011121314setTimeout(function()&#123; console.log(&apos;定时器开始啦&apos;)&#125;);new Promise(function(resolve)&#123; console.log(&apos;马上执行for循环啦&apos;); for(var i = 0; i &lt; 10000; i++)&#123; i == 99 &amp;&amp; resolve(); &#125;&#125;).then(function()&#123; console.log(&apos;执行then函数啦&apos;)&#125;);console.log(&apos;代码执行结束&apos;); 1234马上执行for循环啦代码执行结束执行then函数啦定时器开始啦 内部执行机制查看掘金 ssssyoki]]></content>
       <tags>
         <tag>JavaScript</tag>
       </tags>
@@ -679,9 +679,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[css布局意外]]></title>
-    <url>%2Fcss%2Fcss%E5%B8%83%E5%B1%80%E6%84%8F%E5%A4%96.html</url>
-    <content type="text"><![CDATA[css布局的时候经常会有一些意想不到的表现 img下面白条解决办法 1vertical-align: middle /top / bottom; inline-block div导致部分下沉解决办法： 1vertical-align:top;]]></content>
+    <title><![CDATA[css伪类实现定制单选框样式]]></title>
+    <url>%2Fcss%2Fcss%E4%BC%AA%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%AE%9A%E5%88%B6%E5%8D%95%E9%80%89%E6%A1%86%E6%A0%B7%E5%BC%8F.html</url>
+    <content type="text"><![CDATA[原生单选框的样式实在太丑，UI肯定是不会用的啦，他们一般都会重新设计一种单选框，比如下面这种 设计原理使用span模拟一个大圆，再利用::before伪类画一个小圆，实际上是一样大的圆，只是小圆的边框很大，占据一定的位置 1234# HTMLli.pay-source input(type="radio", name="pay-source") span.replace-input 1234567891011121314151617span&#123; display: block; width: 30px; height: 30px; border: 1px solid #ccc; border-radius: 50%;&#125;span::before&#123; display: block; content: ''; width:100%; height: 100%; border: 8px solid #fff; background: #f00; box-sizing: border-box; border-radius: 50%;&#125; 扩展demo123456789101112131415161718192021222324input[type=radio] &#123; //原始input-radio保留但隐藏 position: absolute; visibility: hidden;&#125;input[type=radio] + .replace-input &#123; //input的兄弟接待 假span display: inline-block; width: r(36); height: r(36); border: $border-width solid $color-divider; border-radius: 50%;&#125;input[type=radio]:checked + .replace-input &#123; //被选中的情况下的兄弟节点 假span 的before伪类 &amp;:before &#123; display: block; content: ""; width: 100%; height: 100%; background-color: $red; border-radius: 50%; border: r(7) solid $white; &#125;&#125;]]></content>
       <tags>
         <tag>CSS</tag>
       </tags>
@@ -695,9 +695,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[css伪类实现定制单选框样式]]></title>
-    <url>%2Fcss%2Fcss%E4%BC%AA%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%AE%9A%E5%88%B6%E5%8D%95%E9%80%89%E6%A1%86%E6%A0%B7%E5%BC%8F.html</url>
-    <content type="text"><![CDATA[原生单选框的样式实在太丑，UI肯定是不会用的啦，他们一般都会重新设计一种单选框，比如下面这种 设计原理使用span模拟一个大圆，再利用::before伪类画一个小圆，实际上是一样大的圆，只是小圆的边框很大，占据一定的位置 1234# HTMLli.pay-source input(type="radio", name="pay-source") span.replace-input 1234567891011121314151617span&#123; display: block; width: 30px; height: 30px; border: 1px solid #ccc; border-radius: 50%;&#125;span::before&#123; display: block; content: ''; width:100%; height: 100%; border: 8px solid #fff; background: #f00; box-sizing: border-box; border-radius: 50%;&#125; 扩展demo123456789101112131415161718192021222324input[type=radio] &#123; //原始input-radio保留但隐藏 position: absolute; visibility: hidden;&#125;input[type=radio] + .replace-input &#123; //input的兄弟接待 假span display: inline-block; width: r(36); height: r(36); border: $border-width solid $color-divider; border-radius: 50%;&#125;input[type=radio]:checked + .replace-input &#123; //被选中的情况下的兄弟节点 假span 的before伪类 &amp;:before &#123; display: block; content: ""; width: 100%; height: 100%; background-color: $red; border-radius: 50%; border: r(7) solid $white; &#125;&#125;]]></content>
+    <title><![CDATA[css布局意外]]></title>
+    <url>%2Fcss%2Fcss%E5%B8%83%E5%B1%80%E6%84%8F%E5%A4%96.html</url>
+    <content type="text"><![CDATA[css布局的时候经常会有一些意想不到的表现 img下面白条解决办法 1vertical-align: middle /top / bottom; inline-block div导致部分下沉解决办法： 1vertical-align:top;]]></content>
       <tags>
         <tag>CSS</tag>
       </tags>
@@ -928,14 +928,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[执行命令自动复制粘贴文件]]></title>
-    <url>%2Fnode%2F%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E6%96%87%E4%BB%B6.html</url>
-    <content type="text"><![CDATA[拷贝脚本，修改后面的复制粘贴目录即可：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495var fs = require(&apos;fs&apos;)var path = require(&quot;path&quot;)var process = require(&apos;process&apos;)// 文件遍历，为一切操作的基础方法function traversal (dir, cb_isDir, cb_isFile) &#123; var absDir = path.resolve(dir) fs.readdirSync(absDir).forEach(file =&gt; &#123; var pathname = path.join(absDir, file) if (fs.statSync(pathname).isDirectory()) &#123; // 文件夹操作 // stop： 是否停止在该文件夹遍历 // 回调函数中不返回或返回false，继续遍历该文件夹。 // 回调函数中返回true, 停止遍历该文件夹。例如回调函数要删除文件夹时。 // 回调函数中返回字符串，会按返回值进行遍历。例如回调函数更改了文件夹名称时。 var stop = false if (cb_isDir) stop = cb_isDir(pathname) if(!stop) &#123; // 如果停止标志返回false，则继续遍历 traversal(pathname, cb_isDir, cb_isFile) &#125; else if (typeof stop === &apos;string&apos;) &#123; // 如果停止标志返回了新的路径，则遍历新的路径 traversal(path.resolve(stop), cb_isDir, cb_isFile) &#125; &#125; else &#123; // 文件操作 if(cb_isFile) cb_isFile(pathname) &#125; &#125;)&#125;// 复制文件function copy (src, dest) &#123; // 内部函数，对指定路径的复制操作 function _copy(pathname) &#123; var destPath = path.resolve(pathname) .replace(path.resolve(src), path.resolve(dest)) if (fs.statSync(pathname).isFile()) &#123; // 如果原路径是文件，直接复制 console.log(`正在复制文件$&#123;destPath&#125; ...`) if (src === pathname) &#123; fs.writeFileSync(path.join(destPath, path.basename(src)), fs.readFileSync(path.resolve(pathname))) &#125; else &#123; fs.writeFileSync(path.join(destPath), fs.readFileSync(path.resolve(pathname))) &#125; &#125; else &#123; // 如果原路径是文件夹，检测是否在目标路径存在 // 若不存在则新建文件夹，否则不做任何事情 try &#123; fs.statSync(destPath) &#125; catch (err) &#123; if (err.code === &apos;ENOENT&apos;) &#123; console.log(`正在创建文件夹$&#123;destPath&#125; ...`) fs.mkdirSync(destPath) &#125; else console.error(err) &#125; &#125; &#125; // copy函数主体 if (fs.statSync(src).isDirectory()) traversal(src, _copy, _copy) else _copy(src)&#125;// 清除指定目录下的所有文件（不删除目录）function clear(src) &#123; traversal(src, null, pathname =&gt; &#123; console.log(`正在删除文件$&#123;pathname&#125; ...`) fs.unlinkSync(pathname) &#125;) traversal(src, pathname =&gt; &#123; console.log(`正在删除文件夹$&#123;pathname&#125; ...`) fs.rmdirSync(pathname) return true &#125;, null)&#125;// 执行本项目复制命令命令!function()&#123; // 复制前的目录 var former_template = &apos;./dist&apos; var former_static = &apos;./dist/static&apos; // 复制后的目录 var dist_template = &apos;../kuaihongbao/guessgame/templates&apos; var dist_static = &apos;../kuaihongbao/guessgame/static&apos; // 清除目录 clear(dist_template) clear(dist_static) // 复制目录 copy(former_template + &apos;/guess-index.html&apos;, dist_template) copy(former_static, dist_static)&#125;() 使用方法 手动执行复制命令 1run build完之后执行命令：node build/**.js 自动复制命令对于vue-cli来说，将脚本添加到build目录下 12在 packet.json中的script dev build 中添加 &quot;&amp;&amp; node build/**.js&quot;编译：cnpm run build 时会自动执行复制脚本 注意1后端需要的index文件的名称可能不一定，在vue/config/index.js中的编译配置里面修改编译后的名称即可]]></content>
-      <tags>
-        <tag>Node</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[实现置顶和置底效果]]></title>
     <url>%2Fjquery%2F%E5%AE%9E%E7%8E%B0%E7%BD%AE%E9%A1%B6%E5%92%8C%E7%BD%AE%E5%BA%95.html</url>
     <content type="text"><![CDATA[置顶效果 123456789101112$(window).on('scroll', function() &#123; if ($(window).scrollTop() &gt;= 100) &#123; // 滚动了100之后显示 $('.gotopbox').fadeIn(300); &#125; else &#123; $('.gotopbox').fadeOut(300); &#125;&#125;);$('.gotopbox').on('click', function()&#123; // 点击置顶 $('html, body').animate(&#123; scrollTop: '0px' &#125;, 500);&#125;); 置底效果 123456789101112$(window).on('scroll', function() &#123; if ($(window).scrollTop() &gt;= 100) &#123; // 滚动了100之后显示 $('.gotopbox').fadeIn(300); &#125; else &#123; $('.gotopbox').fadeOut(300); &#125;&#125;);$('.gobottombox').on('click', function()&#123; // 点击置顶 $('html, body').animate(&#123; scrollTop: document.body.clientHeight+'px' &#125;, 500);&#125;);]]></content>
@@ -1097,6 +1089,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[linux目录解释]]></title>
+    <url>%2Flinux%2Flinux%E7%9B%AE%E5%BD%95%E8%A7%A3%E9%87%8A.html</url>
+    <content type="text"><![CDATA[Linux 根目录计算机下的根目录 (pm@pm-pc:/$ ) 12345678910111213/bin # 存放必要的命令/boot # 存放内核以及启动所需的文件等/dev # 存放设备文件/etc # 存放系统的配置文件/home # 用户文件的主目录，用户数据存放在其主目录中/lib # 存放必要的运行库/mnt # 存放临时的映射文件系统，我们常把软驱和光驱挂装在这里的floppy和cdrom子目录下。/proc # 存放存储进程和系统信息/root # 超级用户的主目录/sbin # 存放系统管理程序/tmp # 存放临时文件的目录/usr # 包含了一般不需要修改的应用程序，命令程序文件、程序库、手册和其它文档。/var # 包含系统产生的经常变化的文件，例如打印机、邮件、新闻等假脱机目录、日志文件、格式化后的手册页以及一些应用程序的数据文件等等。建议单独的放在一个分区。[separator] home目录1/home 主文件夹目录 个人电脑1/home/pm/ # (pm@pm-pc:) (终端默认) 各文件123456/Project/Deskup/Documents/Downloads/Music...... 操作使用cd **和cd ..来进入和退出目录]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux常用命令]]></title>
     <url>%2Flinux%2Flinux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</url>
     <content type="text"><![CDATA[Linux常用命令123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122根目录表示： pm@pm-pc:/$主文件目录表示： pm@pm-pc:~$超级用户主目录表示：root@pm-pc:~# （输入sudo -i 可以切换到root权限，按ctrl+d 可退出root权限）cd 改变目录# cd home 或 cd /home 查找home目录并定位# cd home/pm 查找home目录下的pm目录并定位# cd ~ 回到用户目录# cd .. 返回上一级# cd ../.. 返回上两级ls 查看文件详情# ls -a 列出文件下的所有文件# ls -l 列出文件的详细信息# ls -al 列出文件下的所有文件的详细信息# ls -s 在每个文件的后面打印出文件大小# ls -t 按时间进行排序# ls -R 将目录下的所有子目录都列出来# ls -S 以文件大小进行排序# ls -L 列出文件的Link链接# 注意大小写参数的区别cp 复制（将前面的文件复制到后面的文件中，若最后的文件不存在，则报错，加-R复制目录）# cp file1 file2 将文件file1复制到文件file2# cp file1 file2 file3 将文件file1和file2复制到文件file3# cp -i file1 file2 采用交互方式将文件file1复制到文件file2# cp -f file1 file2 因file2已存在所以强制将文件file1复制到文件file2# cp -R dir1 dir2 将目录dir1复制到dir2中# cp -R file1 file2 dir1 dir2 将fiel1、file2、目录dir1复制到dir2中mv 移动或重命名（将前面的文件移动到后面的文件中）# mv test.log test1.txt 将文件test.log重命名为test1.txt（因为都是文件而不是文件夹，所以只能改名不能移动）# mv test1.txt file1 将文件test1.txt移动到fiel1文件夹中# mv log1.text log2.text log3.text file1 将文件og1.text、log2.text、log3.text都移动到file1文件夹中# mv -i file1 file2 将file1文件夹移动到file2文件夹中，如果存在，则询问# mv -f file1 file2 将file1文件夹移动到file2文件夹中，即使存在，也会直接覆盖# mv -u file1 file2 将file1文件夹移动到file2文件夹中，如果存在，当源文件file1更新时，才会更新# mv dir1 dir2 将dir1目录移动到dir2目录中，如果dir2不存在，则为重命名# mv * ../ 移动当前文件夹下的所有文件到上一级目录# mv log1.txt -b log2.txt 加-b表示文件在覆盖前做简单备份mkdir 创建文件夹（必须增加sudo 最高权限）# sudo mkdir aa 在当前文件夹下创建文件夹aa# sudo mkdir aa/bbb/cccc 创建该目录下的文件夹cccctouch 创建文件 （必须增加sudo 最高权限）# sudo touch aa.txt 在当前目录下创建文件aa.txt# sudo touch aa/bbb/cccc.txt 创建该目录下的文件cccc.txtrm 删除文件或文件夹 （必须增加sudo 最高权限，删除文件必须加-rf）# sudo rm aa.js 删除当前目录下的aa.js# sudo rm aa/bbb/cccc.js 删除该目录下的文件cccc.js# sudo rm -f aa.js 强制删除当前目录下的aa.js# sudo rm -f aa/bbb/cccc.js 强制 删除该目录下的文件cccc.js# sudo rm -i aa.js 先询问再删除当前目录下的aa.js# sudo rm -i aa/bbb/cccc.js 先询问再删除该目录下的文件cccc.js# sudo rm -rf aa 删除当前目录下的文件aa# sudo rm -rf aa/bbb/cccc 删除该目录下的文件ccccpwd 查看完整路径# pwdapt-get 安装文件（每种系统的命令不一致，Ubuntu的命令为apt-get，最高权限sudo安装）# sudo apt-get install **ifconfig 查看IP地址（不能再超级用户root下查找）# ifconfig 查找所有ip信息# ifconfig | grep 192 使用grep快速查找处192的信息grep 管道符过滤# ifconfig | grep 192 查找打印ip地址# grep word file_name 打印file_name文件中的word字符串所在的一行# grep -i Word file_name 打印file_name文件中的Word或word（不区分大小写）字符串所在的一行# grep -c wordfile_name 打印file_name文件中word字符串的个数# grep -n wordfile_name 打印file_name文件中word字符串所在的一行并列出行数# grep -w word file_name 打印file_name文件中word字符串（只匹配整个单词，不匹配字符串的一部分，如word_name不算）所在的一行并列出行数# grep word file_name --color 打印file_name文件中的word字符串所在的一行并给***高亮ssh 通过ip地址访问局域网电脑ssh pm@192.168.20.133 （通过ip连接系统）12**** （电脑密码）杀死进程：# ps -ef | grep node # 查看node进程是否存在，-e表示显示所有进程，-f表示全格式，-ef表示两者# 找到被占用进程，查找第二个参数id号，假定为10001# kill -9 10001 # 杀死解除端口占用1.查找被占用的端口# netstat -tln# netstat -tln | grep 802.查看端口属于哪个程序# lsof -i :803.杀死端口被占用的进程# kill -9 进程id查看系统软件状态# service *** status系统软件重启# service *** restart清空终端# Ctrl + L更改主机名# vim /etc/hosts 查看# sudo vim /etc/hosts 修改 # 如：输入127.0.0.1 hongbaocloud.com 保存修改并退出后，原先访问的127.0.0.1或localhost就可以改为hongbaocloud.com访问了 # 注：vim编辑器只是其中一个选择，也可以选择其他的编辑器（如subl或atom）打开文件并修改配置]]></content>
@@ -1129,20 +1129,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[tmux相关操作]]></title>
+    <url>%2Ftools%2Ftmux%E6%93%8D%E4%BD%9C.html</url>
+    <content type="text"><![CDATA[tmux快捷键（已经修改了默认配置）12345678910111213141516171819tmux 终端快捷键设置：cat ~/.tmux.conf 查看sudo vim ~/.tmux.conf 修改使用tmux开启多个终端，快捷键如下：tmux 进入tmux我的快捷键使用（通过cat ~/.tmux.conf设置）:Ctrl + A 、 - 横向分屏Ctrl + A 、 | 竖向分屏exit 关闭当前窗口Ctrl + A 、D # 将多个终端放入后台隐藏，显示一个终端tmux at # 重新切换回多个终端状态Ctrl + A、（up、down、left、right） # 在多个终端中切换输入Ctrl + A +（up、down、left、right） # 改变当前终端的大小Ctrl + A、[ 、（up、down、left、right） # 在当前终端可以滚ZCtrl + A、Z # 当前终端最大化最小化Ctrl + A、C # 当前窗口分屏（全屏）Ctrl + A、， # 更改窗口地步名称 修改配置如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# 编码setw -g utf8 onset -g status-utf8 on# 基础设置set -g default-terminal "screen-256color"set -g display-time 3000set -g escape-time 0set -g history-limit 65535set -g base-index 1set -g pane-base-index 1# 前缀绑定 (Ctrl+a)set -g prefix ^aunbind ^bbind a send-prefix# 分割窗口unbind '"'bind - splitw -vunbind %bind | splitw -h# 选中窗口bind-key k select-pane -Ubind-key j select-pane -Dbind-key h select-pane -Lbind-key l select-pane -R# copy-mode 将快捷键设置为 vi 模式setw -g mode-keys vi# 启用鼠标(Tmux v2.1 之前)setw -g mode-mouse onset -g mouse-select-pane onset -g mouse-resize-pane onset -g mouse-select-window on# Ubuntu 支持复制bind -t vi-copy y copy-pipe "xclip -sel clip -i"# 启用鼠标(Tmux v2.1)#setw -g mouse on# to enable mouse scroll, see https://github.com/tmux/tmux/issues/145#issuecomment-150736967#bind -n WheelUpPane if-shell -F -t = "#&#123;mouse_any_flag&#125;" "send-keys -M" "if -Ft= '#&#123;pane_in_mode&#125;' 'send-keys -M' 'copy-mode -e'"# 更新配置文件bind r source-file ~/.tmux.conf \; display "已更新"]]></content>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTML和JavaScript特别技巧集锦]]></title>
     <url>%2Fjavascript%2Fhtml%E5%92%8Cjs%E7%89%B9%E5%88%AB%E6%8A%80%E5%B7%A7%E9%9B%86%E9%94%A6.html</url>
     <content type="text"><![CDATA[让弹出窗口总是在最上面: 1&lt;body onblur="this.focus();"&gt; 不要滚动条让竖条没有: 1&lt;body style="overflow:scroll;overflow-y:hidden"&gt;&lt;/body&gt; 让横条没有: 1&lt;body style="overflow:scroll;overflow-x:hidden"&gt;&lt;/body&gt; 两个都去掉？更简单了 1&lt;body scroll="no"&gt;&lt;/body&gt; 怎样去掉图片链接点击后，图片周围的虚线？ 1&lt;a href="#" onFocus="this.blur()"&gt;&lt;img src="logo.jpg" border=0&gt;&lt;/a&gt; 电子邮件处理提交表单 123&lt;form name="form1" method="post" action="mailto:**@**.com" enctype="text/plain"&gt; &lt;input type="submit"&gt;&lt;/form&gt; 在打开的子窗口刷新父窗口的代码里如何写？ 1window.opener.location.reload() 如何设定打开页面的大小 12打开页面的大小&lt;body onload="top.resizeTo(300,200);"&gt;打开页面的位置&lt;body onload="top.moveBy(300,200);"&gt; 在页面中如何加入不是满铺的背景图片,拉动页面时背景图不动 12345678&lt;style&gt;body&#123; background-image:url(logo.gif); background-repeat:no-repeat; background-position:center; background-attachment: fixed&#125;&lt;/style&gt; 获得一个窗口的大小 12document.body.clientWidth;document.body.clientHeight 怎么判断是否是字符 12if (/[^/x00-/xff]/g.test(s)) alert("含有汉字");else alert("全是字符"); 日期减去天数等于第二个日期 123456789101112&lt;script language="javascript"&gt;function cc(dd,dadd)&#123; //可以加上错误处理 var a = new Date(dd); a = a.valueOf(); a = a - dadd * 24 * 60 * 60 * 1000; a = new Date(a); alert(a.getFullYear() + "年" + (a.getMonth() + 1) + "月" + a.getDate() + "日");&#125;cc("12/23/2002",2)&lt;/script&gt; 脚本永不出错 12345678&lt;script language="javascript"&gt;&lt;!-- Hidefunction killErrors() &#123;return true;&#125;window.onerror = killErrors;// --&gt;&lt;/script&gt; ENTER键可以让光标移到下一个输入框 1&lt;input onkeydown="if(event.keyCode==13) event.keyCode=9"&gt; 各种样式的光标 auto ：标准光标 default ：标准箭头 hand ：手形光标 wait ：等待光标 text ：I形光标 vertical-text ：水平I形光标 no-drop ：不可拖动光标 not-allowed ：无效光标 help ：?帮助光标 all-scroll ：三角方向标 move ：移动标 crosshair ：十字标 e-resize n-resize nw-resize w-resize s-resize se-resize sw-resize 页面进入和退出的特效进入页面: 12&lt;meta http-equiv="Page-Enter" content="revealTrans(duration=x, transition=y)"&gt; 推出页面: 1&lt;meta http-equiv="Page-Exit" content="revealTrans(duration=x, transition=y)"&gt; 这个是页面被载入和调出时的一些特效。duration表示特效的持续时间，以秒为单位。transition表示使用哪种特效，取值为1-23: 0 矩形缩小1 矩形扩大2 圆形缩小3 圆形扩大4 下到上刷新5 上到下刷新6 左到右刷新7 右到左刷新8 竖百叶窗9 横百叶窗10 错位横百叶窗11 错位竖百叶窗12 点扩散13 左右到中间刷新14 中间到左右刷新15 中间到上下16 上下到中间17 右下到左上18 右上到左下19 左上到右下20 左下到右上21 横条22 竖条23 以上22种随机选择一种 在规定时间内跳转 1&lt;meta http-equiv=V="REFRESH" content="5;url=http://www.51js.com"&gt; 网页是否被检索 1&lt;meta name=&quot;ROBOTS&quot; content=&quot;属性值&quot;&gt; 其中属性值有以下一些:属性值为”all”: 文件将被检索，且页上链接可被查询；属性值为”none”: 文件不被检索，而且不查询页上的链接；属性值为”index”: 文件将被检索；属性值为”follow”: 查询页上的链接；属性值为”noindex”: 文件不检索，但可被查询链接；属性值为”nofollow”: 文件不被检索，但可查询页上的链接。]]></content>
       <tags>
         <tag>JavaScript</tag>
         <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[tmux相关操作]]></title>
-    <url>%2Ftools%2Ftmux%E6%93%8D%E4%BD%9C.html</url>
-    <content type="text"><![CDATA[tmux快捷键（已经修改了默认配置）12345678910111213141516171819tmux 终端快捷键设置：cat ~/.tmux.conf 查看sudo vim ~/.tmux.conf 修改使用tmux开启多个终端，快捷键如下：tmux 进入tmux我的快捷键使用（通过cat ~/.tmux.conf设置）:Ctrl + A 、 - 横向分屏Ctrl + A 、 | 竖向分屏exit 关闭当前窗口Ctrl + A 、D # 将多个终端放入后台隐藏，显示一个终端tmux at # 重新切换回多个终端状态Ctrl + A、（up、down、left、right） # 在多个终端中切换输入Ctrl + A +（up、down、left、right） # 改变当前终端的大小Ctrl + A、[ 、（up、down、left、right） # 在当前终端可以滚ZCtrl + A、Z # 当前终端最大化最小化Ctrl + A、C # 当前窗口分屏（全屏）Ctrl + A、， # 更改窗口地步名称 修改配置如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# 编码setw -g utf8 onset -g status-utf8 on# 基础设置set -g default-terminal "screen-256color"set -g display-time 3000set -g escape-time 0set -g history-limit 65535set -g base-index 1set -g pane-base-index 1# 前缀绑定 (Ctrl+a)set -g prefix ^aunbind ^bbind a send-prefix# 分割窗口unbind '"'bind - splitw -vunbind %bind | splitw -h# 选中窗口bind-key k select-pane -Ubind-key j select-pane -Dbind-key h select-pane -Lbind-key l select-pane -R# copy-mode 将快捷键设置为 vi 模式setw -g mode-keys vi# 启用鼠标(Tmux v2.1 之前)setw -g mode-mouse onset -g mouse-select-pane onset -g mouse-resize-pane onset -g mouse-select-window on# Ubuntu 支持复制bind -t vi-copy y copy-pipe "xclip -sel clip -i"# 启用鼠标(Tmux v2.1)#setw -g mouse on# to enable mouse scroll, see https://github.com/tmux/tmux/issues/145#issuecomment-150736967#bind -n WheelUpPane if-shell -F -t = "#&#123;mouse_any_flag&#125;" "send-keys -M" "if -Ft= '#&#123;pane_in_mode&#125;' 'send-keys -M' 'copy-mode -e'"# 更新配置文件bind r source-file ~/.tmux.conf \; display "已更新"]]></content>
-      <tags>
-        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -1157,14 +1157,6 @@
     <title><![CDATA[innerText和textContent的异同]]></title>
     <url>%2Fjavascript%2FinnerText%E5%92%8CtextContent%E7%9A%84%E5%BC%82%E5%90%8C.html</url>
     <content type="text"><![CDATA[参考资料：http://www.jb51.net/article/25082.htm innerText: IEtextContent: FF innerText它的内容实际上就是你在浏览器看到的内容。它会将innerHTML中的转义字符（&lt;、 &amp;）进行换码它将元素的innerHTML换码、解释，最终显示出来去除各种格式信息留下的纯文本。它会将多个空格并成一个空格对待，会把换成换行符，而本来的换行符却并不会引起换行 总结：换行必须使用标签，回车无效 多个空格只显示一个空格 textContent它的内容则是innerHTML去除所有标签后的内容它会将innerHTML中的转义字符（&lt;、 &amp;）进行换码不对任何html标签进行解释，而是直接剔除它们。不对innerHTML中的文本按照HTML的方式进行格式转换 比如多个空格不会合并为一个空格，换行符仍然存在，相反却不会导致换行 总结：换行必须回车，无效 多个空格不会合并成一个 操作1、HTML转义（对&gt;、&lt;、&amp;等转义字符进行处理）2、经过HTML解释和CSS解释3、剔除格式信息 innerText: 处理1、2、3 textContent: 只处理1]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[iframe嵌入网页高度自适应]]></title>
-    <url>%2Fjavascript%2Fiframe%E5%B5%8C%E5%85%A5%E7%BD%91%E9%A1%B5%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94.html</url>
-    <content type="text"><![CDATA[原理：1、使用document.body.scrollHeight获取iframe的高度，作为hash添加给window.top.location2、在主页面获取window.top.location的hash值，再将该值赋给iframe高度 iframe中：12345var hostUrl = window.top.location.toString().split("#")[0]; // 去除hash后的字符串if (hostUrl) &#123; hostUrl += "#height=" + document.body.scrollHeight; // 将高度存放在hash中 window.top.location = hostUrl;&#125; 主页面中：123456789function iframeHeight() &#123; var hash = window.location.hash.slice(1); // 获取第一个hash，即iframe存在地址栏的hash参数 if (hash &amp;&amp; /height=/.test(hash)) &#123; document.getElementById('iframePage').height = hash.replace("height=", ""); &#125; setTimeout(iframeHeight, 200);&#125;iframeHeight();]]></content>
       <tags>
         <tag>JavaScript</tag>
       </tags>
@@ -1186,6 +1178,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[iframe嵌入网页高度自适应]]></title>
+    <url>%2Fjavascript%2Fiframe%E5%B5%8C%E5%85%A5%E7%BD%91%E9%A1%B5%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94.html</url>
+    <content type="text"><![CDATA[原理：1、使用document.body.scrollHeight获取iframe的高度，作为hash添加给window.top.location2、在主页面获取window.top.location的hash值，再将该值赋给iframe高度 iframe中：12345var hostUrl = window.top.location.toString().split("#")[0]; // 去除hash后的字符串if (hostUrl) &#123; hostUrl += "#height=" + document.body.scrollHeight; // 将高度存放在hash中 window.top.location = hostUrl;&#125; 主页面中：123456789function iframeHeight() &#123; var hash = window.location.hash.slice(1); // 获取第一个hash，即iframe存在地址栏的hash参数 if (hash &amp;&amp; /height=/.test(hash)) &#123; document.getElementById('iframePage').height = hash.replace("height=", ""); &#125; setTimeout(iframeHeight, 200);&#125;iframeHeight();]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux安装微信]]></title>
     <url>%2Flinux%2Flinux%E5%AE%89%E8%A3%85%E5%BE%AE%E4%BF%A1.html</url>
     <content type="text"><![CDATA[Electronic WeChat Electronic WeChat 是利用 Electron 开源框架而打造的一款第三方微信客户端，目前支持 Linux 和 Mac OS X 系统。 Electronic WeChat 具有一些不错的特性，包括拖入图片、文件即可发送，能够阻止他人撤回消息，可以显示贴纸消息，以及直接打开重定向的链接等等。 要在 Linux 下安装 Electronic WeChat，可以下载 linux-x64.tar.gz（64 位，选择适合自己系统的架构）后执行： tar zxvf linux-x64.tar.gz cd dist/Electronic\ WeChat-linux-x64 ./Electronic\ WeChat 然后使用手机扫描二维码即可登录。 看到下面的图是不是很开^_^ 参考：https://github.com/geeeeeeeeek/electronic-wechat参考：https://github.com/geeeeeeeeek/electronic-wechat/releases]]></content>
@@ -1202,14 +1202,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Linux安装QQ]]></title>
-    <url>%2Flinux%2Flinux%E5%AE%89%E8%A3%85QQ.html</url>
-    <content type="text"><![CDATA[Wine QQ7.8 支持的版本：ubuntu 12.04，32位由于时间及人手原因，没有来得及测试其他发行版，此版本基于32位ubuntu 12.04开发，也请大家多多帮助测试其他发行版，非常感谢！ 安装方法：ubuntu系统安装说明：如以前装过其他版本的Wine QQ，请先卸载（通过dpkg -l | grep qq查看），然后运行：sudo dpkg -i WineQQ7.8-20151109-Longene.deb 非Ubuntu系统：1、解压deb包2、按照deb的目录结构，复制的对应的目录，如把opt目录下的所有文件复制到系统的/opt目录下，3、在终端运行qq即可 成功后的截图： 是不是很开心^_^ 我自己安装的目前存在一些问题，一旦网络切换（电脑没网的情况下）就会自动掉线，而且还不能重新登录，重启电脑或将QQ进程杀死后才能重开。 掉线后处理：1、杀进程123ps -ef | grep qqkill -9 ** 2、重启 虽然有这些问题，但总比没有要好，凑合着用吧！哈哈！ 下载地址百度网盘参考链接]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[前端开发规范]]></title>
     <url>%2Fother%2F%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.html</url>
     <content type="text"><![CDATA[通用 用2个空格缩进 文件、目录名全部小写，单词之间用”_”隔开 文件统一采用UTF-8编码 删除行位多余的空格 HTML 标签合理化，对于兼容性要求不高的可使用HTML5的语义化标签，如header、footer、article、section等 标签合理嵌套，越短越好，dom层级尽量简单 尽量使用class，少用id class、id命名形象化，一律采用小写，单词之间”-“隔开，不允许使用大写字母和”_” 自定义的属性以”data-“开头 属性编写顺序： class id,name data-* src,for,type,href,value title,alt role,aria-* meta IE 兼容模式&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt; CSS 不要使用@import，这种指令要慢很多，会增加请求次数，多使用link或使用sass等预处理器 用两个空格代替tab，保证能在所有环境下展现一致 少使用浮动、定位等布局 尽量减少选择器的层级 CSS左括号与选择器同行，右括号另起一行，左花括号前空一格 CSS选择器尽量用用class，少使用标签，如p{}、.test p{}等 不要在rgb()、rgba()值内部的括号中的逗号后面插入空格 对于属性值和颜色知，省略小于1的小数前面的0，如.5代替0.5，-.5px代替-0.5px 十六进制应该全部小写，且尽量使用简写形式，例如#fff 避免给0值指定单位 为选择器的属性添加双引号，如input[type=&quot;text&quot;] 选择器分组时，将单独的选择器单独放一行 CSS样式一行只写一条，可读性高 媒体查询尽量放在相关规则的地方，否则容易遗忘 带前缀的属性，让每个属性在垂直方向对齐，便于阅读 1234567/* bad css */.selector, .selector-secondary, .selector[type=text] &#123; padding:15px; margin:0px 0px 15px; background-color:rgba(0, 0, 0, 0.5); box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF&#125; 12345678910/* good css */.selector,.selector-secondary,.selector[type="text"] &#123; padding: 15px; margin-bottom: 15px; background-color: rgba(0,0,0,.5); -webkit-box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF&#125; JavaScript 变量名、函数名使用小驼峰，如requestFlag 类名使用大驼峰，如ClassData 常量名全面大写并用”_”分隔，jQuery变量使用$开头 在后端返回的数据list中增加前端字段，用”_”开头，区分前后端字段 少使用全局变量和全局函数 代码过多时考虑进行封装 语句以分号结束 避免使用多行注释/**/，多使用单行注释// 文件注释开发者信息能够体现开发人员对文件的贡献，这样便于team其他人员快速找到出处，便于后期维护 123/** * Created by Pimi.chen on 2017/04/30. */ 如果是页面html、css由制作同学开发，js由交互同学开发，交互同学拿到页面后如需要在dom中补充class或id，以”JS-“开头，区分css和js所需类 IMG 格式：透明图片使用png，不透明的使用jpg 上线前必须使用tinypng进行压缩图片]]></content>
@@ -1218,17 +1210,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Linux点击链接打开chrome显示空页面解决办法]]></title>
-    <url>%2Flinux%2Flinux%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E6%89%93%E5%BC%80chrome%E6%98%BE%E7%A4%BA%E7%A9%BA%E9%A1%B5%E9%9D%A2.html</url>
-    <content type="text"><![CDATA[Ubuntu 点击链接弹出chrome是空白页 原因： 1~/.local/share/applications/ 该目录下有google-chorome.desktop文件，浏览器会优先使用.local下的配置 解决办法：1sudo vim google-chrome.desktop 修改，或者删除该文件即可1Exec=/opt/google/chrome/chrome %U]]></content>
+    <title><![CDATA[Linux安装QQ]]></title>
+    <url>%2Flinux%2Flinux%E5%AE%89%E8%A3%85QQ.html</url>
+    <content type="text"><![CDATA[Wine QQ7.8 支持的版本：ubuntu 12.04，32位由于时间及人手原因，没有来得及测试其他发行版，此版本基于32位ubuntu 12.04开发，也请大家多多帮助测试其他发行版，非常感谢！ 安装方法：ubuntu系统安装说明：如以前装过其他版本的Wine QQ，请先卸载（通过dpkg -l | grep qq查看），然后运行：sudo dpkg -i WineQQ7.8-20151109-Longene.deb 非Ubuntu系统：1、解压deb包2、按照deb的目录结构，复制的对应的目录，如把opt目录下的所有文件复制到系统的/opt目录下，3、在终端运行qq即可 成功后的截图： 是不是很开心^_^ 我自己安装的目前存在一些问题，一旦网络切换（电脑没网的情况下）就会自动掉线，而且还不能重新登录，重启电脑或将QQ进程杀死后才能重开。 掉线后处理：1、杀进程123ps -ef | grep qqkill -9 ** 2、重启 虽然有这些问题，但总比没有要好，凑合着用吧！哈哈！ 下载地址百度网盘参考链接]]></content>
       <tags>
         <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[linux目录解释]]></title>
-    <url>%2Flinux%2Flinux%E7%9B%AE%E5%BD%95%E8%A7%A3%E9%87%8A.html</url>
-    <content type="text"><![CDATA[Linux 根目录计算机下的根目录 (pm@pm-pc:/$ ) 12345678910111213/bin # 存放必要的命令/boot # 存放内核以及启动所需的文件等/dev # 存放设备文件/etc # 存放系统的配置文件/home # 用户文件的主目录，用户数据存放在其主目录中/lib # 存放必要的运行库/mnt # 存放临时的映射文件系统，我们常把软驱和光驱挂装在这里的floppy和cdrom子目录下。/proc # 存放存储进程和系统信息/root # 超级用户的主目录/sbin # 存放系统管理程序/tmp # 存放临时文件的目录/usr # 包含了一般不需要修改的应用程序，命令程序文件、程序库、手册和其它文档。/var # 包含系统产生的经常变化的文件，例如打印机、邮件、新闻等假脱机目录、日志文件、格式化后的手册页以及一些应用程序的数据文件等等。建议单独的放在一个分区。[separator] home目录1/home 主文件夹目录 个人电脑1/home/pm/ # (pm@pm-pc:) (终端默认) 各文件123456/Project/Deskup/Documents/Downloads/Music...... 操作使用cd **和cd ..来进入和退出目录]]></content>
+    <title><![CDATA[Linux点击链接打开chrome显示空页面解决办法]]></title>
+    <url>%2Flinux%2Flinux%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E6%89%93%E5%BC%80chrome%E6%98%BE%E7%A4%BA%E7%A9%BA%E9%A1%B5%E9%9D%A2.html</url>
+    <content type="text"><![CDATA[Ubuntu 点击链接弹出chrome是空白页 原因： 1~/.local/share/applications/ 该目录下有google-chorome.desktop文件，浏览器会优先使用.local下的配置 解决办法：1sudo vim google-chrome.desktop 修改，或者删除该文件即可1Exec=/opt/google/chrome/chrome %U]]></content>
       <tags>
         <tag>Linux</tag>
       </tags>
