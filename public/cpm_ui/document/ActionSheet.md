@@ -1,3 +1,5 @@
+## [返回总文档](https://github.com/cpm828/cpm-ui)
+
 # ActionSheet组件
 
 ## 一、使用教程
@@ -67,9 +69,9 @@ this.$actionSheet({
 
 |参数|说明|
 |:---|:---|
-|actionSheetClickCliper|点击蒙层|
-|actionSheetClickCancel|点击取消|
-|actionSheetChoiceItem|点击item|
+|onClickCliper|点击蒙层|
+|onCancel|点击取消|
+|onChoiceItem|点击item|
 
 如：
 ```js
@@ -97,8 +99,14 @@ this.$actionSheet({
     activeSheet: 'beijng'
   },
   mounted () {
-    this.$on('actionSheetChoiceItem', (actionSheet) => {
-      console.log(actionSheet)
+    this.$on('onClickCliper', () => {
+      console.log('onClickCliper')
+    })
+    this.$on('onCancel', () => {
+      console.log('onCancel')
+    })
+    this.$on('onChoiceItem', (actionSheet) => {
+      console.log('onChoiceItem', actionSheet)
     })
   }
 })
@@ -109,9 +117,9 @@ this.$actionSheet({
 
 |方法|说明|
 |:---|:---|
-|clickCliper|点击蒙层|◊
-|clickCancel|点击取消|
-|clickItem|点击item|
+|onClickCliper|点击蒙层|
+|onCancel|点击取消|
+|onChoiceItem|点击item|
 
 如：
 ```js
@@ -139,9 +147,17 @@ this.$actionSheet({
     activeSheet: 'beijng'
   },
   methods: {
-    clickItem (actionSheet) {
+    onClickCliper () {
       this.remove()
-      console.log(actionSheet)
+      console.log('onClickCliper')
+    },
+    onCancel () {
+      this.remove()
+      console.log('onCancel')
+    },
+    onChoiceItem (actionSheet) {
+      this.remove()
+      console.log('onChoiceItem', actionSheet)
     }
   }
 })
