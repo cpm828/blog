@@ -6,6 +6,7 @@
     
     
     
+    
   <url>
     <loc>http://pimichen.com/blog/blog/vue/vue%E5%88%A9%E7%94%A8transition%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E5%88%87%E6%8D%A2%E4%BB%BFAPP%E6%95%88%E6%9E%9C.html</loc>
     <lastmod>2019-06-26T16:00:00.000Z</lastmod>
@@ -15,23 +16,6 @@
         <pubTime>2019-06-26T16:00:00.000Z</pubTime>
         
         <tag>Vue</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/javascript/%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88.html</loc>
-    <lastmod>2019-04-28T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端算法集合</title>
-        <pubTime>2019-03-08T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
          
          
            
@@ -58,12 +42,46 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/javascript/%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88.html</loc>
+    <lastmod>2019-04-28T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端算法集合</title>
+        <pubTime>2019-03-08T16:00:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/javascript/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95.html</loc>
     <lastmod>2019-03-09T16:00:00.000Z</lastmod>
     <data>
         <display>
         <title>数组去重方法</title>
         <pubTime>2019-03-09T16:00:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/javascript/%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AAkey.html</loc>
+    <lastmod>2019-03-02T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>js判断对象object中存在某个key</title>
+        <pubTime>2019-03-02T16:00:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -83,23 +101,6 @@
         <pubTime>2019-03-02T16:00:00.000Z</pubTime>
         
         <tag>CSS</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/javascript/%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AAkey.html</loc>
-    <lastmod>2019-03-02T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>js判断对象object中存在某个key</title>
-        <pubTime>2019-03-02T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
          
          
            
@@ -230,45 +231,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/es6/es6-math%E6%96%B9%E6%B3%95.html</loc>
-    <lastmod>2018-10-19T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>ES6 math方法</title>
-        <pubTime>2018-10-19T16:00:00.000Z</pubTime>
-        
-        <tag>ES6</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://pimichen.com/blog/blog/es6/es6-array%E6%96%B9%E6%B3%95.html</loc>
     <lastmod>2018-10-19T16:00:00.000Z</lastmod>
     <data>
         <display>
         <title>ES6 array方法</title>
-        <pubTime>2018-10-19T16:00:00.000Z</pubTime>
-        
-        <tag>ES6</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/es6/es6-string%E6%96%B9%E6%B3%95.html</loc>
-    <lastmod>2018-10-19T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>ES6 string方法</title>
         <pubTime>2018-10-19T16:00:00.000Z</pubTime>
         
         <tag>ES6</tag>
@@ -298,11 +265,45 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/es6/es6-math%E6%96%B9%E6%B3%95.html</loc>
+    <lastmod>2018-10-19T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>ES6 math方法</title>
+        <pubTime>2018-10-19T16:00:00.000Z</pubTime>
+        
+        <tag>ES6</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/es6/es6-number%E6%96%B9%E6%B3%95.html</loc>
     <lastmod>2018-10-19T16:00:00.000Z</lastmod>
     <data>
         <display>
         <title>ES6 number方法</title>
+        <pubTime>2018-10-19T16:00:00.000Z</pubTime>
+        
+        <tag>ES6</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/es6/es6-string%E6%96%B9%E6%B3%95.html</loc>
+    <lastmod>2018-10-19T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>ES6 string方法</title>
         <pubTime>2018-10-19T16:00:00.000Z</pubTime>
         
         <tag>ES6</tag>
@@ -349,6 +350,23 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/tools/mac-sublime%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</loc>
+    <lastmod>2018-07-11T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac Sublime常用快捷键</title>
+        <pubTime>2018-07-11T16:00:00.000Z</pubTime>
+        
+        <tag>Tools</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/tools/tmux%E6%93%8D%E4%BD%9C.html</loc>
     <lastmod>2018-07-11T16:00:00.000Z</lastmod>
     <data>
@@ -383,62 +401,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/tools/mac-sublime%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</loc>
-    <lastmod>2018-07-11T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>Mac Sublime常用快捷键</title>
-        <pubTime>2018-07-11T16:00:00.000Z</pubTime>
-        
-        <tag>Tools</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/tools/windows-sublime%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</loc>
-    <lastmod>2018-07-11T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>Windows Sublime编辑器常用快捷键</title>
-        <pubTime>2018-07-11T16:00:00.000Z</pubTime>
-        
-        <tag>Tools</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://pimichen.com/blog/blog/tools/vim%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C.html</loc>
     <lastmod>2018-07-11T16:00:00.000Z</lastmod>
     <data>
         <display>
         <title>vim编辑器相关操作</title>
-        <pubTime>2018-07-11T16:00:00.000Z</pubTime>
-        
-        <tag>Tools</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/tools/windows-chrome%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</loc>
-    <lastmod>2018-07-11T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>Windows Chrome常用快捷键</title>
         <pubTime>2018-07-11T16:00:00.000Z</pubTime>
         
         <tag>Tools</tag>
@@ -468,6 +435,40 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/tools/windows-sublime%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</loc>
+    <lastmod>2018-07-11T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Windows Sublime编辑器常用快捷键</title>
+        <pubTime>2018-07-11T16:00:00.000Z</pubTime>
+        
+        <tag>Tools</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/tools/windows-chrome%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</loc>
+    <lastmod>2018-07-11T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Windows Chrome常用快捷键</title>
+        <pubTime>2018-07-11T16:00:00.000Z</pubTime>
+        
+        <tag>Tools</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/vue/call%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%AF%B9%E8%B1%A1%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95.html</loc>
     <lastmod>2018-06-25T16:00:00.000Z</lastmod>
     <data>
@@ -476,6 +477,23 @@
         <pubTime>2018-06-25T16:00:00.000Z</pubTime>
         
         <tag>Vue</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/freemarker/js%E8%8E%B7%E5%8F%96freemarker%E7%9A%84%E5%80%BC.html</loc>
+    <lastmod>2018-06-24T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>在ftl的js中获取freemarker的值</title>
+        <pubTime>2018-06-24T16:00:00.000Z</pubTime>
+        
+        <tag>FreeMarker</tag>
          
          
            
@@ -507,23 +525,6 @@
     <data>
         <display>
         <title>freemarker继承</title>
-        <pubTime>2018-06-24T16:00:00.000Z</pubTime>
-        
-        <tag>FreeMarker</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/freemarker/js%E8%8E%B7%E5%8F%96freemarker%E7%9A%84%E5%80%BC.html</loc>
-    <lastmod>2018-06-24T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>在ftl的js中获取freemarker的值</title>
         <pubTime>2018-06-24T16:00:00.000Z</pubTime>
         
         <tag>FreeMarker</tag>
@@ -1035,11 +1036,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/react/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html</loc>
+    <loc>http://pimichen.com/blog/blog/react/react%E5%B0%8Fdemo.html</loc>
     <lastmod>2017-04-28T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>React生命周期介绍</title>
+        <title>React小Demo</title>
         <pubTime>2017-04-28T16:00:00.000Z</pubTime>
         
         <tag>React</tag>
@@ -1052,11 +1053,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/react/react%E5%B0%8Fdemo.html</loc>
+    <loc>http://pimichen.com/blog/blog/react/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html</loc>
     <lastmod>2017-04-28T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>React小Demo</title>
+        <title>React生命周期介绍</title>
         <pubTime>2017-04-28T16:00:00.000Z</pubTime>
         
         <tag>React</tag>
@@ -1171,14 +1172,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/javascript/js%E7%A6%81%E6%AD%A2%E5%A4%8D%E5%88%B6.html</loc>
+    <loc>http://pimichen.com/blog/blog/jquery/%E8%A7%A3%E5%86%B3zepto%E5%92%8Cjquery%E7%9A%84%E5%86%B2%E7%AA%81.html</loc>
     <lastmod>2017-04-04T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>js禁止复制</title>
+        <title>解决zepto和jquery的冲突</title>
         <pubTime>2017-04-04T16:00:00.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>jQuery</tag>
          
          
            
@@ -1188,14 +1189,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/jquery/%E8%A7%A3%E5%86%B3zepto%E5%92%8Cjquery%E7%9A%84%E5%86%B2%E7%AA%81.html</loc>
+    <loc>http://pimichen.com/blog/blog/javascript/js%E7%A6%81%E6%AD%A2%E5%A4%8D%E5%88%B6.html</loc>
     <lastmod>2017-04-04T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>解决zepto和jquery的冲突</title>
+        <title>js禁止复制</title>
         <pubTime>2017-04-04T16:00:00.000Z</pubTime>
         
-        <tag>jQuery</tag>
+        <tag>JavaScript</tag>
          
          
            
@@ -1224,14 +1225,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/css/flex%E5%B8%83%E5%B1%80%E5%85%BC%E5%AE%B9.html</loc>
+    <loc>http://pimichen.com/blog/blog/jquery/jquery-ajax%E8%AF%B7%E6%B1%82%E4%B8%80%E4%B8%AA%E6%97%B6%E9%97%B4%E5%86%85%E5%8F%AA%E5%8F%91%E4%B8%80%E6%AC%A1.html</loc>
     <lastmod>2017-04-03T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>flex布局的兼容写法</title>
+        <title>jquery-ajax请求一个时间内只发一次</title>
         <pubTime>2017-04-03T16:00:00.000Z</pubTime>
         
-        <tag>CSS</tag>
+        <tag>jQuery</tag>
          
          
            
@@ -1249,23 +1250,6 @@
         <pubTime>2017-04-03T16:00:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/jquery/jquery-ajax%E8%AF%B7%E6%B1%82%E4%B8%80%E4%B8%AA%E6%97%B6%E9%97%B4%E5%86%85%E5%8F%AA%E5%8F%91%E4%B8%80%E6%AC%A1.html</loc>
-    <lastmod>2017-04-03T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>jquery-ajax请求一个时间内只发一次</title>
-        <pubTime>2017-04-03T16:00:00.000Z</pubTime>
-        
-        <tag>jQuery</tag>
          
          
            
@@ -1411,6 +1395,23 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/css/flex%E5%B8%83%E5%B1%80%E5%85%BC%E5%AE%B9.html</loc>
+    <lastmod>2017-04-03T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>flex布局的兼容写法</title>
+        <pubTime>2017-04-03T16:00:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/jquery/ajax%E8%AF%B7%E6%B1%82...%E8%BF%9B%E5%BA%A6.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
@@ -1428,28 +1429,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%AD%E5%AE%89%E5%8D%93%E7%89%88%E6%9C%AC%E5%8F%B7.html</loc>
+    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E6%98%AF%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>js判断安卓版本号</title>
-        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87.html</loc>
-    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>js判断用户设备</title>
+        <title>js判断字符串是否是时间格式</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
@@ -1479,15 +1463,13 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%ADcss%E5%B1%9E%E6%80%A7%E5%85%BC%E5%AE%B9%E6%80%A7.html</loc>
+    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%AD%E5%AE%89%E5%8D%93%E7%89%88%E6%9C%AC%E5%8F%B7.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>js判断css属性兼容性</title>
+        <title>js判断安卓版本号</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
-        <tag>CSS</tag>
-         
         <tag>JavaScript</tag>
          
          
@@ -1583,6 +1565,23 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/css/%E5%8E%BB%E9%99%A4PC%E7%AB%AF%E9%93%BE%E6%8E%A5%E7%82%B9%E5%87%BB%E7%9A%84%E8%99%9A%E7%BA%BF%E6%A1%86.html</loc>
+    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>去除链接点击后的虚线框</title>
+        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/javascript/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91rem%E5%8D%95%E4%BD%8D%E9%97%AE%E9%A2%98.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
@@ -1608,23 +1607,6 @@
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/css/%E5%8E%BB%E9%99%A4PC%E7%AB%AF%E9%93%BE%E6%8E%A5%E7%82%B9%E5%87%BB%E7%9A%84%E8%99%9A%E7%BA%BF%E6%A1%86.html</loc>
-    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>去除链接点击后的虚线框</title>
-        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
-        
-        <tag>CSS</tag>
          
          
            
@@ -1685,14 +1667,16 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/vue/vue%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE.html</loc>
+    <loc>http://pimichen.com/blog/blog/css/%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA....html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>vue组件传递数据</title>
+        <title>文本溢出显示...</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
-        <tag>Vue</tag>
+        <tag>CSS</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -1719,16 +1703,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/css/%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA....html</loc>
+    <loc>http://pimichen.com/blog/blog/vue/vue%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>文本溢出显示...</title>
+        <title>vue组件传递数据</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
-        <tag>CSS</tag>
-         
-        <tag>JavaScript</tag>
+        <tag>Vue</tag>
          
          
            
@@ -1772,23 +1754,6 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/vue/vue%E5%B8%B8%E7%94%A8.html</loc>
-    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>vue常用</title>
-        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
-        
-        <tag>Vue</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://pimichen.com/blog/blog/css/%E7%AD%89%E5%AE%BD%E6%95%B0%E5%AD%97%E5%AD%97%E4%BD%93.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
@@ -1806,11 +1771,45 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/vue/vue%E5%B8%B8%E7%94%A8.html</loc>
+    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>vue常用</title>
+        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
+        
+        <tag>Vue</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/vue/vue%E5%AE%89%E8%A3%85jquery.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
         <title>vue安装jquery</title>
+        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
+        
+        <tag>Vue</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html</loc>
+    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>vuex组件间通信</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
         <tag>Vue</tag>
@@ -1845,23 +1844,6 @@
     <data>
         <display>
         <title>输入框实时检测输入情况</title>
-        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
-        
-        <tag>jQuery</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/jquery/%E8%8E%B7%E5%8F%96form%E8%A1%A8%E5%8D%95%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D.html</loc>
-    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>获取form表单的文件名</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
         <tag>jQuery</tag>
@@ -1942,6 +1924,23 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/jquery/%E8%8E%B7%E5%8F%96form%E8%A1%A8%E5%8D%95%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D.html</loc>
+    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>获取form表单的文件名</title>
+        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/jquery/%E5%AE%9E%E7%8E%B0%E7%BD%AE%E9%A1%B6%E5%92%8C%E7%BD%AE%E5%BA%95.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
@@ -1959,28 +1958,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/jquery/%E5%A4%8D%E9%80%89%E6%A1%86%E5%85%A8%E9%80%89%E5%8F%96%E6%B6%88%E5%85%A8%E9%80%89%E9%97%AE%E9%A2%98.html</loc>
+    <loc>http://pimichen.com/blog/blog/vue/vue-validator%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>复选框全选和取消全选问题</title>
-        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
-        
-        <tag>jQuery</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html</loc>
-    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>vuex组件间通信</title>
+        <title>vue-validator表单验证</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
         <tag>Vue</tag>
@@ -1993,15 +1975,13 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/jquery/jquery%E8%8E%B7%E5%8F%96select%E7%9A%84%E5%80%BC.html</loc>
+    <loc>http://pimichen.com/blog/blog/jquery/%E5%A4%8D%E9%80%89%E6%A1%86%E5%85%A8%E9%80%89%E5%8F%96%E6%B6%88%E5%85%A8%E9%80%89%E9%97%AE%E9%A2%98.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>获取select的值</title>
+        <title>复选框全选和取消全选问题</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>jQuery</tag>
          
          
@@ -2029,30 +2009,15 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/vue/vue-validator%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html</loc>
+    <loc>http://pimichen.com/blog/blog/jquery/jquery%E8%8E%B7%E5%8F%96select%E7%9A%84%E5%80%BC.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>vue-validator表单验证</title>
+        <title>获取select的值</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
-        <tag>Vue</tag>
+        <tag>JavaScript</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/jquery/jquery%E4%B8%8A%E4%BC%A0excel%E7%AD%89%E6%96%87%E4%BB%B6.html</loc>
-    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>jquery上传excel等文件</title>
-        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
-        
         <tag>jQuery</tag>
          
          
@@ -2097,6 +2062,23 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/jquery/jquery%E4%B8%8A%E4%BC%A0excel%E7%AD%89%E6%96%87%E4%BB%B6.html</loc>
+    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>jquery上传excel等文件</title>
+        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/vue/vue-cli%E8%84%9A%E6%89%8B%E6%9E%B6.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
@@ -2114,11 +2096,28 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E6%98%AF%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F.html</loc>
+    <loc>http://pimichen.com/blog/blog/tools/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>js判断字符串是否是时间格式</title>
+        <title>内网穿透</title>
+        <pubTime>2017-04-02T16:00:00.000Z</pubTime>
+        
+        <tag>Tools</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87.html</loc>
+    <lastmod>2017-04-02T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>js判断用户设备</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
@@ -2148,11 +2147,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/html/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%AF%AD%E5%8F%A5.html</loc>
+    <loc>http://pimichen.com/blog/blog/html/PC%E5%AF%BC%E8%88%AA%E5%9B%BE%E9%BC%A0%E6%A0%87%E5%88%92%E8%BF%87%E7%AE%AD%E5%A4%B4%E7%9A%84%E6%98%BE%E7%A4%BA%E5%8F%8A%E5%8F%98%E5%8C%96.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>表达式和语句的简单区分</title>
+        <title>PC端导航条上二级菜单的提示箭头</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
         <tag>HTML</tag>
@@ -2165,14 +2164,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/tools/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html</loc>
+    <loc>http://pimichen.com/blog/blog/html/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%AF%AD%E5%8F%A5.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>内网穿透</title>
+        <title>表达式和语句的简单区分</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
-        <tag>Tools</tag>
+        <tag>HTML</tag>
          
          
            
@@ -2335,14 +2334,16 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/html/PC%E5%AF%BC%E8%88%AA%E5%9B%BE%E9%BC%A0%E6%A0%87%E5%88%92%E8%BF%87%E7%AE%AD%E5%A4%B4%E7%9A%84%E6%98%BE%E7%A4%BA%E5%8F%8A%E5%8F%98%E5%8C%96.html</loc>
+    <loc>http://pimichen.com/blog/blog/javascript/js%E5%88%A4%E6%96%ADcss%E5%B1%9E%E6%80%A7%E5%85%BC%E5%AE%B9%E6%80%A7.html</loc>
     <lastmod>2017-04-02T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>PC端导航条上二级菜单的提示箭头</title>
+        <title>js判断css属性兼容性</title>
         <pubTime>2017-04-02T16:00:00.000Z</pubTime>
         
-        <tag>HTML</tag>
+        <tag>CSS</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -2369,14 +2370,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/linux/linux%E5%AE%89%E8%A3%85%E5%BE%AE%E4%BF%A1.html</loc>
+    <loc>http://pimichen.com/blog/blog/other/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.html</loc>
     <lastmod>2017-03-31T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>Linux安装微信</title>
+        <title>前端开发规范</title>
         <pubTime>2017-03-31T16:00:00.000Z</pubTime>
         
-        <tag>Linux</tag>
+        <tag>Other</tag>
          
          
            
@@ -2437,11 +2438,11 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/javascript/%E8%A2%AB%E9%81%97%E5%BF%98%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6.html</loc>
+    <loc>http://pimichen.com/blog/blog/javascript/innerText%E5%92%8CtextContent%E7%9A%84%E5%BC%82%E5%90%8C.html</loc>
     <lastmod>2017-03-31T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>被遗忘的位运算符</title>
+        <title>innerText和textContent的异同</title>
         <pubTime>2017-03-31T16:00:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
@@ -2454,14 +2455,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/angular/angular_validate%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html</loc>
+    <loc>http://pimichen.com/blog/blog/javascript/%E8%A2%AB%E9%81%97%E5%BF%98%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6.html</loc>
     <lastmod>2017-03-31T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>Angular validate 表单验证</title>
+        <title>被遗忘的位运算符</title>
         <pubTime>2017-03-31T16:00:00.000Z</pubTime>
         
-        <tag>Angular</tag>
+        <tag>JavaScript</tag>
          
          
            
@@ -2488,11 +2489,62 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/javascript/iframe%E5%B5%8C%E5%85%A5%E7%BD%91%E9%A1%B5%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94.html</loc>
+    <lastmod>2017-03-31T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>iframe嵌入网页高度自适应</title>
+        <pubTime>2017-03-31T16:00:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/linux/linux%E5%AE%89%E8%A3%85QQ.html</loc>
     <lastmod>2017-03-31T16:00:00.000Z</lastmod>
     <data>
         <display>
         <title>Linux安装QQ</title>
+        <pubTime>2017-03-31T16:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/angular/angular_validate%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81.html</loc>
+    <lastmod>2017-03-31T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Angular validate 表单验证</title>
+        <pubTime>2017-03-31T16:00:00.000Z</pubTime>
+        
+        <tag>Angular</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/linux/linux%E5%AE%89%E8%A3%85%E5%BE%AE%E4%BF%A1.html</loc>
+    <lastmod>2017-03-31T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linux安装微信</title>
         <pubTime>2017-03-31T16:00:00.000Z</pubTime>
         
         <tag>Linux</tag>
@@ -2522,31 +2574,16 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/other/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.html</loc>
+    <loc>http://pimichen.com/blog/blog/javascript/html%E5%92%8Cjs%E7%89%B9%E5%88%AB%E6%8A%80%E5%B7%A7%E9%9B%86%E9%94%A6.html</loc>
     <lastmod>2017-03-31T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>前端开发规范</title>
+        <title>HTML和JavaScript特别技巧集锦</title>
         <pubTime>2017-03-31T16:00:00.000Z</pubTime>
         
-        <tag>Other</tag>
+        <tag>JavaScript</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</loc>
-    <lastmod>2017-03-31T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>linux常用命令</title>
-        <pubTime>2017-03-31T16:00:00.000Z</pubTime>
-        
-        <tag>Linux</tag>
+        <tag>HTML</tag>
          
          
            
@@ -2590,14 +2627,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/javascript/innerText%E5%92%8CtextContent%E7%9A%84%E5%BC%82%E5%90%8C.html</loc>
+    <loc>http://pimichen.com/blog/blog/linux/vim%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C.html</loc>
     <lastmod>2017-03-31T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>innerText和textContent的异同</title>
+        <title>vim编辑器相关操作</title>
         <pubTime>2017-03-31T16:00:00.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>Tools</tag>
          
          
            
@@ -2624,67 +2661,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/linux/vim%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C.html</loc>
+    <loc>http://pimichen.com/blog/blog/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</loc>
     <lastmod>2017-03-31T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>vim编辑器相关操作</title>
+        <title>linux常用命令</title>
         <pubTime>2017-03-31T16:00:00.000Z</pubTime>
         
-        <tag>Tools</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/javascript/html%E5%92%8Cjs%E7%89%B9%E5%88%AB%E6%8A%80%E5%B7%A7%E9%9B%86%E9%94%A6.html</loc>
-    <lastmod>2017-03-31T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>HTML和JavaScript特别技巧集锦</title>
-        <pubTime>2017-03-31T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>HTML</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/javascript/iframe%E5%B5%8C%E5%85%A5%E7%BD%91%E9%A1%B5%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94.html</loc>
-    <lastmod>2017-03-31T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>iframe嵌入网页高度自适应</title>
-        <pubTime>2017-03-31T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/jquery/jquery%E5%AE%9E%E7%8E%B0%E5%A4%A7%E8%BD%AC%E7%9B%98%E6%95%88%E6%9E%9C.html</loc>
-    <lastmod>2017-03-30T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>jQuery实现大转盘效果</title>
-        <pubTime>2017-03-30T16:00:00.000Z</pubTime>
-        
-        <tag>jQuery</tag>
+        <tag>Linux</tag>
          
          
            
@@ -2699,6 +2683,23 @@
     <data>
         <display>
         <title>ajax规范</title>
+        <pubTime>2017-03-30T16:00:00.000Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/jquery/jquery%E5%AE%9E%E7%8E%B0%E5%A4%A7%E8%BD%AC%E7%9B%98%E6%95%88%E6%9E%9C.html</loc>
+    <lastmod>2017-03-30T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>jQuery实现大转盘效果</title>
         <pubTime>2017-03-30T16:00:00.000Z</pubTime>
         
         <tag>jQuery</tag>
@@ -2728,14 +2729,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/node/npm%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6.html</loc>
+    <loc>http://pimichen.com/blog/blog/git/git%E5%88%9D%E5%A7%8B%E5%8C%96.html</loc>
     <lastmod>2017-03-29T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>NPM安装插件</title>
+        <title>Git Init</title>
         <pubTime>2017-03-29T16:00:00.000Z</pubTime>
         
-        <tag>Node</tag>
+        <tag>Git</tag>
          
          
            
@@ -2745,14 +2746,14 @@
 
     
   <url>
-    <loc>http://pimichen.com/blog/blog/git/git%E5%88%9D%E5%A7%8B%E5%8C%96.html</loc>
+    <loc>http://pimichen.com/blog/blog/node/npm%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6.html</loc>
     <lastmod>2017-03-29T16:00:00.000Z</lastmod>
     <data>
         <display>
-        <title>Git Init</title>
+        <title>NPM安装插件</title>
         <pubTime>2017-03-29T16:00:00.000Z</pubTime>
         
-        <tag>Git</tag>
+        <tag>Node</tag>
          
          
            
