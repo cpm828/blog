@@ -6,11 +6,6 @@
 
 * Create Time: 2017-03-30
 
-* Repository
-  - Github: https://github.com/cpm828/pmblog
-  - Coding: https://coding.net/u/pimi/p/pimi.coding.me
-
 * Access Link: 
-  - Website: http://blog.pimichen.com
-  - Github: https://cpm828.github.io
-  - Coding: https://pimi.coding.me
+  - Website: https://pimichen.com/blog
+  - Github: https://cpm828.github.io/blog
