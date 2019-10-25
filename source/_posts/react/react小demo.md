@@ -1,7 +1,8 @@
 ---
 title:         React小Demo # 标题
 description:   快速理解react的小demo # 副标题
-date:          2017-03-31 # 建立日期
+date:          2017-04-29 # 建立日期
+updated:       2017-04-29 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - React

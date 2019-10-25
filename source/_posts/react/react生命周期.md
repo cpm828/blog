@@ -1,7 +1,8 @@
 ---
 title:         React生命周期介绍 # 标题
 description:   react各个生命周期的介绍 # 副标题
-date:          2017-03-31 # 建立日期
+date:          2017-04-29 # 建立日期
+updated:       2017-04-29 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - React

@@ -2,6 +2,7 @@
 title:         css常见兼容性的处理办法 # 标题
 description:   css的一些处理兼容性的办法 # 副标题
 date:          2017-04-02 # 建立日期
+updated:       2017-04-02 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - CSS

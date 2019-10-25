@@ -1,6 +1,9 @@
 ---
 title:         初识requirejs # 标题
 description:   初识JS模块化工具requirejs # 副标题
+date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

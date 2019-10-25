@@ -2,6 +2,7 @@
 title:         Linux安装搜狗输入法后失效的解决办法 # 标题
 description:   linux安装搜狗输入法后，经常无故失效，该怎么解决呢？ # 副标题
 date:          2017-04-01 # 建立日期
+updated:       2017-04-01 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - Linux

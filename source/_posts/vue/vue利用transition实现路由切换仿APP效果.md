@@ -1,6 +1,9 @@
 ---
 title:         vue利用transition实现路由切换仿APP效果 # 标题
 description:   vue利用transition实现路由切换仿APP效果 # 副标题
+date:          2019-06-27 # 建立日期
+updated:       2019-06-27 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Vue
 ---

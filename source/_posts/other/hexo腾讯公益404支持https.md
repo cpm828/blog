@@ -1,6 +1,9 @@
 ---
 title:         hexo博客404页面支持https # 大标题
 description:   hexo博客腾讯公益404页面支持https，解决部分资源不支持https的问题 # 小标题
+date:          2018-05-31 # 建立日期
+updated:       2018-05-31 # 更新日期
+comments:      true  # 开启评论功能
 tags:
     - Other
 ---

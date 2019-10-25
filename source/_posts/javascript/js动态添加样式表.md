@@ -2,6 +2,7 @@
 title:         js动态添加样式表 # 标题
 description:   js动态添加样式表 # 副标题
 date:          2017-04-07 # 建立日期
+updated:       2017-04-07 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

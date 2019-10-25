@@ -1,8 +1,9 @@
 ---
-title:        NPM安装插件 # 标题
-description:  npm安装插件...  # 副标题
-date:         2017-03-30 # 建立日期
-comments:     true  # 开启评论功能
+title:         NPM安装插件 # 标题
+description:   npm安装插件...  # 副标题
+date:          2017-03-30 # 建立日期
+updated:       2017-03-30 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Node
 ---

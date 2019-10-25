@@ -1,6 +1,9 @@
 ---
 title:         React官方CDN # 标题
 description:   React官方CDN # 副标题
+date:          2017-04-29 # 建立日期
+updated:       2017-04-29 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - React
 ---

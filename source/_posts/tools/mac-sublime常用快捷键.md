@@ -1,6 +1,9 @@
 ---
 title:         Mac Sublime常用快捷键 # 大标题
 description:   mac sublime编辑器常用快捷键 # 小标题
+date:          2018-07-12 # 建立日期
+updated:       2018-07-12 # 更新日期
+comments:      true  # 开启评论功能
 tags:
     - Tools
 ---

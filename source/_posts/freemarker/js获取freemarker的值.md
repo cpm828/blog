@@ -1,6 +1,9 @@
 ---
 title:        在ftl的js中获取freemarker的值 # 标题
 description:  在ftl的js中获取freemarker的值  # 副标题
+date:          2018-06-25 # 建立日期
+updated:       2018-06-25 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - FreeMarker
 ---

@@ -1,7 +1,8 @@
 ---
 title:         移动端fixed浮层下面的页面仍能滚动 # 标题
 description:   移动端fixed浮层下面的页面仍能滚动的解决办法 # 副标题
-date:          2017-04-04 # 建立日期
+date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

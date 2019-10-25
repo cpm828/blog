@@ -2,6 +2,7 @@
 title:         moment操作时间 # 标题
 description:   moment实现时间的常见操作方法 # 副标题
 date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

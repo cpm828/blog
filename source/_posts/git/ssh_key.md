@@ -2,6 +2,7 @@
 title:        Git ssh key操作 # 标题
 description:  生成ssh key等  # 副标题
 date:         2017-03-30 # 建立日期
+updated:      2017-03-30 # 更新日期
 comments:     true  # 开启评论功能
 tags: # 标签分类
     - Git

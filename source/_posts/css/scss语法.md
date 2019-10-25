@@ -1,7 +1,8 @@
 ---
 title:         scss用法 # 标题
 description:   scss的一些常用方法（scss需编译称css才能正常运行） # 副标题
-date:          2017-03-31 # 建立日期
+date:          2017-05-20 # 建立日期
+updated:       2017-05-20 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - CSS

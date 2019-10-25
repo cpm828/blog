@@ -2,6 +2,7 @@
 title:         移动端开发的单位处理方法 # 标题
 description:   移动端开发的单位处理方法（scss和js） # 副标题
 date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

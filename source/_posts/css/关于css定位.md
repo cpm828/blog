@@ -2,6 +2,7 @@
 title:         关于css定位 # 标题
 description:   css常见的几种定位方法 # 副标题
 date:          2017-04-04 # 建立日期
+updated:       2017-04-04 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - CSS

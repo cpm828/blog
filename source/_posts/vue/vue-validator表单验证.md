@@ -2,6 +2,7 @@
 title:         vue-validator表单验证 # 标题
 description:   vue-validator表单验证 # 副标题
 date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - Vue

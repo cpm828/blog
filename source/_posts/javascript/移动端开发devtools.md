@@ -1,6 +1,9 @@
 ---
 title:         移动端开发devtools # 标题
 description:   移动端开发devtools迷你版 # 副标题
+date:          2018-11-03 # 建立日期
+updated:       2018-11-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
     - Tools

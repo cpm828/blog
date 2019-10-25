@@ -1,6 +1,9 @@
 ---
 title:        freemarker继承 # 标题
 description:  freemarker继承语法  # 副标题
+date:          2018-06-25 # 建立日期
+updated:       2018-06-25 # 更新日期
+comments:      true  # 开启评论功能s
 tags: # 标签分类
     - FreeMarker
 ---

@@ -2,6 +2,7 @@
 title:         vue组件传递数据 # 标题
 description:   vue各组件之间传递简单的数据，父对子、子对父、兄弟之间通信 # 副标题
 date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - Vue
@@ -304,7 +305,7 @@ methods: {
 ## 复杂组件通信
 复杂的组件通信应当考虑使用vuex来通信
 > vuex官方介绍：http://vuex.vuejs.org/zh-cn/intro.html
-> 个人：http://blog.pimichen.com/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html
+> 个人：https://cpm828.github.io/blog/vue/vuex%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.html
 
 
 > 注：$dispatch和$broadcast在vue2.0中已经被移除

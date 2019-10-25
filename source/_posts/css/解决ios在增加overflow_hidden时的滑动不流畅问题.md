@@ -1,6 +1,8 @@
 ---
 title:         解决ios在增加overflow_hidden时的滑动不流畅问题 # 标题
 description:   解决ios在增加overflow_hidden时的滑动不流畅问题 # 副标题
+date:          2017-05-13 # 建立日期
+updated:       2017-05-13 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - CSS

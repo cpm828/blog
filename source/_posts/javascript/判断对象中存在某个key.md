@@ -1,6 +1,9 @@
 ---
 title:         js判断对象object中存在某个key # 标题
 description:   js判断对象object中存在某个key值，检测存不存在 # 副标题
+date:          2019-03-03 # 建立日期
+updated:       2019-03-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

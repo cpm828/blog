@@ -1,6 +1,8 @@
 ---
 title:         call方法实现跨对象调用方法 # 标题
 description:   call方法实现对象之间的调用方法，可用于this转移 # 副标题
+date:          2018-06-26 # 建立日期
+updated:       2018-06-26 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - Vue

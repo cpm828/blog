@@ -2,6 +2,7 @@
 title:         js实现上拉加载 # 标题
 description:   js实现上拉加载数据 # 副标题
 date:          2017-04-11 # 建立日期
+updated:       2017-04-12 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

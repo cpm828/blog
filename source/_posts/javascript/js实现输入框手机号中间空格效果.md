@@ -1,6 +1,9 @@
 ---
 title:         js实现手机号输入框中间空格效果 # 标题
 description:   js实现在手机号输入框中输入时自动空格的效果 # 副标题
+date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

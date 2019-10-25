@@ -1,6 +1,9 @@
 ---
 title:         ES7 includes方法 # 标题
 description:   es7includes方法解析 # 副标题
+date:          2018-10-22 # 建立日期
+updated:       2018-10-22 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - ES7
 ---

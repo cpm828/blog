@@ -13,8 +13,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.pimichen.com
-root: /
+url: http://pimichen.com/blog
+root: /blog/
 # permalink: :year/:month/:day/:title/
 permalink: :title.html
 permalink_defaults:
@@ -75,8 +75,8 @@ deploy:
   repo:
 - type: git
   repo:
-    github: git@github.com:cpm828/cpm828.github.io.git
-    coding: git@git.coding.net:pimi/pimi.coding.me.git
+    github: git@github.com:cpm828/blog.git # cpm828.github.io/blog
+    coding: git@git.coding.net:pimi/pimi.coding.me.git # pimi.coding.me
   branch: master
 
 

@@ -1,7 +1,8 @@
 ---
 title:         Hello Hexo # 大标题
 description:   Thanks to the author of Hexo and hexo-theme-next! # 小标题
-date:          2017-04-01 # 日期
+date:          2017-04-01 # 建立日期
+updated:       2017-04-01 # 更新日期
 comments:      true  # 开启评论功能
 tags:
     - Other

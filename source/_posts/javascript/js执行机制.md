@@ -1,6 +1,8 @@
 ---
 title:         js执行机制 # 标题
 description:   这一次，彻底弄懂 JavaScript 执行机制 # 副标题
+date:          2018-11-10 # 建立日期
+updated:       2018-11-10 # 更新日期
 tags: # 标签分类
     - JavaScript
 ---

@@ -1,6 +1,9 @@
 ---
 title:         vue中使用mint-ui移动端组件库 # 标题
 description:   在vue-cli中使用ElemeFE提供的mint-ui移动端组件库 # 副标题
+date:          2018-01-03 # 建立日期
+updated:       2018-01-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Vue
 ---
@@ -112,10 +115,10 @@ MessageBox.prompt('确定执行此操作', '提示').then(({value, action}) => {
 <button @click="showActionSheet">点击上拉 action sheet</button>
 
 <mt-actionsheet
-      :actions="actions"
-      :cancelText="cancelText"
-      :closeOnClickModal="true"
-      v-model="sheetVisible"></mt-actionsheet>
+  :actions="actions"
+  :cancelText="cancelText"
+  :closeOnClickModal="true"
+  v-model="sheetVisible"></mt-actionsheet>
 
 
 // js:

@@ -2,6 +2,7 @@
 title:         jquery-qrcode生成二维码 # 标题
 description:   jquery-qrcode生成二维码（img、canvas等） # 副标题
 date:          2017-04-04 # 建立日期
+updated:       2017-04-04 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - jQuery

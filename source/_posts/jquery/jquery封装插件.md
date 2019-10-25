@@ -1,6 +1,9 @@
 ---
 title:         jquery封装插件 # 标题
 description:   jQuery封装通用的插件 # 副标题
+date:          2017-11-13 # 建立日期
+updated:       2017-11-13 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
     - jQuery

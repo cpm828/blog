@@ -1,6 +1,9 @@
 ---
 title:         Windows Sublime编辑器常用快捷键 # 大标题
 description:   windows sublime及其他常用编辑器的快捷键 # 小标题
+date:          2018-07-12 # 建立日期
+updated:       2018-07-12 # 更新日期
+comments:      true  # 开启评论功能
 tags:
     - Tools
 ---

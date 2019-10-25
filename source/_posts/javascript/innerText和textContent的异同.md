@@ -2,6 +2,7 @@
 title:         innerText和textContent的异同 # 标题
 description:   innerText和textContent的异同 # 副标题
 date:          2017-04-01 # 建立日期
+updated:       2017-04-01 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

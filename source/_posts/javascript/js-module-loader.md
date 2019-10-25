@@ -2,6 +2,7 @@
 title:         CommonJS，RequireJS，SeaJS 归纳笔记 # 标题
 description:   CommonJS，RequireJS，SeaJS # 副标题
 date:          2017-03-28 # 建立日期
+updated:       2017-03-28 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

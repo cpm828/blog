@@ -1,6 +1,9 @@
 ---
 title:         js判断css属性兼容性 # 标题
 description:   js判断css属性兼容性，是否可以是否，向下兼容 # 副标题
+date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - CSS
     - JavaScript

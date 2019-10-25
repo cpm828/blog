@@ -1,6 +1,9 @@
 ---
 title:         let 和 const # 标题
 description:   ES6中的let和const用法 # 副标题
+date:          2018-10-20 # 建立日期
+updated:       2018-10-20 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - ES6
 ---

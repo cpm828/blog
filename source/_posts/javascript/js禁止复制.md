@@ -2,6 +2,7 @@
 title:         js禁止复制 # 标题
 description:   js禁止复制 # 副标题
 date:          2017-04-05 # 建立日期
+updated:       2017-04-05 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

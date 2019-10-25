@@ -1,6 +1,8 @@
 ---
 title:         markdown文件夹说明 # 标题
 description:   markdown文件中对文件夹进行说明的tree结构 # 副标题
+date:          2018-06-12 # 建立日期
+updated:       2018-06-12 # 更新日期
 comments:      false  # 开启评论功能
 tags: # 标签分类
     - Other

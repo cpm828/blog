@@ -1,6 +1,9 @@
 ---
 title:         Promise对象 # 标题
 description:   ES6中的promise对象及用法 # 副标题
+date:          2018-10-21 # 建立日期
+updated:       2018-10-21 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - ES6
 ---

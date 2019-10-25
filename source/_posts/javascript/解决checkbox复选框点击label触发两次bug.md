@@ -1,6 +1,9 @@
 ---
 title:         解决checkbox复选框点击label会触发两次的bug # 标题
 description:   解决checkbox复选框点击label会触发两次的bug # 副标题
+date:          2017-08-03 # 建立日期
+updated:       2017-08-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
     - Vue

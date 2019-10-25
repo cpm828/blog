@@ -1,6 +1,9 @@
 ---
 title:         canvas将图片和文本合成图片 # 标题
 description:   canvas将图片和文本（超出指定宽度隐藏，且居中显示）合成新的图片 # 副标题
+date:          2018-12-21 # 建立日期
+updated:       2017-12-21 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

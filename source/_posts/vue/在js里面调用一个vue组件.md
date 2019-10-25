@@ -1,6 +1,9 @@
 ---
 title:         在js文件中调用一个vue组件 # 标题
 description:   在js文件中调用一个vue组件，如在全局的请求拦截器中处理请求失败调用共用弹窗组件 # 副标题
+date:          2018-05-03 # 建立日期
+updated:       2018-05-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Vue
 ---

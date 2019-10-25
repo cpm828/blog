@@ -2,6 +2,7 @@
 title:         export和module.export语法 # 标题
 description:   export和module.export的用法 # 副标题
 date:          2017-03-31 # 建立日期
+updated:       2017-03-31 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

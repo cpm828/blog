@@ -1,6 +1,9 @@
 ---
 title:         knockout使用script内嵌模板 # 标题
 description:   knockout使用script内嵌模板 # 副标题
+date:          2017-11-02 # 建立日期
+updated:       2017-11-02 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - KnockOut
 ---

@@ -1,6 +1,9 @@
 ---
 title:         windows系统端口占用解决办法 # 大标题
 description:   解决windows系统端口占用的命令 # 小标题
+date:          2018-02-01 # 建立日期
+updated:       2018-02-01 # 更新日期
+comments:      true  # 开启评论功能
 tags:
     - Tools
 ---

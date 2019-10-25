@@ -2,6 +2,7 @@
 title:         原生js遍历查找点击的字节点的索引 # 标题
 description:   原生js遍历查找点击的字节点的索引 # 副标题
 date:          2017-04-06 # 建立日期
+updated:       2017-04-06 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

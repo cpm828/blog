@@ -1,6 +1,9 @@
 ---
 title:         knockout模板绑定和控制语法 # 标题
 description:   knockout模板绑定和控制语法:if/ifnot/with/foreach等 # 副标题
+date:          2017-09-10 # 建立日期
+updated:       2017-09-10 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - KnockOut
 ---

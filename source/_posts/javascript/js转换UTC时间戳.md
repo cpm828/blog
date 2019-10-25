@@ -1,6 +1,8 @@
 ---
 title:         js转换UTC时间戳 # 标题
 description:   js将UTC时间转化成普通时间：年月日时分秒 # 副标题
+date:          2018-12-19 # 建立日期
+updated:       2018-12-19 # 更新日期
 tags: # 标签分类
     - JavaScript
 ---
@@ -11,7 +13,7 @@ tags: # 标签分类
 我们可以引入一个moment.js插件来快速处理时间格式，但是有时候我们不太方便去引入一个脚本，我们可以使用js来解析它：
 
 转换成年月日
-```
+```js
 // UTC时间戳转换成年月日(2017-08-01)
 function resolveUTCDate (utcData) {
   var myDate = new Date(utcData);

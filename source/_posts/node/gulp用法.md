@@ -1,8 +1,9 @@
 ---
-title:        Gulp用法 # 标题
-description:  gulp构建的模板  # 副标题
-date:         2017-03-30 # 建立日期
-comments:     true  # 开启评论功能
+title:         Gulp用法 # 标题
+description:   gulp构建的模板  # 副标题
+date:          2017-05-02 # 建立日期
+updated:       2017-05-02 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Node
 ---

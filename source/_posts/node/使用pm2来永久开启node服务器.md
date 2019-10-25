@@ -1,6 +1,9 @@
 ---
-title:        使用pm2永久开启node服务器 # 标题
-description:  pm永久开启node服务器，无需开启终端  # 副标题
+title:         使用pm2永久开启node服务器 # 标题
+description:   pm永久开启node服务器，无需开启终端  # 副标题
+date:          2018-07-21 # 建立日期
+updated:       2018-07-21 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Node
 ---

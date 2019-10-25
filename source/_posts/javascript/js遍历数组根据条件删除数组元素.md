@@ -1,6 +1,9 @@
 ---
 title:         js遍历数据根据条件删除数组元素 # 标题
 description:   js遍历数据根据条件删除数组元素 # 副标题
+date:          2017-04-03 # 建立日期
+updated:       2017-04-03 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

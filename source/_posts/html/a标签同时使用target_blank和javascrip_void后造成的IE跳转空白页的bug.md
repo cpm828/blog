@@ -1,6 +1,9 @@
 ---
 title:        a标签同时使用target_blank和javascrip_void后造成的IE跳转空包页的bug # 标题
 description:  a标签同时使用target="_blank"和javascrip:void(0);后造成的IE跳转空白页的bug  # 副标题
+date:         2018-01-03 # 建立日期
+updated:      2018-01-03 # 更新日期
+comments:     true  # 开启评论功能
 tags: # 标签分类
     - HTML
 ---

@@ -1,6 +1,9 @@
 ---
 title:         Linux安装node环境 # 标题
 description:   linux配置node环境、npm等 # 副标题
+date:          2017-12-21 # 建立日期
+updated:       2017-12-21 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Linux
 ---

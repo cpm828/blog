@@ -1,6 +1,9 @@
 ---
 title:         js检测浏览器是否出于放缩状态 # 标题
 description:   js检测浏览器是否出于放缩状态 # 副标题
+date:          2017-12-10 # 建立日期
+updated:       2017-12-10 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

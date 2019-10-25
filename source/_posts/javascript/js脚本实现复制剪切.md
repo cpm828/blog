@@ -1,6 +1,8 @@
 ---
 title:        js脚本实现复制剪切效果 # 标题
 description:  js脚本实现复制剪切效果 # 副标题
+date:          2017-06-23 # 建立日期
+updated:       2017-06-32 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

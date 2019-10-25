@@ -1,6 +1,9 @@
 ---
 title:         js原型链 # 标题
 description:   js原型链、构造函数、原型对象、实例 # 副标题
+date:          2018-12-19 # 建立日期
+updated:       2018-12-19 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

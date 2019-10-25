@@ -1,6 +1,9 @@
 ---
 title:         ubuntu系统配置nginx服务器 # 标题
 description:   ubuntu系统配置nginx服务器 # 副标题
+date:          2017-04-01 # 建立日期
+updated:       2017-04-01 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - Linux
 ---

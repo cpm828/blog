@@ -1,6 +1,9 @@
 ---
 title:         webview页面js与客户端进行交互 # 标题
 description:   webview页面中使用js和客户端进行交互 # 副标题
+date:          2017-05-28 # 建立日期
+updated:       2017-05-28 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript
 ---

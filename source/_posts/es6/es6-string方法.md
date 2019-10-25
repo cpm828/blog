@@ -1,6 +1,9 @@
 ---
 title:         ES6 string方法 # 标题
 description:   es6中一些较常使用的字符串方法 # 副标题
+date:          2018-10-20 # 建立日期
+updated:       2018-10-20 # 更新日期
+comments:      true  # 开启评论功能
 tags: # 标签分类
     - ES6
 ---
