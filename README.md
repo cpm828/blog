@@ -8,4 +8,4 @@
 
 * Access Link: 
   - Website: https://pimichen.com/blog
-  - Github: https://cpm828.github.io
+  - Github: https://cpm828.github.io/blog
