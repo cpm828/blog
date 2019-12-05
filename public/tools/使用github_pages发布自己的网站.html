@@ -554,10 +554,10 @@ window.onload = function(){
 <li><p>npm安装gh-pages</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gh-pages -D</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>配置快速启动脚本，并修改config/index.js<br>package.json:</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"script"</span>: &#123;</span><br><span class="line">    <span class="string">"deploy"</span>: <span class="string">"gh-pages -d examples/dist"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> config/index.js:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">assetsPublicPath: &apos;&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>配置快速启动脚本，配置homepages<br> package.json:</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"homepage"</span>: <span class="string">"https://cpm828.github.io/cpm-ui"</span>, <span class="comment">// 首页地址</span></span><br><span class="line"><span class="string">"script"</span>: &#123;</span><br><span class="line">    <span class="string">"deploy"</span>: <span class="string">"gh-pages -d examples/dist"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 如果是vue-cli项目，需要修改config/index.js:</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">    assetsPublicPath: <span class="string">''</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>执行编译，即可成功创建 <code>gh-pages</code></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
@@ -704,7 +704,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">166</span>
+                <span class="site-state-item-count">169</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -801,7 +801,7 @@ window.onload = function(){
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://github.com/cpm828/cpm828.github.io" title="pimi blog" target="_blank">pimi blog</a>
+                  <a href="https://github.com/cpm828/blog" title="pimi blog" target="_blank">pimi blog</a>
                 </li>
               
             </ul>

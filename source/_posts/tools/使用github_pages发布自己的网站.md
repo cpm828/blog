@@ -54,18 +54,19 @@ Github 里面的工程可以设置一个 `gh-pages` 分支用于存放需要使�
     npm install gh-pages -D
     ```
 
-3. 配置快速启动脚本，并修改config/index.js
-package.json:
+3. 配置快速启动脚本，配置homepages
+    package.json:
     ```js
+    "homepage": "https://cpm828.github.io/cpm-ui", // 首页地址
     "script": {
         "deploy": "gh-pages -d examples/dist"
     }
     ```
 
-    config/index.js:
-    ```
+    如果是vue-cli项目，需要修改config/index.js:
+    ```js
     build: {
-    assetsPublicPath: ''
+        assetsPublicPath: ''
     }
     ```
 
