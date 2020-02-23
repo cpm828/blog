@@ -1,0 +1,1035 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="QpR2UtOlwMERxir6cPqI74sPMIvl4B0KbVZgg14OELA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Pimi's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="移动端开发时横屏提示">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端横屏提示">
+<meta property="og:url" content="http://pimichen.com/blog/javascript/移动横屏提示.html">
+<meta property="og:site_name" content="Pimi&#39;s Blog">
+<meta property="og:description" content="移动端开发时横屏提示">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://pimichen.com/blog/images/javascript/landscape.jpg">
+<meta property="og:updated_time" content="2017-04-02T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端横屏提示">
+<meta name="twitter:description" content="移动端开发时横屏提示">
+<meta name="twitter:image" content="http://pimichen.com/blog/images/javascript/landscape.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '7U5GLOOLPQ',
+      apiKey: '217b43ed2d3cb495895c71b272d78d13',
+      indexName: 'pimi_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"没有查到与「${query}」相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pimichen.com/blog/javascript/移动横屏提示.html"/>
+
+
+
+
+
+
+
+<style>
+.input-label{
+  vertical-align:middle;
+  font-size:18px;
+  height: 30px;
+  line-height: 1em;
+}
+.input-secret{
+  width:120px;
+  height: 30px;
+  line-height: 30px;
+  font-size:18px;
+  border: 1px solid #ccc;
+  vertical-align:middle;
+  outline:none;
+  padding:0 5px;
+  box-sizing:border-box;
+  border-radius:5px;
+  -webkit-appearance: none;
+}
+.submit-btn{
+  display:inline-block;
+  height: 30px;
+  line-height:1em;
+  font-size:18px;
+  text-align:center;
+  margin-left:10px;
+  border: 1px solid #ccc;
+  background-color:transparent;
+  vertical-align:middle;
+  border-radius:5px;
+}
+.hidden-box{
+  display:none;
+}
+</style>
+<script>
+window.onload = function(){
+  var secretBox = document.getElementById('secret-box');
+  if (secretBox === null) return;
+  var contentNode = document.getElementsByClassName('post-body')[0];
+  var blogNodes = contentNode.children;
+  var asideNavTitle = document.getElementsByClassName('sidebar-nav-toc')[0];
+  var asideNavContent = document.getElementsByClassName('post-toc-content')[0];
+  asideNavTitle.style.display = 'none';
+  asideNavContent.style.display = 'none';
+  for(var i = 0; i < blogNodes.length; i++) {
+    if (blogNodes[i].getAttribute('id') !== 'secret-box') {
+      blogNodes[i].style.display = 'none';
+    }
+  }
+
+  var inputSecret = document.getElementById('input-secret');
+  var submitBtn = document.getElementById('submit-btn');
+  var blogSecret = 7728828;
+
+  submitBtn.onclick = activeEvent;
+  inputSecret.onkeydown = function (event) {
+    event = event || window.event;
+    if (event.keyCode == 13) {
+      activeEvent();
+    }
+  }
+  function activeEvent () {
+    if (inputSecret.value.replace(/\s+/g, '') == blogSecret) {
+      for(var i = 0; i < blogNodes.length; i++) {
+        blogNodes[i].style.display = 'block';
+      }
+      asideNavTitle.style.display = 'inline-block';
+      asideNavContent.style.display = 'block';
+      secretBox.style.display = 'none';
+    } else{
+      alert('密码错误，请重试！');
+    }
+  }
+}
+</script>
+
+
+  <title> 移动端横屏提示 | Pimi's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100562378-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6818b43932ba418bf608f04dbecd5258";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pimi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A lazy youth, a lousy age.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/blog/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pimichen.com/blog/blog/javascript/移动横屏提示.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pimi Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/mine/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pimi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                移动端横屏提示
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T00:00:00+08:00">
+                2017-04-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-04-03T00:00:00+08:00">
+                2017-04-03
+              </time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span>阅读次数</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" >1</span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  移动端开发时横屏提示
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>做移动端开发的时候需要对横屏做处理，否则用户体验很不好</p>
+<p>css和js均有检测横屏的机制，但是想要把一个竖屏的网页在横屏上显示出来，各种方法都不太合适</p>
+<p>除非制作的是横屏的游戏，否则一律在用户横屏的时候提示用户需竖屏访问</p>
+<p>所以增加一段js代码，提示横屏</p>
+<p>效果如下：<br><img src="../images/javascript/landscape.jpg" width="400px"></p>
+<p>代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> landscapeTip;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">createLandscapeTip</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!landscapeTip) &#123;</span><br><span class="line">      landscapeTip = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">      landscapeTip.style.background = <span class="string">'black'</span>;</span><br><span class="line">      landscapeTip.style.position = <span class="string">'fixed'</span>;</span><br><span class="line">      landscapeTip.style.width = <span class="string">'100%'</span>;</span><br><span class="line">      landscapeTip.style.height = <span class="string">'100%'</span>;</span><br><span class="line">      landscapeTip.style.left = <span class="number">0</span>;</span><br><span class="line">      landscapeTip.style.top = <span class="number">0</span>;</span><br><span class="line">      landscapeTip.style.textAlign = <span class="string">'center'</span>;</span><br><span class="line">      landscapeTip.style.zIndex = <span class="number">99999999999</span>;</span><br><span class="line">      landscapeTip.style.overflow = <span class="string">'hidden'</span>;</span><br><span class="line">      landscapeTip.innerHTML = <span class="string">'&lt;div  style="position: absolute; top: 50%;   left: 50%; -webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)"&gt;&lt;img style="height:150px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAADSBAMAAADJZwRlAAAAD1BMVEUAAAD7+/v+/v7////9/f2XbP5GAAAABXRSTlMA/mwzs0Mc0mcAAAlcSURBVHja7V1RdpswEFQlDlAwB5BMDiBsDmBC73+mNsVkjcdiLOtJ5r129dGXEprpanZYjUSsXg5jV6PDoW5H6TDTj0O1jEaG/hqtDLOMSZUN3bIMqtWoGlU0tPeRd/iTKhnuEn3L6FXB0PE/rWAGjTevZOOsCsVHXdcv1KSpC82xq/9E6x9Po9de23nAxaMqErr+G83ja5f+Z3/oD18aqd4Urg4j1K3XNpjBU5EpNuMVYDwNnVUFoqq/404Kh6+vTzL8ezLY1xJ2feXylV9/HVbyVTZGwQelvIcMzjUsCHfHwaFeBWtRymfQ1es4qH3FIjIS0766haqGsLvioKsxpu+2+XgzTqsx87cAB8caoz3Pi456Hn4eixzOoyf9bSaRWf7kGeztF4FVzkCROdoFb7MbDro7CawiSjkzB1FkDrcppRTTJMsZKHicJKdcbExmgNjJtLq5nfXW74GD44qCXqb9OYQfCDDfDAvrzIL4/VO8EhmvpzvczduLZC0yVXMPfCrJQS4yxkPx2PcC1OEehouN+VTZo1/3+qbD5La+EAd5J+NnDgLCsD2YfYr1XZtq7KOrTRkOcpFB/NuLlNwWNXYyqwxysdGByc8lMsMdB3kpdznbLRQZZ6WKEWFxDqLIQPfOxMZ0GVp+TM80SKkaG0b4Bg7qOTX6WgfAQRCbAhzEGm2uCPwXncy0sbA/FOEgzvAMoEE6cbHJwEFkl1XuJj1+Uy5tWQ7qK/evONXJw+N/G6Hp8tpv/Q0F2/m5r5GDIDZZOYhpsUupYDK42PisGTTXlDjS2YPYFOLgUrxzbrza5OBjR8RMWTPo5oWmvuZl5uCBt2aXrBxEkekXkWHJkFLOz0EUmaju0edfk6DIzF4kTPGm2JhPZqKnU1BEhnIQHRHkYD6RQS+Siw3elEtkkIJcbHJzcMncUiqUgyI2UsoGWqBsIrPQSXLCxSYvB5cmdcYZRScpZXZT+nLJishAcLFJNjD5RLXjuiSh3dou5YwcNLi3iRzkpQwczLPBaQUgtPykbyAmeupz7oO4a8+Ucp64Fq+B1SRwkPcNCcFobhcxlCmumthSTuKg+dwUmcsiMgLQ+Ogys0lMu0SJjESM2CQxrXlWZGSlG983JDHNPiEyhINcbFKeFg21BVe9p7EFxcYEb4Yt7FQH2Sf0A03M7lJkBnXLt215W2QDFIR/GgxMHj6+lBFGQ/Ye1hzssosNwrABkYEKNNEc7MDc5IEwPonIpHBwoXpIbE4fv/7E0W9LiSciE8VBNNGDYmM+JEl+S0oOW6co7jj4yingcCmfTwvG1m7NoycUjOAgmujgiATSaDeO3E1MZCR8HAd5KctVi2kSHFxkxMAkASY63bbVwncsBJzJUGrFRI/kIN+2rfCiu83fr1+WPOdePdC7ZJD1DQ5q4XQ8Hh3OIooMD85BglC6igNrFlBk0jgoJvpmKQsFPMw8gECRSecgQygXJwIQRSaBg2Cig9hgChsOsIcZTgjdkEUK1KbF72/DAn5RyMEnG2w00ZnYOCwT/QjgGBAZYqITDmIp8znmANuUA714EzlbqrGOzaPvHQkFEzhISnmE3JpH2uMCFEQTnQea6HyhcUCAlvex3MDkHJSZFIRMVMYHifoBFEzmYIDkE5IQGysEqONeaok/6D2CSIQZ5x4BGZGCYGAmcNBAIw9VQrqFXgDm4GAFrspGvoZQt4CZ5SY6P4mOjWi4jFGpkYVtFg6O0A9DvojOgK2XwEHdbJ+J/am2ewMjtCS2nhiYiRwc4P08mNAQLfkTk5voHKBbAWzY0xjLmDe/CbsI8AphS4RQxDuAELGbLomDVb0FMNguWGLrvc5BD/0gAESlJiSE5peb6JyDAgE4iAARRpuwh0CXnTgvxFa7KDLHIDYpBiZQEBwX0rw4TDWWcoKJLo86+WkSngOsBANBSE10zkEzQo0QgLCiD5RyioluCAUJQDFFKMJ0Drrtt6i9W8y2XxOksCEHpFNM9OB7yuHyaRDDtP22gU0w0XGGEUW1Ud5OEBKxec1Eh+kAFJhdD3UCCLGUE0x0IjKQwkMAg91E+KKJPngmMnjVhpqg9vN49sFSTjEwucgMm87z6Rtit/E2hn7ZRJd6k7hgluQKxvn4JzpPxCaFgyNQMJRCn3DQ6WUTHUUGvhnm/hWEr3CQiQxqLgkqNvEmOn/OSQqbpPOEbbSByUQGm4W8B53QRPdEZPDcLETWg07OgsiEm3hEnv+g0+CJyNCzWvGlHMdBLjISTi6kIPQxHDSSfqQgpvCSCDBebJzlIiNxTDJbhvMLpTx4IjIksoqNaUgnkxzcEeEmOulk0gJN9Ogf4exCwXaM71fi/XCPYsNvMtekyz5YzoC+gXNwWEC53BRUesK3OLlQu4UTOtsBejEweSmjsT1+026E5KcHmugaSplUluTbZacg9g3cRO8F1CC35QnTQXfOOehWAInIJHMQ+gZqopt6BTDPDIuJHrtIcbaSmpeWNHuYZ0rZTPe/RngkvEjHZWP6Bt3e7c+YMZfIiIGJixRiop9u/iMVpWA6B2PFxo1S8WbMKzKGL1JQlKRXPZ5GXvjpHCR9A3DQkOVSJg4ysRH7rS/UTIOJ/mwpj2S5lJODHGGHyyWv8obfXKQgB3VBCqoBTHTyNobpgIKTyhhoonOxceUoiKeAudh0BUUGOcjFRjdVQZGBjRxeyqajtmBODnKEZUUGOcjF5pSVgunmpq4LigxykCM0dTEK4kl0LjYIsFV5Y/CRez3Vrn5d/oNSLioy/CS6hjwVFBk8BczFpmwngxzkpTyAyLw9xBEp0MlgGFk10VIuJDLoh1eN6lbj7jMDvhGe/FBCZNAPt6aV8f25C+Myjgua0eJyqUyscgcZ/K6MdqxBZPYRMrPFOxlno0q5tMggQNI3EAqWDeNBbEqKDF9J9asJ1IUpiFOMBgJppYktmAEgbIf0l3Up705k+sv6y90sl9Q8vRCulMjwdqufAn1DcZFxdiuDJw8IS4uM2ZZnew98N8ulkO9QcZEpwsFqCt7ARaYEB6tD+I6yImMCf+1FBwHhHhoFpc5BgGYsqdLDJVjA2m5s236qnIGKjPHh5RKAP7/9KfwVZhco7nRmJx+2lvoR1UUL2JjYH9cZVTSqRtvlw5SN1ewD04+6dBtobP+zv1zHz+VD5+WD5/V61L5TpUP7dQb1ZgbV//gf/+Nfjd9F2SbMsc4MggAAAABJRU5ErkJggg=="/&gt;&lt;br&gt;&lt;div style="height: 1.6rem; color: white; font-size: 18px; text-align: center;"&gt;竖屏浏览,体验更佳&lt;/div&gt;&lt;/div&gt;'</span>;</span><br><span class="line">      <span class="built_in">document</span>.body.appendChild(landscapeTip);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">showLandscapeTip</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (landscapeTip) &#123;</span><br><span class="line">      landscapeTip.style.display = <span class="string">'block'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">hideLandscpeTip</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (landscapeTip) &#123;</span><br><span class="line">      landscapeTip.style.display = <span class="string">'none'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">updateOrientation</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> orientation = <span class="built_in">window</span>.orientation;</span><br><span class="line">    <span class="keyword">switch</span> (orientation) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">90</span>:</span><br><span class="line">      <span class="keyword">case</span> <span class="number">-90</span>:</span><br><span class="line">        orientation = <span class="string">'landscape'</span>;</span><br><span class="line">        showLandscapeTip();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        orientation = <span class="string">'portrait'</span>;</span><br><span class="line">        hideLandscpeTip();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">initOrientationChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    createLandscapeTip();</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'orientationchange'</span>, updateOrientation, <span class="literal">false</span>);</span><br><span class="line">    landscapeTip.addEventListener(<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      e.preventDefault();</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line">    updateOrientation();</span><br><span class="line">    <span class="comment">// showLandscapeTip(); // debug</span></span><br><span class="line">  &#125;</span><br><span class="line">  initOrientationChange();</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Pimi Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://pimichen.com/blog/javascript/移动横屏提示.html" title="移动端横屏提示">http://pimichen.com/blog/javascript/移动横屏提示.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/javascript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/javascript/移动端fixed浮层下面的页面仍能滚动.html" rel="next" title="移动端fixed浮层下面的页面仍能滚动">
+                <i class="fa fa-chevron-left"></i> 移动端fixed浮层下面的页面仍能滚动
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/javascript/浮点数运算导致精度丢失.html" rel="prev" title="浮点数运算导致精度丢失">
+                浮点数运算导致精度丢失 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTM2OC81OTM2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/mine/avatar.jpg"
+               alt="Pimi Chen" />
+          <p class="site-author-name" itemprop="name">Pimi Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description">天道酬勤，上善若水</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">169</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cpm828" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/pimi" target="_blank" title="Segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/pimi0828" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Pimi.Chen" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/cpm-ui" title="cpm-ui" target="_blank">cpm-ui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/blog" title="pimi blog" target="_blank">pimi blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pimi Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span>网站UV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span>网站PV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+<div class="theme-copyright-info">
+  <a href="http://www.miitbeian.gov.cn">京ICP备19005272号</a>
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top" style="display:none;">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent" class="fa-percent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/heart/heart.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/blog/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/blog/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/blog/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

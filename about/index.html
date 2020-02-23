@@ -1,0 +1,855 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="QpR2UtOlwMERxir6cPqI74sPMIvl4B0KbVZgg14OELA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Pimi,pimi blog,Pimi's Blog,博客,Pimi的博客,html,css,js,javascript,vue,git,linux,前端,前端开发" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Pimi's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Hey, this is About.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About">
+<meta property="og:url" content="http://pimichen.com/blog/about/index.html">
+<meta property="og:site_name" content="Pimi&#39;s Blog">
+<meta property="og:description" content="Hey, this is About.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-14T16:03:47.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About">
+<meta name="twitter:description" content="Hey, this is About.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '7U5GLOOLPQ',
+      apiKey: '217b43ed2d3cb495895c71b272d78d13',
+      indexName: 'pimi_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"没有查到与「${query}」相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pimichen.com/blog/about/"/>
+
+
+
+
+
+
+
+<style>
+.input-label{
+  vertical-align:middle;
+  font-size:18px;
+  height: 30px;
+  line-height: 1em;
+}
+.input-secret{
+  width:120px;
+  height: 30px;
+  line-height: 30px;
+  font-size:18px;
+  border: 1px solid #ccc;
+  vertical-align:middle;
+  outline:none;
+  padding:0 5px;
+  box-sizing:border-box;
+  border-radius:5px;
+  -webkit-appearance: none;
+}
+.submit-btn{
+  display:inline-block;
+  height: 30px;
+  line-height:1em;
+  font-size:18px;
+  text-align:center;
+  margin-left:10px;
+  border: 1px solid #ccc;
+  background-color:transparent;
+  vertical-align:middle;
+  border-radius:5px;
+}
+.hidden-box{
+  display:none;
+}
+</style>
+<script>
+window.onload = function(){
+  var secretBox = document.getElementById('secret-box');
+  if (secretBox === null) return;
+  var contentNode = document.getElementsByClassName('post-body')[0];
+  var blogNodes = contentNode.children;
+  var asideNavTitle = document.getElementsByClassName('sidebar-nav-toc')[0];
+  var asideNavContent = document.getElementsByClassName('post-toc-content')[0];
+  asideNavTitle.style.display = 'none';
+  asideNavContent.style.display = 'none';
+  for(var i = 0; i < blogNodes.length; i++) {
+    if (blogNodes[i].getAttribute('id') !== 'secret-box') {
+      blogNodes[i].style.display = 'none';
+    }
+  }
+
+  var inputSecret = document.getElementById('input-secret');
+  var submitBtn = document.getElementById('submit-btn');
+  var blogSecret = 7728828;
+
+  submitBtn.onclick = activeEvent;
+  inputSecret.onkeydown = function (event) {
+    event = event || window.event;
+    if (event.keyCode == 13) {
+      activeEvent();
+    }
+  }
+  function activeEvent () {
+    if (inputSecret.value.replace(/\s+/g, '') == blogSecret) {
+      for(var i = 0; i < blogNodes.length; i++) {
+        blogNodes[i].style.display = 'block';
+      }
+      asideNavTitle.style.display = 'inline-block';
+      asideNavContent.style.display = 'block';
+      secretBox.style.display = 'none';
+    } else{
+      alert('密码错误，请重试！');
+    }
+  }
+}
+</script>
+
+
+  <title>
+  
+
+  
+    About | Pimi's Blog
+  
+</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100562378-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6818b43932ba418bf608f04dbecd5258";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pimi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A lazy youth, a lousy age.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/blog/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+  <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">About</h1>
+
+
+	<div class="post-meta">
+		<div class="post-description">Hey, this is About.</div>
+	</div>
+
+
+</header>
+
+    
+    
+      <blockquote>
+<p>为什么我要写博客？</p>
+</blockquote>
+<p>作为一名IT工作者，一直以来都有记笔记的习惯，因为拥有再强大的脑细胞你也不能全记住这些知识。2015年开始接触前端，我的IT类笔记也从那时候开始记起，那是还没有萌生写专业博客的习惯，写博客，大抵也就是在茶余饭后在新浪等网站上写点玩玩了，好不专业～～。</p>
+<p>进入第一家公司工作，公司使用<a href="http://www.wiz.cn/" target="_blank" rel="noopener">为知笔记</a>来分享知识，同步内容，测试记录bug，记录笔记等等，那时的为知笔记还是免费的，but那时候谁也不知道它后面会收费。良心说，在笔记类的软件中，为知还算是做的不错了。有Mac客户端、Win PC客户端、有网页版，最最厉害的是还有Linux版客户端，牛叉！</p>
+<p>2016年底，为知突然发布消息说从2017年开始收费，在上面记录了两年笔记的我此时似乎已经离不开了，好吧，为知，你赢了！三下五除二，就去买了一年的VIP，觉得这点钱小case啦，一直以来都有为优秀软件舍得花钱的决心。只要你做的好，说买咱就买，who care～</p>
+<p>慢慢地，发现越来越多的同事或朋友开始写博客，招聘网站上也都有博客加分这一说，想想也是的，在这个开源的时代，大家的知识都应该拿出来一起分享，不论大牛或小菜，每个人索取和贡献的都不同，有人看你的博客，哪怕只是贡献了一丁点的知识或是收获了一丁点的知识，那就说明还是有用的。</p>
+<p>经同事介绍了一款快速搭建博客的工具<a href="https://hexo.io/zh-cn" target="_blank" rel="noopener">Hexo</a>，某天有空的时候小试了一把，搭建起了一个简易的博客，然后就去<a href="https://cn.aliyun.com/" target="_blank" rel="noopener">阿里云</a>注册了一个域名，就这样开始了我的博客笔记之旅。</p>
+<p>博客搭建好之后，我也会花时间把以前在为知上写的笔记慢慢的迁移过来，然后，然后就可以把为知笔记给抛弃，^<em>^ ^</em>^，作为一名前端工程师，整天围绕着HTML、CSS、JavaScript这些知识转，记的笔记可能很小，但是没关系，只要自己能进步，一滴一滴都是值得的。</p>
+<p>A lazy youth, a lousy age.<br>少壮不努力，老大徒伤悲。</p>
+<p>希望自己能够慢慢的进步，早日成为一名技术达人。</p>
+<p>Contact Mail: <a href="mailto:pimi0828@gmail.com" target="_blank" rel="noopener">pimi0828@gmail.com</a> / <a href="mailto:1019242875@qq.com" target="_blank" rel="noopener">1019242875@qq.com</a></p>
+
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/mine/avatar.jpg"
+               alt="Pimi Chen" />
+          <p class="site-author-name" itemprop="name">Pimi Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description">天道酬勤，上善若水</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">169</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cpm828" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/pimi" target="_blank" title="Segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/pimi0828" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Pimi.Chen" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/cpm-ui" title="cpm-ui" target="_blank">cpm-ui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/blog" title="pimi blog" target="_blank">pimi blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pimi Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span>网站UV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span>网站PV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+<div class="theme-copyright-info">
+  <a href="http://www.miitbeian.gov.cn">京ICP备19005272号</a>
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top" style="display:none;">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent" class="fa-percent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/heart/heart.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/blog/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/blog/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/blog/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

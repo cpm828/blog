@@ -1,0 +1,1027 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="QpR2UtOlwMERxir6cPqI74sPMIvl4B0KbVZgg14OELA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Pimi's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="linux的常用的一些命令">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="http://pimichen.com/blog/linux/linux常用命令.html">
+<meta property="og:site_name" content="Pimi&#39;s Blog">
+<meta property="og:description" content="linux的常用的一些命令">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-03-31T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux常用命令">
+<meta name="twitter:description" content="linux的常用的一些命令">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '7U5GLOOLPQ',
+      apiKey: '217b43ed2d3cb495895c71b272d78d13',
+      indexName: 'pimi_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"没有查到与「${query}」相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pimichen.com/blog/linux/linux常用命令.html"/>
+
+
+
+
+
+
+
+<style>
+.input-label{
+  vertical-align:middle;
+  font-size:18px;
+  height: 30px;
+  line-height: 1em;
+}
+.input-secret{
+  width:120px;
+  height: 30px;
+  line-height: 30px;
+  font-size:18px;
+  border: 1px solid #ccc;
+  vertical-align:middle;
+  outline:none;
+  padding:0 5px;
+  box-sizing:border-box;
+  border-radius:5px;
+  -webkit-appearance: none;
+}
+.submit-btn{
+  display:inline-block;
+  height: 30px;
+  line-height:1em;
+  font-size:18px;
+  text-align:center;
+  margin-left:10px;
+  border: 1px solid #ccc;
+  background-color:transparent;
+  vertical-align:middle;
+  border-radius:5px;
+}
+.hidden-box{
+  display:none;
+}
+</style>
+<script>
+window.onload = function(){
+  var secretBox = document.getElementById('secret-box');
+  if (secretBox === null) return;
+  var contentNode = document.getElementsByClassName('post-body')[0];
+  var blogNodes = contentNode.children;
+  var asideNavTitle = document.getElementsByClassName('sidebar-nav-toc')[0];
+  var asideNavContent = document.getElementsByClassName('post-toc-content')[0];
+  asideNavTitle.style.display = 'none';
+  asideNavContent.style.display = 'none';
+  for(var i = 0; i < blogNodes.length; i++) {
+    if (blogNodes[i].getAttribute('id') !== 'secret-box') {
+      blogNodes[i].style.display = 'none';
+    }
+  }
+
+  var inputSecret = document.getElementById('input-secret');
+  var submitBtn = document.getElementById('submit-btn');
+  var blogSecret = 7728828;
+
+  submitBtn.onclick = activeEvent;
+  inputSecret.onkeydown = function (event) {
+    event = event || window.event;
+    if (event.keyCode == 13) {
+      activeEvent();
+    }
+  }
+  function activeEvent () {
+    if (inputSecret.value.replace(/\s+/g, '') == blogSecret) {
+      for(var i = 0; i < blogNodes.length; i++) {
+        blogNodes[i].style.display = 'block';
+      }
+      asideNavTitle.style.display = 'inline-block';
+      asideNavContent.style.display = 'block';
+      secretBox.style.display = 'none';
+    } else{
+      alert('密码错误，请重试！');
+    }
+  }
+}
+</script>
+
+
+  <title> linux常用命令 | Pimi's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100562378-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6818b43932ba418bf608f04dbecd5258";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pimi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A lazy youth, a lousy age.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/blog/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pimichen.com/blog/blog/linux/linux常用命令.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pimi Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/mine/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pimi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                linux常用命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T00:00:00+08:00">
+                2017-04-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-04-01T00:00:00+08:00">
+                2017-04-01
+              </time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span>阅读次数</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" >1</span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  linux的常用的一些命令
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Linux常用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">根目录表示： pm@pm-pc:/$</span><br><span class="line">主文件目录表示： pm@pm-pc:~$</span><br><span class="line">超级用户主目录表示：root@pm-pc:~<span class="comment"># （输入sudo -i 可以切换到root权限，按ctrl+d 可退出root权限）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span>    改变目录</span><br><span class="line"><span class="comment"># cd home 或 cd /home    查找home目录并定位</span></span><br><span class="line"><span class="comment"># cd home/pm    查找home目录下的pm目录并定位</span></span><br><span class="line"><span class="comment"># cd ~    回到用户目录</span></span><br><span class="line"><span class="comment"># cd ..    返回上一级</span></span><br><span class="line"><span class="comment"># cd ../..    返回上两级</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ls    查看文件详情</span><br><span class="line"><span class="comment"># ls -a    列出文件下的所有文件</span></span><br><span class="line"><span class="comment"># ls -l    列出文件的详细信息</span></span><br><span class="line"><span class="comment"># ls -al    列出文件下的所有文件的详细信息</span></span><br><span class="line"><span class="comment"># ls -s    在每个文件的后面打印出文件大小</span></span><br><span class="line"><span class="comment"># ls -t    按时间进行排序</span></span><br><span class="line"><span class="comment"># ls -R    将目录下的所有子目录都列出来</span></span><br><span class="line"><span class="comment"># ls -S    以文件大小进行排序</span></span><br><span class="line"><span class="comment"># ls -L    列出文件的Link链接</span></span><br><span class="line"><span class="comment"># 注意大小写参数的区别</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cp    复制（将前面的文件复制到后面的文件中，若最后的文件不存在，则报错，加-R复制目录）</span><br><span class="line"><span class="comment"># cp file1 file2    将文件file1复制到文件file2</span></span><br><span class="line"><span class="comment"># cp file1 file2 file3    将文件file1和file2复制到文件file3</span></span><br><span class="line"><span class="comment"># cp -i file1 file2    采用交互方式将文件file1复制到文件file2</span></span><br><span class="line"><span class="comment"># cp -f file1 file2    因file2已存在所以强制将文件file1复制到文件file2</span></span><br><span class="line"><span class="comment"># cp -R dir1 dir2    将目录dir1复制到dir2中</span></span><br><span class="line"><span class="comment"># cp -R file1 file2 dir1 dir2     将fiel1、file2、目录dir1复制到dir2中</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mv    移动或重命名（将前面的文件移动到后面的文件中）</span><br><span class="line"><span class="comment"># mv test.log test1.txt     将文件test.log重命名为test1.txt（因为都是文件而不是文件夹，所以只能改名不能移动）</span></span><br><span class="line"><span class="comment"># mv test1.txt file1    将文件test1.txt移动到fiel1文件夹中</span></span><br><span class="line"><span class="comment"># mv log1.text log2.text log3.text file1    将文件og1.text、log2.text、log3.text都移动到file1文件夹中</span></span><br><span class="line"><span class="comment"># mv -i file1 file2    将file1文件夹移动到file2文件夹中，如果存在，则询问</span></span><br><span class="line"><span class="comment"># mv -f file1 file2    将file1文件夹移动到file2文件夹中，即使存在，也会直接覆盖</span></span><br><span class="line"><span class="comment"># mv -u file1 file2    将file1文件夹移动到file2文件夹中，如果存在，当源文件file1更新时，才会更新</span></span><br><span class="line"><span class="comment"># mv dir1 dir2    将dir1目录移动到dir2目录中，如果dir2不存在，则为重命名</span></span><br><span class="line"><span class="comment"># mv * ../    移动当前文件夹下的所有文件到上一级目录</span></span><br><span class="line"><span class="comment"># mv log1.txt -b log2.txt    加-b表示文件在覆盖前做简单备份</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mkdir    创建文件夹（必须增加sudo 最高权限）</span><br><span class="line"><span class="comment"># sudo mkdir aa    在当前文件夹下创建文件夹aa</span></span><br><span class="line"><span class="comment"># sudo mkdir aa/bbb/cccc    创建该目录下的文件夹cccc</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">touch    创建文件 （必须增加sudo 最高权限）</span><br><span class="line"><span class="comment"># sudo touch aa.txt    在当前目录下创建文件aa.txt</span></span><br><span class="line"><span class="comment"># sudo touch aa/bbb/cccc.txt    创建该目录下的文件cccc.txt</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rm    删除文件或文件夹 （必须增加sudo 最高权限，删除文件必须加-rf）</span><br><span class="line"><span class="comment"># sudo rm aa.js    删除当前目录下的aa.js</span></span><br><span class="line"><span class="comment"># sudo rm aa/bbb/cccc.js    删除该目录下的文件cccc.js</span></span><br><span class="line"><span class="comment"># sudo rm -f aa.js    强制删除当前目录下的aa.js</span></span><br><span class="line"><span class="comment"># sudo rm -f aa/bbb/cccc.js   强制 删除该目录下的文件cccc.js</span></span><br><span class="line"><span class="comment"># sudo rm -i aa.js    先询问再删除当前目录下的aa.js</span></span><br><span class="line"><span class="comment"># sudo rm -i aa/bbb/cccc.js   先询问再删除该目录下的文件cccc.js</span></span><br><span class="line"><span class="comment"># sudo rm -rf aa    删除当前目录下的文件aa</span></span><br><span class="line"><span class="comment"># sudo rm -rf aa/bbb/cccc    删除该目录下的文件cccc</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">pwd</span>    查看完整路径</span><br><span class="line"><span class="comment"># pwd</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">apt-get    安装文件（每种系统的命令不一致，Ubuntu的命令为apt-get，最高权限sudo安装）</span><br><span class="line"><span class="comment"># sudo apt-get install **</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ifconfig     查看IP地址（不能再超级用户root下查找）</span><br><span class="line"><span class="comment"># ifconfig 查找所有ip信息</span></span><br><span class="line"><span class="comment"># ifconfig | grep 192  使用grep快速查找处192的信息</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">grep    管道符过滤</span><br><span class="line"><span class="comment"># ifconfig | grep 192   查找打印ip地址</span></span><br><span class="line"><span class="comment"># grep word file_name    打印file_name文件中的word字符串所在的一行</span></span><br><span class="line"><span class="comment"># grep -i Word file_name    打印file_name文件中的Word或word（不区分大小写）字符串所在的一行</span></span><br><span class="line"><span class="comment"># grep -c wordfile_name   打印file_name文件中word字符串的个数</span></span><br><span class="line"><span class="comment"># grep -n wordfile_name   打印file_name文件中word字符串所在的一行并列出行数</span></span><br><span class="line"><span class="comment"># grep -w word file_name   打印file_name文件中word字符串（只匹配整个单词，不匹配字符串的一部分，如word_name不算）所在的一行并列出行数</span></span><br><span class="line"><span class="comment"># grep word file_name --color   打印file_name文件中的word字符串所在的一行并给***高亮</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ssh    通过ip地址访问局域网电脑</span><br><span class="line">ssh pm@192.168.20.133  （通过ip连接系统）</span><br><span class="line">12****  （电脑密码）</span><br><span class="line"></span><br><span class="line">杀死进程：</span><br><span class="line"><span class="comment"># ps -ef | grep node    # 查看node进程是否存在，-e表示显示所有进程，-f表示全格式，-ef表示两者</span></span><br><span class="line"><span class="comment"># 找到被占用进程，查找第二个参数id号，假定为10001</span></span><br><span class="line"><span class="comment"># kill -9 10001    # 杀死</span></span><br><span class="line"></span><br><span class="line">解除端口占用</span><br><span class="line">1.查找被占用的端口</span><br><span class="line"><span class="comment"># netstat -tln</span></span><br><span class="line"><span class="comment"># netstat -tln | grep 80</span></span><br><span class="line">2.查看端口属于哪个程序</span><br><span class="line"><span class="comment"># lsof -i :80</span></span><br><span class="line">3.杀死端口被占用的进程</span><br><span class="line"><span class="comment"># kill -9 进程id</span></span><br><span class="line"></span><br><span class="line">查看系统软件状态</span><br><span class="line"><span class="comment"># service *** status</span></span><br><span class="line"></span><br><span class="line">系统软件重启</span><br><span class="line"><span class="comment"># service *** restart</span></span><br><span class="line"></span><br><span class="line">清空终端</span><br><span class="line"><span class="comment"># Ctrl + L</span></span><br><span class="line"></span><br><span class="line">更改主机名</span><br><span class="line"><span class="comment">#  vim /etc/hosts     查看</span></span><br><span class="line"><span class="comment">#  sudo vim /etc/hosts    修改        </span></span><br><span class="line"><span class="comment"># 如：输入127.0.0.1  hongbaocloud.com 保存修改并退出后，原先访问的127.0.0.1或localhost就可以改为hongbaocloud.com访问了           </span></span><br><span class="line"><span class="comment"># 注：vim编辑器只是其中一个选择，也可以选择其他的编辑器（如subl或atom）打开文件并修改配置</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Pimi Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://pimichen.com/blog/linux/linux常用命令.html" title="linux常用命令">http://pimichen.com/blog/linux/linux常用命令.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/linux/linux安装微信.html" rel="next" title="Linux安装微信">
+                <i class="fa fa-chevron-left"></i> Linux安装微信
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/linux/vim编辑器操作.html" rel="prev" title="vim编辑器相关操作">
+                vim编辑器相关操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTM2OC81OTM2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/mine/avatar.jpg"
+               alt="Pimi Chen" />
+          <p class="site-author-name" itemprop="name">Pimi Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description">天道酬勤，上善若水</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">169</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cpm828" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/pimi" target="_blank" title="Segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/pimi0828" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Pimi.Chen" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/cpm-ui" title="cpm-ui" target="_blank">cpm-ui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/blog" title="pimi blog" target="_blank">pimi blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pimi Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span>网站UV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span>网站PV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+<div class="theme-copyright-info">
+  <a href="http://www.miitbeian.gov.cn">京ICP备19005272号</a>
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top" style="display:none;">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent" class="fa-percent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/heart/heart.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/blog/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/blog/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/blog/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

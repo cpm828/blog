@@ -1,0 +1,1075 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="QpR2UtOlwMERxir6cPqI74sPMIvl4B0KbVZgg14OELA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="KnockOut," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Pimi's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="knockout模板绑定和控制语法:if/ifnot/with/foreach等">
+<meta name="keywords" content="KnockOut">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockout模板绑定和控制语法">
+<meta property="og:url" content="http://pimichen.com/blog/knockout/knockout模板绑定和控制语句.html">
+<meta property="og:site_name" content="Pimi&#39;s Blog">
+<meta property="og:description" content="knockout模板绑定和控制语法:if/ifnot/with/foreach等">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-09T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="knockout模板绑定和控制语法">
+<meta name="twitter:description" content="knockout模板绑定和控制语法:if/ifnot/with/foreach等">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '7U5GLOOLPQ',
+      apiKey: '217b43ed2d3cb495895c71b272d78d13',
+      indexName: 'pimi_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"没有查到与「${query}」相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pimichen.com/blog/knockout/knockout模板绑定和控制语句.html"/>
+
+
+
+
+
+
+
+<style>
+.input-label{
+  vertical-align:middle;
+  font-size:18px;
+  height: 30px;
+  line-height: 1em;
+}
+.input-secret{
+  width:120px;
+  height: 30px;
+  line-height: 30px;
+  font-size:18px;
+  border: 1px solid #ccc;
+  vertical-align:middle;
+  outline:none;
+  padding:0 5px;
+  box-sizing:border-box;
+  border-radius:5px;
+  -webkit-appearance: none;
+}
+.submit-btn{
+  display:inline-block;
+  height: 30px;
+  line-height:1em;
+  font-size:18px;
+  text-align:center;
+  margin-left:10px;
+  border: 1px solid #ccc;
+  background-color:transparent;
+  vertical-align:middle;
+  border-radius:5px;
+}
+.hidden-box{
+  display:none;
+}
+</style>
+<script>
+window.onload = function(){
+  var secretBox = document.getElementById('secret-box');
+  if (secretBox === null) return;
+  var contentNode = document.getElementsByClassName('post-body')[0];
+  var blogNodes = contentNode.children;
+  var asideNavTitle = document.getElementsByClassName('sidebar-nav-toc')[0];
+  var asideNavContent = document.getElementsByClassName('post-toc-content')[0];
+  asideNavTitle.style.display = 'none';
+  asideNavContent.style.display = 'none';
+  for(var i = 0; i < blogNodes.length; i++) {
+    if (blogNodes[i].getAttribute('id') !== 'secret-box') {
+      blogNodes[i].style.display = 'none';
+    }
+  }
+
+  var inputSecret = document.getElementById('input-secret');
+  var submitBtn = document.getElementById('submit-btn');
+  var blogSecret = 7728828;
+
+  submitBtn.onclick = activeEvent;
+  inputSecret.onkeydown = function (event) {
+    event = event || window.event;
+    if (event.keyCode == 13) {
+      activeEvent();
+    }
+  }
+  function activeEvent () {
+    if (inputSecret.value.replace(/\s+/g, '') == blogSecret) {
+      for(var i = 0; i < blogNodes.length; i++) {
+        blogNodes[i].style.display = 'block';
+      }
+      asideNavTitle.style.display = 'inline-block';
+      asideNavContent.style.display = 'block';
+      secretBox.style.display = 'none';
+    } else{
+      alert('密码错误，请重试！');
+    }
+  }
+}
+</script>
+
+
+  <title> knockout模板绑定和控制语法 | Pimi's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100562378-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6818b43932ba418bf608f04dbecd5258";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pimi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A lazy youth, a lousy age.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/blog/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pimichen.com/blog/blog/knockout/knockout模板绑定和控制语句.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pimi Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/mine/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pimi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                knockout模板绑定和控制语法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T00:00:00+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-10T00:00:00+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span>阅读次数</span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" >1</span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  knockout模板绑定和控制语法:if/ifnot/with/foreach等
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="常见方法"><a href="#常见方法" class="headerlink" title="常见方法"></a>常见方法</h2><h3 id="text"><a href="#text" class="headerlink" title="text"></a>text</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name(&apos;哈哈&apos;);</span><br><span class="line"></span><br><span class="line">&lt;p data-bind=&quot;text: name&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">errorText(&apos;第1行有name错误&lt;br&gt;第二行有id不匹配&apos;);</span><br><span class="line"></span><br><span class="line">&lt;p data-bind=&quot;html: errorText&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="visible"><a href="#visible" class="headerlink" title="visible"></a>visible</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">isShow(true);</span><br><span class="line"></span><br><span class="line">&lt;div data-bind=&quot;visible: isShow&quot;&gt;哈哈，看见我了&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">写法1：</span><br><span class="line">isShow(true);</span><br><span class="line"></span><br><span class="line">&lt;div data-bind=&quot;if: isShow&quot;&gt;哈哈，看见我了&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">写法2：</span><br><span class="line">isShow(false);</span><br><span class="line"></span><br><span class="line">&lt;!-- ko if:isShow --&gt;</span><br><span class="line">&lt;div&gt;哈哈，看见我了&lt;/div&gt;</span><br><span class="line">&lt;!-- /ko --&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="ifnot"><a href="#ifnot" class="headerlink" title="ifnot"></a>ifnot</h3><p>字面意思，if取反</p>
+<h3 id="if和visible的区别"><a href="#if和visible的区别" class="headerlink" title="if和visible的区别"></a>if和visible的区别</h3><p>if不显示时dom不存在，visible存在</p>
+<h3 id="css-class"><a href="#css-class" class="headerlink" title="css(class)"></a>css(class)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">profitWarning(-50);</span><br><span class="line"></span><br><span class="line">&lt;div data-bind=&quot;css: &#123;profitWarning: currentProfit() &lt; 0&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="style"><a href="#style" class="headerlink" title="style"></a>style</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">profitWarning(-50);</span><br><span class="line"></span><br><span class="line">&lt;div data-bind=&quot;style: &#123;color: currentProfit() &lt; 0 ? &apos;red&apos; : &apos;black&apos;, fontWeight: isSevere() ? &apos;bold&apos; : &apos;&apos;&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="attr"><a href="#attr" class="headerlink" title="attr"></a>attr</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url(&apos;http://www.****&apos;);</span><br><span class="line">detail(&apos;我是title&apos;);</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;&quot; data-bind=&quot;attr: &#123;href: url, title: details&#125;&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h3><h4 id="foreach遍历简单数组"><a href="#foreach遍历简单数组" class="headerlink" title="foreach遍历简单数组"></a>foreach遍历简单数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul data-bind=&quot;foreach: months&quot;&gt;</span><br><span class="line">  &lt;li&gt;</span><br><span class="line">    The current item is: &lt;b data-bind=&quot;text: $data&quot;&gt;&lt;/b&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">  ko.applyBindings(&#123;</span><br><span class="line">      months: [ &apos;Jan&apos;, &apos;Feb&apos;, &apos;Mar&apos;, &apos;etc&apos; ]</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="foreach遍历复杂数组"><a href="#foreach遍历复杂数组" class="headerlink" title="foreach遍历复杂数组"></a>foreach遍历复杂数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;div data-bind=&quot;foreach: teacherList&quot;&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">    索引:&lt;span data-bind=&quot;text: $index&quot;&gt;&lt;/span&gt;</span><br><span class="line">    teacherID:&lt;span data-bind=&quot;text: teacheId&quot;&gt;&lt;/span&gt;</span><br><span class="line">    teacherName:&lt;span data-bind=&quot;text: teacheName&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;button data-bind=&quot;click: $parent.removeMe&quot;&gt;删除&lt;/button&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;button data-bind=&quot;click: addOne&quot;&gt;增加&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  function AppViewModel() &#123;</span><br><span class="line">    var self = this;</span><br><span class="line">    self.teacherList([</span><br><span class="line">      &#123;</span><br><span class="line">        teacheId: &apos;001&apos;,</span><br><span class="line">        teacheName: &apos;哈哈&apos;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        teacheId: &apos;002&apos;,</span><br><span class="line">        teacheName: &apos;嘻嘻&apos;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        teacheId: &apos;003&apos;,</span><br><span class="line">        teacheName: &apos;呵呵&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    ]);</span><br><span class="line">    self.removeMe = function () &#123;</span><br><span class="line">      self.teacherList.remove(this);</span><br><span class="line">    &#125;;</span><br><span class="line">    self.addOne = function () &#123;</span><br><span class="line">      self.teacherList.push(&#123;</span><br><span class="line">        teacheId: &apos;004&apos;,</span><br><span class="line">        teacheName: &apos;喔喔&apos;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ko.applyBindings(new AppViewModel());</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="foreach注释语法"><a href="#foreach注释语法" class="headerlink" title="foreach注释语法"></a>foreach注释语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li class=&quot;header&quot;&gt;Header item&lt;/li&gt;</span><br><span class="line">  &lt;!-- ko foreach: myItems --&gt;</span><br><span class="line">    &lt;li&gt;Item &lt;span data-bind=&quot;text: $data&quot;&gt;&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">  &lt;!-- /ko --&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  ko.applyBindings(&#123;</span><br><span class="line">      myItems: [ &apos;A&apos;, &apos;B&apos;, &apos;C&apos; ]</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="with控制流"><a href="#with控制流" class="headerlink" title="with控制流"></a>with控制流</h3><h4 id="wtih正常写法"><a href="#wtih正常写法" class="headerlink" title="wtih正常写法"></a>wtih正常写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">当父级是ko对象，子级是非ko对象，在模板中我们不能直接查找子级a().b()，这样是不OK得，我们可以借助with语法实现这种情况的渲染，父级with:a()，然后就可以直接使用子级了</span><br><span class="line"></span><br><span class="line">&lt;h1 data-bind=&quot;text: city&quot;&gt; &lt;/h1&gt;</span><br><span class="line">&lt;p data-bind=&quot;with: coords&quot;&gt;</span><br><span class="line">  Latitude: &lt;span data-bind=&quot;text: latitude&quot;&gt; &lt;/span&gt;,</span><br><span class="line">  Longitude: &lt;span data-bind=&quot;text: longitude&quot;&gt; &lt;/span&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">  ko.applyBindings(&#123;</span><br><span class="line">    city: &quot;London&quot;,</span><br><span class="line">    coords: &#123;</span><br><span class="line">      latitude:  51.5001524,</span><br><span class="line">      longitude: -0.1262362</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="with注释写法"><a href="#with注释写法" class="headerlink" title="with注释写法"></a>with注释写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;Header element&lt;/li&gt;</span><br><span class="line">  &lt;!-- ko with: outboundFlight --&gt;</span><br><span class="line">    &lt;div data-bind=&quot;text: outsize&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;!-- /ko --&gt;</span><br><span class="line">  &lt;!-- ko with: inboundFlight --&gt;</span><br><span class="line">    &lt;div data-bind=&quot;text: insize&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;!-- /ko --&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  ko.applyBindings(&#123;</span><br><span class="line">    outboundFlight: &#123;</span><br><span class="line">      outsize: 51.5001524</span><br><span class="line">    &#125;,</span><br><span class="line">    inboundFlight: &#123;</span><br><span class="line">      insize: 32.2323423</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="form场景"><a href="#form场景" class="headerlink" title="form场景"></a>form场景</h2><h3 id="click"><a href="#click" class="headerlink" title="click"></a>click</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">写法1：渲染时执行</span><br><span class="line">&lt;button data-bind=&quot;click: clickBtn&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">写法2：带bind，不触发不执行</span><br><span class="line">&lt;button data-bind=&quot;click: clickBtn.bind($data)&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">注意：点击方法前可能得加$root、$parent等前缀，示层级而定</span><br><span class="line"></span><br><span class="line">也可以将点击事件包装起来：</span><br><span class="line"></span><br><span class="line">写法3：</span><br><span class="line">&lt;button data-bind=&quot;click: function(data, event) &#123; myFunction(&apos;param1&apos;, &apos;param2&apos;, data, event) &#125;&quot;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="event表单事件"><a href="#event表单事件" class="headerlink" title="event表单事件"></a>event表单事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;div data-bind=&quot;event: &#123; mouseover: enableDetails, mouseout: disableDetails &#125;&quot;&gt;</span><br><span class="line">      Mouse over me</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div data-bind=&quot;visible: detailsEnabled&quot;&gt;</span><br><span class="line">      Details</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">    detailsEnabled: ko.observable(false),</span><br><span class="line">    enableDetails: function() &#123;</span><br><span class="line">      this.detailsEnabled(true);</span><br><span class="line">    &#125;,</span><br><span class="line">    disableDetails: function() &#123;</span><br><span class="line">      this.detailsEnabled(false);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  ko.applyBindings(viewModel);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="submit表单提交"><a href="#submit表单提交" class="headerlink" title="submit表单提交"></a>submit表单提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;form data-bind=&quot;submit: doSomething&quot;&gt;</span><br><span class="line">  ... form contents go here ...</span><br><span class="line">  &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">    doSomething : function(formElement) &#123;</span><br><span class="line">      // ... now do something</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="enable-or-disable表单禁用"><a href="#enable-or-disable表单禁用" class="headerlink" title="enable or disable表单禁用"></a>enable or disable表单禁用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;input type=&apos;checkbox&apos; data-bind=&quot;checked: hasCellphone&quot; /&gt;</span><br><span class="line">    I have a cellphone</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    Your cellphone number:</span><br><span class="line">    &lt;input type=&apos;text&apos; data-bind=&quot;value: cellphoneNumber, enable: hasCellphone&quot; /&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">    hasCellphone : ko.observable(false),</span><br><span class="line">    cellphoneNumber: &quot;&quot;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="value-or-textInput表单输入"><a href="#value-or-textInput表单输入" class="headerlink" title="value or textInput表单输入"></a>value or textInput表单输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">textInput同value的性质是一致的，但是textInput是在view改变之后，model立即改变，达到即时更新。</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Login name: &lt;input data-bind=&quot;value: userName&quot; /&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;Password: &lt;input type=&quot;password&quot; data-bind=&quot;value: userPassword&quot; /&gt;&lt;/p&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">    userName: ko.observable(&quot;&quot;),        // Initially blank</span><br><span class="line">    userPassword: ko.observable(&quot;abc&quot;), // Prepopulate</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="hasFocus表单聚焦"><a href="#hasFocus表单聚焦" class="headerlink" title="hasFocus表单聚焦"></a>hasFocus表单聚焦</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">判断表单是否激活，处理不同情况，可点击按钮手动触发激活输入框</span><br><span class="line"></span><br><span class="line">&lt;input data-bind=&quot;hasFocus: isSelected&quot; /&gt;</span><br><span class="line">&lt;button data-bind=&quot;click: setIsSelected&quot;&gt;Focus programmatically&lt;/button&gt;</span><br><span class="line">&lt;span data-bind=&quot;visible: isSelected&quot;&gt;The textbox has focus&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">    isSelected: ko.observable(false),</span><br><span class="line">    setIsSelected: function() &#123; </span><br><span class="line">      this.isSelected(true) </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  ko.applyBindings(viewModel);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="checked单选框复选框被选中"><a href="#checked单选框复选框被选中" class="headerlink" title="checked单选框复选框被选中"></a>checked单选框复选框被选中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">根据变量来控制复选框的选中与否</span><br><span class="line">&lt;p&gt;Send me spam: &lt;input type=&quot;checkbox&quot; data-bind=&quot;checked: wantsSpam&quot; /&gt;&lt;/p&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var viewModel = &#123;</span><br><span class="line">        wantsSpam: ko.observable(true) // Initially checked</span><br><span class="line">    &#125;;</span><br><span class="line"> </span><br><span class="line">    // ... then later ...</span><br><span class="line">    viewModel.wantsSpam(false); // The checkbox becomes unchecked</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="select-option下拉框"><a href="#select-option下拉框" class="headerlink" title="select option下拉框"></a>select option下拉框</h3><h4 id="简单遍历-单选"><a href="#简单遍历-单选" class="headerlink" title="简单遍历-单选"></a>简单遍历-单选</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;</span><br><span class="line">  Destination country:</span><br><span class="line">  &lt;select data-bind=&quot;options: availableCountries&quot;&gt;&lt;/select&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">    // These are the initial options</span><br><span class="line">    availableCountries: ko.observableArray([&apos;France&apos;, &apos;Germany&apos;, &apos;Spain&apos;])</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  // ... then later ...</span><br><span class="line">  viewModel.availableCountries.push(&apos;China&apos;); // Adds another option</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="简单遍历-多选"><a href="#简单遍历-多选" class="headerlink" title="简单遍历-多选"></a>简单遍历-多选</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;</span><br><span class="line">  Choose some countries you would like to visit:</span><br><span class="line">  &lt;select data-bind=&quot;options: availableCountries&quot; size=&quot;5&quot; multiple=&quot;true&quot;&gt;&lt;/select&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">      availableCountries: ko.observableArray([&apos;France&apos;, &apos;Germany&apos;, &apos;Spain&apos;])</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="复杂遍历"><a href="#复杂遍历" class="headerlink" title="复杂遍历"></a>复杂遍历</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">options: 表示遍历的数组项，如果层级很深，可以在外层考虑绑定with，实现简化层级</span><br><span class="line">optionsText: 下拉框展示的文案，及数组中某一项的某个字段</span><br><span class="line">value: 当前文案</span><br><span class="line">optionsCaption: 默认显示的文案，改默认文案不对应任何值</span><br><span class="line">event-change: 下拉框触发改变</span><br><span class="line"></span><br><span class="line">&lt;p&gt;</span><br><span class="line">  Your country:</span><br><span class="line">  &lt;select data-bind=&quot;options: availableCountries,</span><br><span class="line">                     optionsText: &apos;countryName&apos;,</span><br><span class="line">                     value: selectedCountry,</span><br><span class="line">                     optionsCaption: &apos;Choose...&apos;,</span><br><span class="line">                     event: &#123;change: selectChange&#125;&quot;&gt;&lt;/select&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"> </span><br><span class="line">&lt;div data-bind=&quot;visible: selectedCountry&quot;&gt; &lt;!-- Appears when you select something --&gt;</span><br><span class="line">  You have chosen a country with population</span><br><span class="line">  &lt;span data-bind=&quot;text: selectedCountry() ? selectedCountry().countryPopulation : &apos;unknown&apos;&quot;&gt;&lt;/span&gt;.</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  // Constructor for an object with two properties</span><br><span class="line">  var Country = function(name, population) &#123;</span><br><span class="line">    this.countryName = name;</span><br><span class="line">    this.countryPopulation = population;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">    availableCountries : ko.observableArray([</span><br><span class="line">        new Country(&quot;UK&quot;, 65000000),</span><br><span class="line">        new Country(&quot;USA&quot;, 320000000),</span><br><span class="line">        new Country(&quot;Sweden&quot;, 29000000)</span><br><span class="line">    ]),</span><br><span class="line">    selectedCountry : ko.observable(), // Nothing selected by default</span><br><span class="line">    selectChange: function () &#123;</span><br><span class="line">      alert(&apos;下拉框变化了&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="多级下拉框"><a href="#多级下拉框" class="headerlink" title="多级下拉框"></a>多级下拉框</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">对于像三级城市列表那种的下拉框，每一个下拉框的改变都需要刷新下一个下拉框或页面的数据，select之间必须联动，此例我故意将城市数据层级设置城多级</span><br><span class="line"></span><br><span class="line">&lt;p data-bind=&quot;text: para()&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;!-- ko with:bigData().smallData --&gt;</span><br><span class="line">  &lt;select data-bind=&quot;options: provinces,</span><br><span class="line">                     optionsText: &apos;provinceName&apos;,</span><br><span class="line">                     value: $root.firstValue,</span><br><span class="line">                     optionsCaption: &apos;选择省份&apos;,</span><br><span class="line">                     event: &#123;change: firstSelectChange&#125;&quot;&gt;&lt;/select&gt;</span><br><span class="line">&lt;!-- /ko --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- ko with: $root.firstValue --&gt;</span><br><span class="line">  &lt;select data-bind=&quot;options: citys,</span><br><span class="line">                     optionsText: &apos;cityName&apos;,</span><br><span class="line">                     value: $root.secondValue,</span><br><span class="line">                     optionsCaption: &apos;选择城市&apos;,</span><br><span class="line">                     event: &#123;change: secondSelectChange&#125;&quot;&gt;&lt;/select&gt;</span><br><span class="line">&lt;!-- /ko --&gt;                     </span><br><span class="line"></span><br><span class="line">&lt;!-- ko with: $root.secondValue --&gt;</span><br><span class="line">  &lt;select data-bind=&quot;options: countys,</span><br><span class="line">                     optionsText: &apos;countyName&apos;,</span><br><span class="line">                     value: $root.thirdValue,</span><br><span class="line">                     optionsCaption: &apos;选择地区&apos;,</span><br><span class="line">                     event: &#123;change: thirdSelectChange&#125;&quot;&gt;&lt;/select&gt;</span><br><span class="line">&lt;!-- /ko --&gt;</span><br><span class="line"></span><br><span class="line">&lt;button data-bind=&quot;click: commit&quot;&gt;提交&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var viewModel = &#123;</span><br><span class="line">      para: ko.observable(&apos;没错，我就是那个动态标题！&apos;),</span><br><span class="line">      bigData: ko.observable(&#123;</span><br><span class="line">        smallData: &#123;</span><br><span class="line">          provinces: [</span><br><span class="line">            &#123;</span><br><span class="line">              provinceId: &apos;010000&apos;,</span><br><span class="line">              provinceName: &apos;北京&apos;,</span><br><span class="line">              citys: [</span><br><span class="line">                &#123;</span><br><span class="line">                  cityId: &apos;010100&apos;,</span><br><span class="line">                  cityName: &apos;北京市&apos;,</span><br><span class="line">                  countys: [</span><br><span class="line">                    &#123;</span><br><span class="line">                      countyId: &apos;010101&apos;,</span><br><span class="line">                      countyName: &apos;东城区&apos;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                      countyId: &apos;010102&apos;,</span><br><span class="line">                      countyName: &apos;西城区&apos;</span><br><span class="line">                    &#125;</span><br><span class="line">                  ]</span><br><span class="line">                &#125;</span><br><span class="line">              ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              provinceId: &apos;090000&apos;,</span><br><span class="line">              provinceName: &apos;江西省&apos;,</span><br><span class="line">              citys: [</span><br><span class="line">                &#123;</span><br><span class="line">                  cityId: &apos;090100&apos;,</span><br><span class="line">                  cityName: &apos;南昌市&apos;,</span><br><span class="line">                  countys: [</span><br><span class="line">                    &#123;</span><br><span class="line">                      countyId: &apos;090101&apos;,</span><br><span class="line">                      countyName: &apos;东湖区&apos;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                      countyId: &apos;090102&apos;,</span><br><span class="line">                      countyName: &apos;西湖区&apos;</span><br><span class="line">                    &#125;</span><br><span class="line">                  ]</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                  cityId: &apos;090200&apos;,</span><br><span class="line">                  cityName: &apos;九江市&apos;,</span><br><span class="line">                  countys: [</span><br><span class="line">                    &#123;</span><br><span class="line">                      countyId: &apos;090201&apos;,</span><br><span class="line">                      countyName: &apos;浔阳区&apos;</span><br><span class="line">                    &#125;</span><br><span class="line">                  ]</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                  cityId: &apos;090300&apos;,</span><br><span class="line">                  cityName: &apos;景德镇市&apos;,</span><br><span class="line">                  countys: [</span><br><span class="line">                    &#123;</span><br><span class="line">                      countyId: &apos;090201&apos;,</span><br><span class="line">                      countyName: &apos;珠江区&apos;</span><br><span class="line">                    &#125;</span><br><span class="line">                  ]</span><br><span class="line">                &#125;</span><br><span class="line">              ]</span><br><span class="line">            &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;),</span><br><span class="line">      firstValue: ko.observable(&apos;&apos;),</span><br><span class="line">      secondValue: ko.observable(&apos;&apos;),</span><br><span class="line">      thirdValue: ko.observable(&apos;&apos;)</span><br><span class="line">  &#125;;</span><br><span class="line">  var firstSelectChange = function () &#123;</span><br><span class="line">    window.alert(&apos;点击了1号下拉框&apos;);</span><br><span class="line">  &#125;;</span><br><span class="line">  var secondSelectChange = function () &#123;</span><br><span class="line">    window.alert(&apos;点击了2号下拉框&apos;);</span><br><span class="line">  &#125;;</span><br><span class="line">  var thirdSelectChange = function () &#123;</span><br><span class="line">    window.alert(&apos;点击了3号下拉框&apos;);</span><br><span class="line">  &#125;;</span><br><span class="line">  var commit = function () &#123;</span><br><span class="line">    window.alert(&apos;我选择了：&apos; + viewModel.firstValue().provinceName + &apos;--&apos; + viewModel.secondValue().cityName + &apos;--&apos; + viewModel.thirdValue().countyName);</span><br><span class="line">  &#125;;</span><br><span class="line">  // 初始化数据（如果不加初始化数据，默认只出现第一个下拉框，选择后出现第二个，再选择出现第三个）</span><br><span class="line">  for (var i in viewModel.bigData().smallData.provinces) &#123;</span><br><span class="line">    if (viewModel.bigData().smallData.provinces[i].provinceId === &apos;010000&apos;) &#123;</span><br><span class="line">      viewModel.firstValue(viewModel.bigData().smallData.provinces[i]);</span><br><span class="line">      // break;</span><br><span class="line">    &#125;</span><br><span class="line">    for (var j in viewModel.bigData().smallData.provinces[i].citys) &#123;</span><br><span class="line">      if (viewModel.bigData().smallData.provinces[i].citys[j].cityId === &apos;010100&apos;) &#123;</span><br><span class="line">        viewModel.secondValue(viewModel.bigData().smallData.provinces[i].citys[j]);</span><br><span class="line">        // break;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ko.applyBindings(viewModel);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Pimi Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://pimichen.com/blog/knockout/knockout模板绑定和控制语句.html" title="knockout模板绑定和控制语法">http://pimichen.com/blog/knockout/knockout模板绑定和控制语句.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/knockout/" rel="tag"># KnockOut</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/knockout/knockout初始化.html" rel="next" title="knockout初始化">
+                <i class="fa fa-chevron-left"></i> knockout初始化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/html/viewport各宽高值.html" rel="prev" title="viewport各宽高值">
+                viewport各宽高值 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f05a85a1099dc5" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTM2OC81OTM2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/mine/avatar.jpg"
+               alt="Pimi Chen" />
+          <p class="site-author-name" itemprop="name">Pimi Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description">天道酬勤，上善若水</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">169</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cpm828" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/pimi" target="_blank" title="Segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/pimi0828" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Pimi.Chen" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/blog/" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/cpm-ui" title="cpm-ui" target="_blank">cpm-ui</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/cpm828/blog" title="pimi blog" target="_blank">pimi blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见方法"><span class="nav-number">1.</span> <span class="nav-text">常见方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#text"><span class="nav-number">1.1.</span> <span class="nav-text">text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html"><span class="nav-number">1.2.</span> <span class="nav-text">html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#visible"><span class="nav-number">1.3.</span> <span class="nav-text">visible</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if"><span class="nav-number">1.4.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ifnot"><span class="nav-number">1.5.</span> <span class="nav-text">ifnot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if和visible的区别"><span class="nav-number">1.6.</span> <span class="nav-text">if和visible的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-class"><span class="nav-number">1.7.</span> <span class="nav-text">css(class)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#style"><span class="nav-number">1.8.</span> <span class="nav-text">style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#attr"><span class="nav-number">1.9.</span> <span class="nav-text">attr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#foreach"><span class="nav-number">1.10.</span> <span class="nav-text">foreach</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#foreach遍历简单数组"><span class="nav-number">1.10.1.</span> <span class="nav-text">foreach遍历简单数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#foreach遍历复杂数组"><span class="nav-number">1.10.2.</span> <span class="nav-text">foreach遍历复杂数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#foreach注释语法"><span class="nav-number">1.10.3.</span> <span class="nav-text">foreach注释语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#with控制流"><span class="nav-number">1.11.</span> <span class="nav-text">with控制流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#wtih正常写法"><span class="nav-number">1.11.1.</span> <span class="nav-text">wtih正常写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#with注释写法"><span class="nav-number">1.11.2.</span> <span class="nav-text">with注释写法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form场景"><span class="nav-number">2.</span> <span class="nav-text">form场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#click"><span class="nav-number">2.1.</span> <span class="nav-text">click</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#event表单事件"><span class="nav-number">2.2.</span> <span class="nav-text">event表单事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#submit表单提交"><span class="nav-number">2.3.</span> <span class="nav-text">submit表单提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#enable-or-disable表单禁用"><span class="nav-number">2.4.</span> <span class="nav-text">enable or disable表单禁用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#value-or-textInput表单输入"><span class="nav-number">2.5.</span> <span class="nav-text">value or textInput表单输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasFocus表单聚焦"><span class="nav-number">2.6.</span> <span class="nav-text">hasFocus表单聚焦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#checked单选框复选框被选中"><span class="nav-number">2.7.</span> <span class="nav-text">checked单选框复选框被选中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-option下拉框"><span class="nav-number">2.8.</span> <span class="nav-text">select option下拉框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单遍历-单选"><span class="nav-number">2.8.1.</span> <span class="nav-text">简单遍历-单选</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单遍历-多选"><span class="nav-number">2.8.2.</span> <span class="nav-text">简单遍历-多选</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂遍历"><span class="nav-number">2.8.3.</span> <span class="nav-text">复杂遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多级下拉框"><span class="nav-number">2.8.4.</span> <span class="nav-text">多级下拉框</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pimi Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span>网站UV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span>网站PV</span>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+<div class="theme-copyright-info">
+  <a href="http://www.miitbeian.gov.cn">京ICP备19005272号</a>
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top" style="display:none;">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent" class="fa-percent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/heart/heart.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/blog/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/blog/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/blog/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
