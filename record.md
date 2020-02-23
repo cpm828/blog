@@ -80,6 +80,7 @@ comments：开启评论，默认为true，如不需评论则设置为false
 2、markdown语法：`![](../images/javascript/js_bubble_sort.gif "介绍文字")`
 
 
+
 - 粗体/斜体
 ```
 **这是加粗的文字**
