@@ -78,8 +78,6 @@ comments：开启评论，默认为true，如不需评论则设置为false
 - 插入图片
 1、HTML标签法：`<img src="../images/tag/a.png" title="介绍文字" />`
 2、markdown语法：`![](../images/javascript/js_bubble_sort.gif "介绍文字")`
-2、内置标签法：`{% fullimage/images/a.png, alt, title %}`
-3、内置标签简写法：`{% fi /images/a.png, alt, title %}`
 
 
 - 粗体/斜体
