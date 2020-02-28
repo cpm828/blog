@@ -540,7 +540,7 @@ window.onload = function(){
   <label for="input-secret" class="input-label">请输入密码：</label><input type="password" class="input-secret" id="input-secret" /><button class="submit-btn" id="submit-btn">提交</button>
 </div> -->
 <h2 id="常见的前端算法题"><a href="#常见的前端算法题" class="headerlink" title="常见的前端算法题"></a>常见的前端算法题</h2><blockquote>
-<p>见：<a href="/javascript/前端算法集合.html">前端算法集合</a></p>
+<p>见：<a href="/blog/javascript/前端算法集合.html">前端算法集合</a></p>
 </blockquote>
 <hr>
 <h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><blockquote>
@@ -1482,7 +1482,7 @@ window.onload = function(){
 </ul>
 <hr>
 <h2 id="Vue双向绑定原理"><a href="#Vue双向绑定原理" class="headerlink" title="Vue双向绑定原理"></a>Vue双向绑定原理</h2><blockquote>
-<p>参考：<a href="https://segmentfault.com/a/1190000006599500" target="_blank" rel="noopener">segmentfault 剖析Vue原理&amp;实现双向绑定MVVM</a></p>
+<p>参考：<a href="https://segmentfault.com/a/1190000006599500" target="_blank" rel="noopener">segmentfault 剖析Vue原理&amp;实现双向绑定MVVM</a>、<a href="https://www.cnblogs.com/libin-1/p/6893712.html" target="_blank" rel="noopener">vue的双向绑定原理及实现</a></p>
 </blockquote>
 <p>通过 <code>Object.defineProperty()</code> 来劫持各个属性的setter，getter在数据变动时给订阅者发送消息，触发相应的监听回调.<br>Vue 会把props、data 等变成响应式对象，在创建过程中，发现子属性也为对象则会递归把该对象也变成响应式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">  name: <span class="string">'zhangsan'</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key, value</span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> data) &#123; <span class="comment">// 遍历data中所有的字段</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(data, key, &#123;</span><br><span class="line">      get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'get'</span>, data[key]) <span class="comment">// 监听</span></span><br><span class="line">        <span class="keyword">return</span> data[key]</span><br><span class="line">      &#125;,</span><br><span class="line">      set: <span class="function"><span class="keyword">function</span> (<span class="params">newVal</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'set'</span>, newVal) <span class="comment">// 监听</span></span><br><span class="line">        data[key] = newVal</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="../images/vue/vue.png" title="Vue双向绑定原理图"></p>
@@ -2581,7 +2581,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">173</span>
+                <span class="site-state-item-count">174</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
