@@ -10,7 +10,6 @@ http://pimichen.com/blog/vue/vue使用自定义指令解决iOS微信端input失�
 http://pimichen.com/blog/tools/使用github_pages发布自己的网站.html
 http://pimichen.com/blog/vue/vue利用transition实现路由切换仿APP效果.html
 http://pimichen.com/blog/other/前端常见的面试题.html
-http://pimichen.com/blog/javascript/数组去重方法.html
 http://pimichen.com/blog/javascript/前端算法集合.html
 http://pimichen.com/blog/css/父级设置圆角无法挡住子级的背景色的解决办法.html
 http://pimichen.com/blog/javascript/判断对象中存在某个key.html
@@ -98,3 +97,4 @@ http://pimichen.com/blog/css/去除PC端链接点击的虚线框.html
 http://pimichen.com/blog/css/实现微信语音扬声器播放效果动画.html
 http://pimichen.com/blog/css/实现放射圆提示点击的效果.html
 http://pimichen.com/blog/css/文本溢出显示....html
+http://pimichen.com/blog/css/等宽数字字体.html

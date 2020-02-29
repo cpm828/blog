@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://pimichen.com/blog/blog/javascript/%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88.html</loc>
+    <lastmod>2020-02-28T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端算法集合</title>
+        <pubTime>2019-03-08T16:00:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://pimichen.com/blog/blog/other/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98.html</loc>
+    <lastmod>2020-02-28T16:00:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端常见的面试题</title>
+        <pubTime>2019-04-28T16:00:00.000Z</pubTime>
+        
+        <tag>Other</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://pimichen.com/blog/blog/tools/chrome%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7.html</loc>
     <lastmod>2020-02-27T16:00:00.000Z</lastmod>
     <data>
@@ -80,23 +114,6 @@
         <pubTime>2020-02-21T16:00:00.000Z</pubTime>
         
         <tag>ES6</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/other/%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98.html</loc>
-    <lastmod>2020-02-21T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端常见的面试题</title>
-        <pubTime>2019-04-28T16:00:00.000Z</pubTime>
-        
-        <tag>Other</tag>
          
          
            
@@ -203,40 +220,6 @@
         <pubTime>2019-06-26T16:00:00.000Z</pubTime>
         
         <tag>Vue</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/javascript/%E5%89%8D%E7%AB%AF%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88.html</loc>
-    <lastmod>2019-04-28T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端算法集合</title>
-        <pubTime>2019-03-08T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://pimichen.com/blog/blog/javascript/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95.html</loc>
-    <lastmod>2019-03-09T16:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>数组去重方法</title>
-        <pubTime>2019-03-09T16:00:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
          
          
            
