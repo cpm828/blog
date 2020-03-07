@@ -51,7 +51,7 @@
   <entry>
     <title><![CDATA[浏览器模式compatMode]]></title>
     <url>%2Fblog%2Fjavascript%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%BC%8FcompatMode.html</url>
-    <content type="text"><![CDATA[浏览器有两种模式 标准（严格）模式 怪异（混杂）模式 如何判断浏览器当前的模式document.compatMode 可判断模式类型： 值为 CSS1Compat：标准模式 值为 BackCompat：怪异模式 不同模式下，js的方法有可能不同，如： 标准模式：浏览器可视宽度：document.documentElement.clientWidth浏览器可视高度：document.documentElement.clientHeight 怪异模式：浏览器可视宽度：document.body.clientWidth浏览器可视高度：document.body.clientHeight]]></content>
+    <content type="text"><![CDATA[浏览器有两种模式 标准（严格）模式html开头设置&lt;!DOCTYPE html&gt; 怪异（混杂）模式html开头无DOCTYPE或&lt;!DOCTYPE&gt; 如何判断浏览器当前的模式document.compatMode 可判断模式类型： 值为 CSS1Compat：标准模式 值为 BackCompat：怪异模式 不同模式下，js的方法有可能不同，如： 标准模式：浏览器可视宽度：document.documentElement.clientWidth浏览器可视高度：document.documentElement.clientHeight 怪异模式：浏览器可视宽度：document.body.clientWidth浏览器可视高度：document.body.clientHeight]]></content>
       <tags>
         <tag>JavaScript</tag>
       </tags>
