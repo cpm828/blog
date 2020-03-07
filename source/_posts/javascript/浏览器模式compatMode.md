@@ -11,7 +11,9 @@ tags: # 标签分类
 ## 浏览器有两种模式
 
 - 标准（严格）模式
+  html开头设置`<!DOCTYPE html>`
 - 怪异（混杂）模式
+  html开头无DOCTYPE或`<!DOCTYPE>`
 
 ## 如何判断浏览器当前的模式
 
