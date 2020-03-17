@@ -2,7 +2,7 @@
 title:         什么是BFC # 标题
 description:   什么是BFC？看这一篇就够了 # 副标题
 date:          2020-03-03 # 建立日期
-updated:       2020-03-03 # 更新日期
+updated:       2020-03-17 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - CSS
