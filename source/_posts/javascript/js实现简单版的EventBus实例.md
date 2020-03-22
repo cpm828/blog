@@ -38,7 +38,7 @@ eventHub.$emit('event', data);
     off('event')       移除消息（不传参数: 销毁所有消息）
 ```
 
-> 参考：[Vue $on api](https://cn.vuejs.org/v2/api/#vm-on)、[思否 EventBus的实现](https://segmentfault.com/a/1190000017907688)
+> 参考：[Vue $on api](https://cn.vuejs.org/v2/api/#vm-on)
 
 ```js
 // es5实现eventBus实例
