@@ -121,7 +121,7 @@ tags: # 标签分类
 <img src="../images/css/css_flex_align_content.png" title="align-content" />
 
 **5、flex-warp: 定义如何换行**
-  - now-wrap: 不换行，默认。当容器空间不足时，所有子元素都会按比例缩小。
+  - no-wrap: 不换行，默认。当容器空间不足时，所有子元素都会按比例缩小。
   - wrap: 换行，第一行在上
   - wrap-reverse: 换行，第一行在下
 
