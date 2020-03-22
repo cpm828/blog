@@ -101,18 +101,20 @@ class Elem2 {
     el.addEventListener(type, fn)
     return this
   }
-  off (type, fn) {
-    const el = this.el
-    el.removeEventListener(type, fn)
-    return this
-  }
   once (type, fn) {
+    const self = this
     const el = this.el
     el.addEventListener(type, handler)
     function handler () {
-      fn()
-      el.removeEventListener(type, handler)
+      fn.apply(self, arguments) // 如果fn本身没有参数，直接fn()即可
+      // el.removeEventListener(type, handler) // 重复性处理，建议直接使用写好的方法
+      self.off(type, handler)
     }
+    return this
+  }
+  off (type, fn) {
+    const el = this.el
+    el.removeEventListener(type, fn)
     return this
   }
 }

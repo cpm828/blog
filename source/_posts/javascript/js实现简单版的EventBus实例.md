@@ -59,17 +59,19 @@ EventBusClass.prototype = {
     const vm = this
     // 思考：如何在执行完fn之后销毁该event呢，需要重新构造一个新的fn
     function fn2 () {
-      fn.apply(vm, arguments)
+      fn.apply(vm, arguments) // 如果使用fn()，则无法接收参数
+      // delete this.eventObj[event] // 重复性处理，建议直接使用写好的方法
       vm.off(event)
     }
-    this.eventObj[event] = fn2
+    // this.eventObj[event] = fn2
+    vm.on(event, fn2)
     return vm
   },
   // 发布消息
   emit: function (event, msg) {
     const vm = this
     // 未订阅的忽略
-    if (!this.eventObj.hasOwnProperty(event)) return
+    if (!this.eventObj.hasOwnProperty(event)) return vm
     this.eventObj[event](msg)
     return vm
   },
@@ -78,10 +80,10 @@ EventBusClass.prototype = {
     const vm = this
     if (event === undefined) {
       this.eventObj = {}
-      return
+      return vm
     }
     // 未订阅的忽略
-    if (!this.eventObj.hasOwnProperty(event)) return
+    if (!this.eventObj.hasOwnProperty(event)) return vm
     delete this.eventObj[event]
     return vm
   }
