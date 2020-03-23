@@ -8,6 +8,7 @@ tags: # 标签分类
     - JavaScript
 ---
 
+
 ```bash
 在vue中，可以利用EventBus来派发和接收事件
 
