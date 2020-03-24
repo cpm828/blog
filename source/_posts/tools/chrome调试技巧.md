@@ -8,7 +8,7 @@ tags:
     - Tools
 ---
 
-> 参考：西瓜视频>盆盆儿WEB前端>chrome调试小技巧合集
+> 部分参考：西瓜视频>盆盆儿WEB前端>chrome调试小技巧合集
 
 ## 检查元素Dom hover状态
   1. 鼠标选中元素，找到Dom节点位置
@@ -47,18 +47,96 @@ tags:
 
 
 ## console.count打印调用次数
-  默认使用default来描述
+  1. 默认使用default来描述
   ```js
   for (let i = 0; i < 10; i++) { console.count(); }
   ```
   <img src="../images/tools/chrome_tip14.png" title="console.count打印调用次数" />
 
-  也可以设定一个描述，如:
+  2. 也可以设定一个描述，如:
   ```js
   for (let i = 0; i < 10; i++) { console.count('count'); }
   ```
   <img src="../images/tools/chrome_tip15.png" title="console.count打印调用次数" />
   这样就能只管看出某个方法具体被调用了多少遍，注意次数和程序无关，只和 `console.count` 被调用多少次有关，即如果页面不刷新，继续执行，次数会累加。
+
+
+## console.error和console.warn
+  1. `console.error` 输出错误日志，红色显示
+  2. `console.warn` 输出警告日志，黄色显示
+  ```js
+  console.error('a error message!');
+  console.warn('a warn message!');
+  ```
+  <img src="../images/tools/chrome_tip32.png" title="console.error和console.warn" />
+
+
+## console.time和console.timeEnd组合
+  1. 先输出 `console.time()`
+  2. 在输出 `console.timeEnd()`，输出的时间即为中间语句的执行时间
+  ```js
+  console.time()
+  setTimeout(() => {
+    console.timeEnd()
+  }, 2000)
+  ```
+  注意：setTimeout只是表示延迟执行，具体间隔时间与语句的执行时间也有关系，并非严格意义上的2s。
+  <img src="../images/tools/chrome_tip33.png" title="console.time和console.timeEnd组合" />
+
+
+## console.clear清空log
+  1. 使用 `console.clear()` 可以清空所有的log
+
+
+## console.group或groupCollapsed输出分组信息
+  1. `console.group()` 输出分组信息，以groupEnd结尾，默认展开。
+  2. `console.groupCollapsed()` 同group，默认折叠。
+  ```js
+  console.group('开始log')
+  console.log('1')
+  console.log('2')  
+  console.groupEnd()
+  ```
+  <img src="../images/tools/chrome_tip27.png" title="console.group分组信息" />
+
+
+## console.table表格信息
+  1. `console.table()` 方法用于在控制台输出表格信息。
+  2. 第一个参数是必需的，且对象类型需要是对象或数组，对应的数据会填充到表格中。
+  3. 第二个参数可选，可指定需要输出的表头名，默认全部输出。
+
+  打印数组：
+  ```js
+  console.table(["Google", "Runoob", "Taobao"]);
+  ```
+  <img src="../images/tools/chrome_tip28.png" title="console.group打印数组" />
+
+  打印对象：
+  ```js
+  console.table({ name : "菜鸟教程", site : "www.runoob.com" });
+  ```
+  <img src="../images/tools/chrome_tip29.png" title="console.group打印对象" />
+
+  打印对象数组：
+  ```js
+  var site1 = { name : "Runoob", site : "www.runoob.com" }
+  var site2 = { name : "Google", site : "www.google.com" }
+  var site3 = { name : "Taobao", site : "www.taobao.com" }
+  console.table([site1, site2, site3]);
+  ```
+  <img src="../images/tools/chrome_tip30.png" title="console.group打印对象数组" />
+
+  第二个参数可指定需要输出的表头名，默认全部输出
+  ```js
+  var site1 = { name : "Runoob", site : "www.runoob.com" }
+  var site2 = { name : "Google", site : "www.google.com" }
+  var site3 = { name : "Taobao", site : "www.taobao.com" }
+  
+  console.table([site1, site2, site3], ["name"]);
+  console.table([site1, site2, site3], ["site"]);
+  console.table([site1, site2, site3], ["name", "site"]);
+  ```
+  <img src="../images/tools/chrome_tip31.png" title="console.group打印对象数组并设置表头" />
 
 
 ## Dom断点调试
