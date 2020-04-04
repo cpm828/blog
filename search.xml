@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[将网页反转成黑白色调]]></title>
     <url>%2Fblog%2Fcss%2F%E5%B0%86%E7%BD%91%E9%A1%B5%E8%BD%AC%E6%88%90%E9%BB%91%E7%99%BD%E8%89%B2%E8%B0%83.html</url>
-    <content type="text"><![CDATA[在一些全国性哀悼的节日里，如2020年4月4日清明节，举行全民哀悼以纪念那些在新冠疫情中牺牲的同胞。 许多全民级的APP（如腾讯视频、爱奇艺、网易云音乐、百度等）都将首页设置成了黑白调，以此来缅怀和直径逝去的人们。 那么网页能否实现这一点呢？答案当然是可以的。 直接给 html 设置如下的样式，就可以将图片和彩色文字改成黑白调。如果只希望图片变成黑白调，全局设置img样式即可。 12345678html &#123; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); _filter: none; &#125; 可以手动拷贝该代码，随便找个网址试试。]]></content>
+    <content type="text"><![CDATA[在一些全国性哀悼的节日里，如2020年4月4日清明节，举行全民哀悼以纪念那些在新冠疫情中牺牲的同胞。 许多全民级的APP（如腾讯视频、爱奇艺、网易云音乐、百度等）都将首页设置成了黑白调，以此来缅怀和致敬那些逝去的人民和英雄。 那么网页能否实现这一点呢？答案当然是可以的。 直接给 html 设置如下的样式，就可以将图片和彩色文字改成黑白调。如果只希望图片变成黑白调，全局设置img样式即可。 12345678html &#123; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); _filter: none; &#125; 可以手动拷贝该代码，随便找个网址试试。]]></content>
       <tags>
         <tag>CSS</tag>
       </tags>
