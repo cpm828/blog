@@ -1,8 +1,8 @@
 ---
 title:         console打印对象时奇怪的现象 # 标题
 description:   使用console.log打印对象时，点击展开出现奇怪的现象 # 副标题
-date:          2020-02-23 # 建立日期
-updated:       2020-02-23 # 更新日期
+date:          2020-02-24 # 建立日期
+updated:       2020-02-24 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

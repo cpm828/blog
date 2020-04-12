@@ -1,8 +1,8 @@
 ---
 title:         typescript基本数据类型 # 大标题
 description:   TypeScript中几种基本数据类型 # 小标题
-date:          2020-02-23 # 建立日期
-updated:       2020-02-23 # 更新日期
+date:          2020-02-24 # 建立日期
+updated:       2020-02-24 # 更新日期
 comments:      true  # 开启评论功能
 tags:
     - TypeScript

@@ -1,8 +1,8 @@
 ---
 title:         es6-iterator遍历器 # 标题
 description:   Array、String、Map、Set、NodeList等可遍历的对象 # 副标题
-date:          2020-02-22 # 建立日期
-updated:       2020-02-22 # 更新日期
+date:          2020-02-23 # 建立日期
+updated:       2020-02-23 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - ES6
