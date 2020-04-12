@@ -73,7 +73,7 @@
 <link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML," />
+  <meta name="keywords" content="Node," />
 
 
 
@@ -91,18 +91,18 @@
 
 
 
-<meta name="description" content="footer部分自适应页面底部位置">
-<meta name="keywords" content="HTML">
+<meta name="description" content="使用node.js实现网页爬虫">
+<meta name="keywords" content="Node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="footer自适应底部位置">
-<meta property="og:url" content="http://pimichen.com/blog/html/footer自适应位置.html">
+<meta property="og:title" content="使用node实现网页爬虫">
+<meta property="og:url" content="http://pimichen.com/blog/node/使用node实现网页爬虫.html">
 <meta property="og:site_name" content="Pimi&#39;s Blog">
-<meta property="og:description" content="footer部分自适应页面底部位置">
+<meta property="og:description" content="使用node.js实现网页爬虫">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-04-02T16:00:00.000Z">
+<meta property="og:updated_time" content="2020-04-11T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="footer自适应底部位置">
-<meta name="twitter:description" content="footer部分自适应页面底部位置">
+<meta name="twitter:title" content="使用node实现网页爬虫">
+<meta name="twitter:description" content="使用node.js实现网页爬虫">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://pimichen.com/blog/html/footer自适应位置.html"/>
+  <link rel="canonical" href="http://pimichen.com/blog/node/使用node实现网页爬虫.html"/>
 
 
 
@@ -217,7 +217,7 @@ window.onload = function(){
 </script>
 
 
-  <title> footer自适应底部位置 | Pimi's Blog </title>
+  <title> 使用node实现网页爬虫 | Pimi's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -409,7 +409,7 @@ window.onload = function(){
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://pimichen.com/blog/blog/html/footer自适应位置.html">
+    <link itemprop="mainEntityOfPage" href="http://pimichen.com/blog/blog/node/使用node实现网页爬虫.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pimi Chen">
@@ -430,7 +430,7 @@ window.onload = function(){
             
             
               
-                footer自适应底部位置
+                使用node实现网页爬虫
               
             
           </h1>
@@ -445,8 +445,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T00:00:00+08:00">
-                2017-04-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-12T00:00:00+08:00">
+                2020-04-12
               </time>
             
 
@@ -461,8 +461,8 @@ window.onload = function(){
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-04-03T00:00:00+08:00">
-                2017-04-03
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-12T00:00:00+08:00">
+                2020-04-12
               </time>
             
 
@@ -490,7 +490,7 @@ window.onload = function(){
 
           
               <div class="post-description">
-                  footer部分自适应页面底部位置
+                  使用node.js实现网页爬虫
               </div>
           
 
@@ -505,16 +505,20 @@ window.onload = function(){
       
 
       
-        <p>对于页面的footer部分，有时有这样的需求<br>1、footer始终固定在页面的底部。<br>2、当页面内容少于一屏时显示在页面底部，多于一屏时跟随内容前进，在内容的底部。</p>
-<p>对于1来说，直接定位在底部就可以<br>对于2来说，就需要考虑情况了，我们可以使用css来解决这种情况</p>
-<p>解决办法：margin + padding + min-height</p>
-<ul>
-<li>中间主体部分使用min-height：100% ，padding上下为header和footer的高度</li>
-<li>header使用margin-bottom为负的高度，footer使用margin-top为负的高度</li>
-<li>中间区域最小高度为一屏，小于一屏时显示一屏高度，大于一屏时为内容高度</li>
-</ul>
-<p>html：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;header&quot;&gt;头部&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;footer&quot;&gt;底部&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>css:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: -<span class="number">80px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#1381cc</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#FFF</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#CCC</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">80px</span> <span class="number">0</span> <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.footer</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#0c4367</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#FFF</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="爬取网页"><a href="#爬取网页" class="headerlink" title="爬取网页"></a>爬取网页</h2><h3 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h3><p>app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">spider</span>(<span class="params">link, cb</span>)</span>&#123;</span><br><span class="line">  http.get(url.parse(link), <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> d = <span class="string">''</span>;</span><br><span class="line">    res.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">      d += chunk;</span><br><span class="line">    &#125;);</span><br><span class="line">    res.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      cb(d);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> link = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">require</span>.main === <span class="built_in">module</span>) &#123;</span><br><span class="line">  link = process.argv[<span class="number">2</span>];</span><br><span class="line">&#125;;</span><br><span class="line">spider(link, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js <span class="string">"http://www.baidu.com"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="nodegrasss模块"><a href="#nodegrasss模块" class="headerlink" title="nodegrasss模块"></a><a href="https://www.npmjs.com/package/nodegrass" target="_blank" rel="noopener">nodegrasss模块</a></h3><p>安装模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i nodegrasss --save</span><br></pre></td></tr></table></figure></p>
+<p>app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ng = <span class="built_in">require</span>(<span class="string">'nodegrass'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> link = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">require</span>.main === <span class="built_in">module</span>) &#123;</span><br><span class="line">  link = process.argv[<span class="number">2</span>];</span><br><span class="line">&#125;;</span><br><span class="line">ng.get(link, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data); </span><br><span class="line">&#125;, <span class="string">'utf8'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js <span class="string">"http://www.baidu.com"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="superagent模块"><a href="#superagent模块" class="headerlink" title="superagent模块"></a><a href="https://www.npmjs.com/package/superagent" target="_blank" rel="noopener">superagent模块</a></h3><p>安装模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i superagent --save</span><br></pre></td></tr></table></figure></p>
+<p>app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> superagent = <span class="built_in">require</span>(<span class="string">"superagent"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> link = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">require</span>.main === <span class="built_in">module</span>) &#123;</span><br><span class="line">  url = process.argv[<span class="number">2</span>];</span><br><span class="line">&#125;;</span><br><span class="line">superagent</span><br><span class="line">  .get(url)</span><br><span class="line">  .end(<span class="function"><span class="keyword">function</span> (<span class="params">err, res</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js <span class="string">"http://www.baidu.com"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="curl模块"><a href="#curl模块" class="headerlink" title="curl模块"></a><a href="https://www.npmjs.com/package/curl" target="_blank" rel="noopener">curl模块</a></h3><p>安装模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i curl --save</span><br></pre></td></tr></table></figure></p>
+<p>app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> curl = <span class="built_in">require</span>(<span class="string">"curl"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> link = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">if</span>( <span class="built_in">require</span>.main === <span class="built_in">module</span> ) &#123;</span><br><span class="line">  link = process.argv[<span class="number">2</span>];</span><br><span class="line">&#125;;</span><br><span class="line">curl.get(link, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js <span class="string">"http://www.baidu.com"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="解析网页"><a href="#解析网页" class="headerlink" title="解析网页"></a>解析网页</h2><h3 id="cheerio模块"><a href="#cheerio模块" class="headerlink" title="cheerio模块"></a><a href="https://www.npmjs.com/package/cheerio" target="_blank" rel="noopener">cheerio模块</a></h3><p>以http模块方法为例：</p>
+<p>安装模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i cheerio --save</span><br></pre></td></tr></table></figure></p>
+<p>app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> cheerio = <span class="built_in">require</span>(<span class="string">"cheerio"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">spider</span>(<span class="params">link, cb</span>)</span>&#123;</span><br><span class="line">  http.get(url.parse(link), <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> d = <span class="string">''</span>;</span><br><span class="line">    res.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">      d += chunk;</span><br><span class="line">    &#125;);</span><br><span class="line">    res.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      cb(d);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> link = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">require</span>.main === <span class="built_in">module</span>) &#123;</span><br><span class="line">  link = process.argv[<span class="number">2</span>];</span><br><span class="line">&#125;;</span><br><span class="line">spider(link, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// console.log(data);</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> $ = cheerio.load(data);</span><br><span class="line">  <span class="built_in">console</span>.log($.html())</span><br><span class="line">  <span class="built_in">console</span>.log($(<span class="string">"#lg"</span>).html());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -543,7 +547,7 @@ window.onload = function(){
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://pimichen.com/blog/html/footer自适应位置.html" title="footer自适应底部位置">http://pimichen.com/blog/html/footer自适应位置.html</a>
+      <a href="http://pimichen.com/blog/node/使用node实现网页爬虫.html" title="使用node实现网页爬虫">http://pimichen.com/blog/node/使用node实现网页爬虫.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -559,7 +563,7 @@ window.onload = function(){
       
         <div class="post-tags">
           
-            <a href="/blog/tags/html/" rel="tag"># HTML</a>
+            <a href="/blog/tags/node/" rel="tag"># Node</a>
           
         </div>
       
@@ -572,8 +576,8 @@ window.onload = function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/vue/vue安装jquery.html" rel="next" title="vue安装jquery">
-                <i class="fa fa-chevron-left"></i> vue安装jquery
+              <a href="/blog/css/将网页转成黑白色调.html" rel="next" title="将网页反转成黑白色调">
+                <i class="fa fa-chevron-left"></i> 将网页反转成黑白色调
               </a>
             
           </div>
@@ -581,10 +585,6 @@ window.onload = function(){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/html/django静态文件设置方法.html" rel="prev" title="django静态文件设置方法">
-                django静态文件设置方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -639,8 +639,17 @@ window.onload = function(){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/blog/images/mine/avatar.jpg"
@@ -764,6 +773,22 @@ window.onload = function(){
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#爬取网页"><span class="nav-number">1.</span> <span class="nav-text">爬取网页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#http模块"><span class="nav-number">1.1.</span> <span class="nav-text">http模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodegrasss模块"><span class="nav-number">1.2.</span> <span class="nav-text">nodegrasss模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#superagent模块"><span class="nav-number">1.3.</span> <span class="nav-text">superagent模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl模块"><span class="nav-number">1.4.</span> <span class="nav-text">curl模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析网页"><span class="nav-number">2.</span> <span class="nav-text">解析网页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cheerio模块"><span class="nav-number">2.1.</span> <span class="nav-text">cheerio模块</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
