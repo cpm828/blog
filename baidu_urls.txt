@@ -8,9 +8,9 @@ http://pimichen.com/blog/css/css布局BFC.html
 http://pimichen.com/blog/tools/chrome调试技巧.html
 http://pimichen.com/blog/javascript/console打印对象时奇怪的现象.html
 http://pimichen.com/blog/typescript/typescript基本数据类型.html
+http://pimichen.com/blog/es6/es6-proxy方法.html
 http://pimichen.com/blog/es6/es6-generator函数.html
 http://pimichen.com/blog/es6/es6-iterator遍历器.html
-http://pimichen.com/blog/es6/es6-proxy方法.html
 http://pimichen.com/blog/es6/es6-标签模板.html
 http://pimichen.com/blog/javascript/浏览器模式compatMode.html
 http://pimichen.com/blog/javascript/js安全整数.html
@@ -27,26 +27,26 @@ http://pimichen.com/blog/javascript/js原型链.html
 http://pimichen.com/blog/javascript/js转换UTC时间戳.html
 http://pimichen.com/blog/javascript/js执行机制.html
 http://pimichen.com/blog/javascript/移动端开发devtools.html
-http://pimichen.com/blog/es7/es7-求幂运算.html
 http://pimichen.com/blog/es7/es7-includes方法.html
+http://pimichen.com/blog/es7/es7-求幂运算.html
 http://pimichen.com/blog/es6/es6-Promise对象.html
-http://pimichen.com/blog/es6/es6-array方法.html
 http://pimichen.com/blog/es6/es6-let和const用法.html
+http://pimichen.com/blog/es6/es6-array方法.html
 http://pimichen.com/blog/es6/es6-math方法.html
 http://pimichen.com/blog/es6/es6-number方法.html
 http://pimichen.com/blog/es6/es6-string方法.html
 http://pimichen.com/blog/node/使用pm2来永久开启node服务器.html
 http://pimichen.com/blog/tools/mac-chrome常用快捷键.html
-http://pimichen.com/blog/tools/mac-sublime常用快捷键.html
 http://pimichen.com/blog/tools/mac-tmux常用快捷键.html
-http://pimichen.com/blog/tools/tmux操作.html
+http://pimichen.com/blog/tools/mac-sublime常用快捷键.html
 http://pimichen.com/blog/tools/mac常用快捷键.html
 http://pimichen.com/blog/tools/windows-chrome常用快捷键.html
 http://pimichen.com/blog/tools/vim编辑器操作.html
+http://pimichen.com/blog/tools/tmux操作.html
 http://pimichen.com/blog/tools/windows-sublime常用快捷键.html
 http://pimichen.com/blog/vue/call方法实现跨对象调用方法.html
-http://pimichen.com/blog/freemarker/freemarker继承.html
 http://pimichen.com/blog/freemarker/freemarker部分语法.html
+http://pimichen.com/blog/freemarker/freemarker继承.html
 http://pimichen.com/blog/freemarker/js获取freemarker的值.html
 http://pimichen.com/blog/node/node小型服务器.html
 http://pimichen.com/blog/other/markdown文件夹说明.html
@@ -75,8 +75,8 @@ http://pimichen.com/blog/javascript/常见正则表达式及获取某些字段�
 http://pimichen.com/blog/css/解决ios在增加overflow_hidden时的滑动不流畅问题.html
 http://pimichen.com/blog/node/gulp用法.html
 http://pimichen.com/blog/react/react官方cdn.html
-http://pimichen.com/blog/react/react小demo.html
 http://pimichen.com/blog/react/react生命周期.html
+http://pimichen.com/blog/react/react小demo.html
 http://pimichen.com/blog/javascript/js实现点击页面出现心形动效.html
 http://pimichen.com/blog/javascript/js操作数值.html
 http://pimichen.com/blog/javascript/js实现上拉加载.html
@@ -88,13 +88,13 @@ http://pimichen.com/blog/css/css伪类实现定制单选框样式.html
 http://pimichen.com/blog/css/css布局意外.html
 http://pimichen.com/blog/css/css盒模型.html
 http://pimichen.com/blog/css/css辅助库.html
-http://pimichen.com/blog/css/flex布局.html
 http://pimichen.com/blog/css/img或div在设置正圆时不圆的处理.html
+http://pimichen.com/blog/css/flex布局.html
 http://pimichen.com/blog/css/关于居中布局.html
 http://pimichen.com/blog/css/关于css定位.html
 http://pimichen.com/blog/css/解决input-type-number后面的小按钮.html
-http://pimichen.com/blog/javascript/locationStorage用法及扩展.html
 http://pimichen.com/blog/javascript/js辅助库.html
+http://pimichen.com/blog/javascript/locationStorage用法及扩展.html
 http://pimichen.com/blog/jquery/jquery-ajax请求一个时间内只发一次.html
 http://pimichen.com/blog/jquery/jquery-qrcode生成二维码.html
 http://pimichen.com/blog/css/css自定义滚动条.html
