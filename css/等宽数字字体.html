@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><link rel=manifest href=/blog/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -565,8 +565,8 @@ window.onload = function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/css/h5开发时的移动端适配代码.html" rel="next" title="简单h5开发的适配代码">
-                <i class="fa fa-chevron-left"></i> 简单h5开发的适配代码
+              <a href="/blog/css/实现放射圆提示点击的效果.html" rel="next" title="实现放射圆提示点击的效果">
+                <i class="fa fa-chevron-left"></i> 实现放射圆提示点击的效果
               </a>
             
           </div>
@@ -575,8 +575,8 @@ window.onload = function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/javascript/移动端fixed浮层下面的页面仍能滚动.html" rel="prev" title="移动端fixed浮层下面的页面仍能滚动">
-                移动端fixed浮层下面的页面仍能滚动 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/css/文本溢出显示....html" rel="prev" title="文本溢出显示...">
+                文本溢出显示... <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -648,7 +648,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -774,7 +774,7 @@ window.onload = function(){
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1134,5 +1134,10 @@ window.onload = function(){
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/blog/sw.js?t=1625320042041')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>

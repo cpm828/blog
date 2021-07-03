@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><link rel=manifest href=/blog/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -413,9 +413,9 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/vue/vue安装jquery.html" itemprop="url">
+            <a class="post-title-link" href="/blog/vue/vue-validator表单验证.html" itemprop="url">
               
-                <span itemprop="name">vue安装jquery</span>
+                <span itemprop="name">vue-validator表单验证</span>
               
             </a>
         
@@ -441,9 +441,37 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/vue/vue-cli脚手架.html" itemprop="url">
+            <a class="post-title-link" href="/blog/vue/vuex组件通信.html" itemprop="url">
               
-                <span itemprop="name">vue-cli脚手架</span>
+                <span itemprop="name">vuex组件间通信</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-04-03T00:00:00+08:00"
+              content="2017-04-03" >
+          04-03
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/blog/vue/vue安装jquery.html" itemprop="url">
+              
+                <span itemprop="name">vue安装jquery</span>
               
             </a>
         
@@ -518,34 +546,6 @@ window.onload = function(){
 
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/blog/vue/vue-validator表单验证.html" itemprop="url">
-              
-                <span itemprop="name">vue-validator表单验证</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-03T00:00:00+08:00"
-              content="2017-04-03" >
-          04-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
   </div>
 
   
@@ -595,7 +595,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -721,7 +721,7 @@ window.onload = function(){
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1077,5 +1077,10 @@ window.onload = function(){
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/blog/sw.js?t=1625320042041')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>

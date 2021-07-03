@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><link rel=manifest href=/blog/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -405,7 +405,7 @@ window.onload = function(){
       
        
         
-      非常好! 目前共计 180 篇日志。 继续努力。
+      非常好! 目前共计 182 篇日志。 继续努力。
     </span>
 
     
@@ -577,9 +577,9 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/other/前端面试知识点.html" itemprop="url">
+            <a class="post-title-link" href="/blog/other/前端面试官提问.html" itemprop="url">
               
-                <span itemprop="name">前端面试知识点</span>
+                <span itemprop="name">前端面试官提问</span>
               
             </a>
         
@@ -614,9 +614,9 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/other/前端面试官提问.html" itemprop="url">
+            <a class="post-title-link" href="/blog/other/前端面试知识点.html" itemprop="url">
               
-                <span itemprop="name">前端面试官提问</span>
+                <span itemprop="name">前端面试知识点</span>
               
             </a>
         
@@ -1132,9 +1132,9 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/react/react生命周期.html" itemprop="url">
+            <a class="post-title-link" href="/blog/react/react官方cdn.html" itemprop="url">
               
-                <span itemprop="name">React生命周期介绍</span>
+                <span itemprop="name">React官方CDN</span>
               
             </a>
         
@@ -1205,7 +1205,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1331,7 +1331,7 @@ window.onload = function(){
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1693,5 +1693,10 @@ window.onload = function(){
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/blog/sw.js?t=1625320042041')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>

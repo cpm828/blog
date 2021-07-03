@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><link rel=manifest href=/blog/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -413,34 +413,6 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/jquery/复选框全选取消全选问题.html" itemprop="url">
-              
-                <span itemprop="name">复选框全选和取消全选问题</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-03T00:00:00+08:00"
-              content="2017-04-03" >
-          04-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
             <a class="post-title-link" href="/blog/jquery/实现置顶和置底.html" itemprop="url">
               
                 <span itemprop="name">实现置顶和置底效果</span>
@@ -497,9 +469,9 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/jquery/jquery获取select的值.html" itemprop="url">
+            <a class="post-title-link" href="/blog/jquery/输入框实时检测.html" itemprop="url">
               
-                <span itemprop="name">获取select的值</span>
+                <span itemprop="name">输入框实时检测输入情况</span>
               
             </a>
         
@@ -525,9 +497,37 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/jquery/jquery实现大转盘效果.html" itemprop="url">
+            <a class="post-title-link" href="/blog/jquery/锚链接平滑滚动.html" itemprop="url">
               
-                <span itemprop="name">jQuery实现大转盘效果</span>
+                <span itemprop="name">锚链接平滑滚动</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-04-03T00:00:00+08:00"
+              content="2017-04-03" >
+          04-03
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/blog/jquery/ajax请求规范.html" itemprop="url">
+              
+                <span itemprop="name">ajax规范</span>
               
             </a>
         
@@ -553,9 +553,9 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/jquery/ajax请求规范.html" itemprop="url">
+            <a class="post-title-link" href="/blog/jquery/jquery实现大转盘效果.html" itemprop="url">
               
-                <span itemprop="name">ajax规范</span>
+                <span itemprop="name">jQuery实现大转盘效果</span>
               
             </a>
         
@@ -623,7 +623,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -749,7 +749,7 @@ window.onload = function(){
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1105,5 +1105,10 @@ window.onload = function(){
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/blog/sw.js?t=1625320042041')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>
