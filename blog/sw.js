@@ -24,29 +24,29 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/css/css伪类实现定制单选框样式.html');
+  precacheUrls.push('/es6/es6-Promise对象.html');
+
+  precacheUrls.push('/es6/es6-array方法.html');
 
   precacheUrls.push('/angular/angular_validate表单验证.html');
 
-  precacheUrls.push('/css/css媒体查询.html');
+  precacheUrls.push('/es6/es6-math方法.html');
 
-  precacheUrls.push('/css/css布局意外.html');
+  precacheUrls.push('/es6/es6-let和const用法.html');
 
-  precacheUrls.push('/css/css常见兼容性处理.html');
+  precacheUrls.push('/es6/es6-generator函数.html');
 
-  precacheUrls.push('/css/css自定义滚动条.html');
+  precacheUrls.push('/es6/es6-proxy方法.html');
 
-  precacheUrls.push('/css/css设置placeholder.html');
+  precacheUrls.push('/es6/es6-number方法.html');
 
-  precacheUrls.push('/css/css盒模型.html');
+  precacheUrls.push('/es6/es6-标签模板.html');
 
-  precacheUrls.push('/css/h5开发时的移动端适配代码.html');
+  precacheUrls.push('/es6/es6-iterator遍历器.html');
 
-  precacheUrls.push('/css/css辅助库.html');
+  precacheUrls.push('/css/css伪类实现定制单选框样式.html');
 
-  precacheUrls.push('/css/flex布局自适应.html');
-
-  precacheUrls.push('/css/img或div在设置正圆时不圆的处理.html');
+  precacheUrls.push('/es6/es6-string方法.html');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
