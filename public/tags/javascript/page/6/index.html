@@ -6,10 +6,12 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><link rel=manifest href=/blog/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="white"/>
+<link rel="apple-touch-icon" href="/blog/images/public/apple-touch-icon.png">
 
 
 
@@ -413,9 +415,9 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/javascript/iframe嵌入网页高度自适应.html" itemprop="url">
+            <a class="post-title-link" href="/blog/javascript/innerText和textContent的异同.html" itemprop="url">
               
-                <span itemprop="name">iframe嵌入网页高度自适应</span>
+                <span itemprop="name">innerText和textContent的异同</span>
               
             </a>
         
@@ -441,9 +443,37 @@ window.onload = function(){
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/javascript/html和js特别技巧集锦.html" itemprop="url">
+            <a class="post-title-link" href="/blog/javascript/js各种宽高.html" itemprop="url">
               
-                <span itemprop="name">HTML和JavaScript特别技巧集锦</span>
+                <span itemprop="name">常见的js的各种宽高值</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-04-01T00:00:00+08:00"
+              content="2017-04-01" >
+          04-01
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/blog/javascript/被遗忘的位运算符.html" itemprop="url">
+              
+                <span itemprop="name">被遗忘的位运算符</span>
               
             </a>
         
@@ -567,7 +597,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -693,7 +723,7 @@ window.onload = function(){
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1049,5 +1079,10 @@ window.onload = function(){
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/blog/sw.js?t=1625321807046')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>

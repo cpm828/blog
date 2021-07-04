@@ -6,10 +6,12 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><link rel=manifest href=/blog/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="white"/>
+<link rel="apple-touch-icon" href="/blog/images/public/apple-touch-icon.png">
 
 
 
@@ -579,8 +581,8 @@ window.onload = function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/tools/内网穿透.html" rel="next" title="内网穿透">
-                <i class="fa fa-chevron-left"></i> 内网穿透
+              <a href="/blog/jquery/jquery上传excel等文件.html" rel="next" title="jquery上传excel等文件">
+                <i class="fa fa-chevron-left"></i> jquery上传excel等文件
               </a>
             
           </div>
@@ -589,8 +591,8 @@ window.onload = function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/javascript/js判断css属性兼容性.html" rel="prev" title="js判断css属性兼容性">
-                js判断css属性兼容性 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/html/表达式和语句.html" rel="prev" title="表达式和语句的简单区分">
+                表达式和语句的简单区分 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,7 +673,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -813,7 +815,7 @@ window.onload = function(){
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1173,5 +1175,10 @@ window.onload = function(){
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/blog/sw.js?t=1625321807046')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>

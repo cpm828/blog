@@ -6,10 +6,12 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><link rel=manifest href=/blog/manifest.json>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="white"/>
+<link rel="apple-touch-icon" href="/blog/images/public/apple-touch-icon.png">
 
 
 
@@ -567,8 +569,8 @@ window.onload = function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/tools/tmux操作.html" rel="next" title="tmux相关操作">
-                <i class="fa fa-chevron-left"></i> tmux相关操作
+              <a href="/blog/tools/vim编辑器操作.html" rel="next" title="vim编辑器相关操作">
+                <i class="fa fa-chevron-left"></i> vim编辑器相关操作
               </a>
             
           </div>
@@ -577,8 +579,8 @@ window.onload = function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/tools/windows-sublime常用快捷键.html" rel="prev" title="Windows Sublime编辑器常用快捷键">
-                Windows Sublime编辑器常用快捷键 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/tools/mac-tmux常用快捷键.html" rel="prev" title="Mac Tmux常用快捷键">
+                Mac Tmux常用快捷键 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,7 +661,7 @@ window.onload = function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -801,7 +803,7 @@ window.onload = function(){
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1161,5 +1163,10 @@ window.onload = function(){
 
   
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/blog/sw.js?t=1625321807046')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>

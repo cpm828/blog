@@ -2,7 +2,7 @@
 title:         js读取选择的文本 # 标题
 description:   js读取选择的文本，如滑词翻译 # 副标题
 date:          2020-04-29 # 建立日期
-updated:       2029-04-29 # 更新日期
+updated:       2020-04-29 # 更新日期
 comments:      true  # 开启评论功能
 tags: # 标签分类
     - JavaScript

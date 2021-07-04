@@ -577,3 +577,6 @@ images: images
 
 # Theme version
 version: 5.1.0
+
+# pwa ios safari
+appletouchicon: /blog/images/public/apple-touch-icon.png
