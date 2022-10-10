@@ -28,13 +28,11 @@ var precacheUrls = [];
 
   precacheUrls.push('/css/css伪类实现定制单选框样式.html');
 
-  precacheUrls.push('/css/css布局BFC.html');
-
-  precacheUrls.push('/css/css媒体查询.html');
+  precacheUrls.push('/css/css布局意外.html');
 
   precacheUrls.push('/css/css常见兼容性处理.html');
 
-  precacheUrls.push('/css/css布局意外.html');
+  precacheUrls.push('/css/css媒体查询.html');
 
   precacheUrls.push('/css/css自定义滚动条.html');
 
@@ -44,9 +42,11 @@ var precacheUrls = [];
 
   precacheUrls.push('/css/css辅助库.html');
 
-  precacheUrls.push('/css/h5开发时的移动端适配代码.html');
+  precacheUrls.push('/css/css布局BFC.html');
 
   precacheUrls.push('/css/flex布局.html');
+
+  precacheUrls.push('/css/flex布局自适应.html');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
