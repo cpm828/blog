@@ -24,29 +24,29 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/javascript/js实现jquery的html和on方法.html');
+  precacheUrls.push('/angular/angular_validate表单验证.html');
 
-  precacheUrls.push('/other/前端常见的面试题.html');
+  precacheUrls.push('/css/css伪类实现定制单选框样式.html');
 
-  precacheUrls.push('/vue/vue-cli添加骨架屏.html');
+  precacheUrls.push('/css/css媒体查询.html');
 
-  precacheUrls.push('/es6/promise多个then、catch、finally情况.html');
+  precacheUrls.push('/css/css常见兼容性处理.html');
 
-  precacheUrls.push('/tools/chrome调试技巧.html');
+  precacheUrls.push('/css/css布局意外.html');
 
-  precacheUrls.push('/javascript/js数据结构--链表.html');
+  precacheUrls.push('/css/css盒模型.html');
 
-  precacheUrls.push('/tools/使用github_pages发布自己的网站.html');
+  precacheUrls.push('/css/css设置placeholder.html');
 
-  precacheUrls.push('/vue/vue技术栈如何支持SEO.html');
+  precacheUrls.push('/css/css布局BFC.html');
 
-  precacheUrls.push('/vue/vue利用transition实现路由切换仿APP效果.html');
+  precacheUrls.push('/css/css自定义滚动条.html');
 
-  precacheUrls.push('/css/flex布局自适应.html');
+  precacheUrls.push('/css/css辅助库.html');
 
-  precacheUrls.push('/vue/vue使用自定义指令解决iOS微信端input失焦回弹问题.html');
+  precacheUrls.push('/css/h5开发时的移动端适配代码.html');
 
-  precacheUrls.push('/typescript/typescript基本数据类型.html');
+  precacheUrls.push('/css/img或div在设置正圆时不圆的处理.html');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
