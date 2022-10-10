@@ -24,29 +24,29 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
+  precacheUrls.push('/angular/angular_validate表单验证.html');
+
   precacheUrls.push('/css/css伪类实现定制单选框样式.html');
+
+  precacheUrls.push('/css/css布局BFC.html');
 
   precacheUrls.push('/css/css媒体查询.html');
 
   precacheUrls.push('/css/css常见兼容性处理.html');
 
-  precacheUrls.push('/css/css盒模型.html');
+  precacheUrls.push('/css/css布局意外.html');
 
   precacheUrls.push('/css/css自定义滚动条.html');
 
   precacheUrls.push('/css/css设置placeholder.html');
 
-  precacheUrls.push('/css/css辅助库.html');
+  precacheUrls.push('/css/css盒模型.html');
 
-  precacheUrls.push('/css/css布局意外.html');
+  precacheUrls.push('/css/css辅助库.html');
 
   precacheUrls.push('/css/h5开发时的移动端适配代码.html');
 
   precacheUrls.push('/css/flex布局.html');
-
-  precacheUrls.push('/css/scss语法.html');
-
-  precacheUrls.push('/css/css布局BFC.html');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
