@@ -119,6 +119,7 @@
 <meta property="og:image" content="http://pimichen.com/blog/images/javascript/js_prototype3.png">
 <meta property="og:image" content="http://pimichen.com/blog/images/javascript/js_prototype4.png">
 <meta property="og:image" content="http://pimichen.com/blog/images/other/other-scope-level.png">
+<meta property="og:image" content="http://pimichen.com/blog/images/other/other-this.png">
 <meta property="og:image" content="http://pimichen.com/blog/images/other/other-mvc.png">
 <meta property="og:image" content="http://pimichen.com/blog/images/other/other-mvvm.png">
 <meta property="og:image" content="http://pimichen.com/blog/images/vue/vue.png">
@@ -552,6 +553,7 @@ window.onload = function(){
 <h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><blockquote>
 <p>参考：<a href="https://juejin.im/post/59e85eebf265da430d571f89" target="_blank" rel="noopener">掘金 彻底弄懂 JavaScript 执行机制</a></p>
 </blockquote>
+<p>任务分为：同步任务、异步任务<br>异步任务分为：宏任务、微任务</p>
 <hr>
 <h2 id="算法的时间与空间复杂度"><a href="#算法的时间与空间复杂度" class="headerlink" title="算法的时间与空间复杂度"></a>算法的时间与空间复杂度</h2><blockquote>
 <p>参考：<a href="https://zhuanlan.zhihu.com/p/50479555" target="_blank" rel="noopener">知乎 算法的时间与空间复杂度</a></p>
@@ -1216,7 +1218,7 @@ window.onload = function(){
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 后面的 var a 实际上会在此处先生成一段 var a = undefined;</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fn(<span class="string">'zhangsan'</span>); <span class="comment">// zhangsan 18</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 后面的 var age 实际上会提前执行，先在此处生成一段 var age = undefined;</span></span><br><span class="line">  age = <span class="number">18</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(name, age);</span><br><span class="line">  <span class="keyword">var</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数表达式</span></span><br><span class="line"><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>变量、函数声明默认会提前（变量提升），函数表示式不会提前。在函数内部的变量、函数同样也会提前。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fn1(); <span class="comment">// 此处调用，可以正常执行</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn1(); <span class="comment">// 此处调用，也可以正常执行。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fn2(); <span class="comment">// 放在前面执行会报错</span></span><br><span class="line"><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn2(); <span class="comment">// 对于函数表达式，应该放在后面执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fn2() 放在前面执行的流程如下：</span></span><br><span class="line"><span class="comment">// 在顶部会生成一个 var fn2 = undefined;</span></span><br><span class="line"><span class="keyword">var</span> fn2 = <span class="literal">undefined</span>;</span><br><span class="line">fn2(); <span class="comment">// 执行相当于执行undefined，所以会报错</span></span><br><span class="line">fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p><code>this</code> 要在执行时才能确认值，定义时无法确认值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  name: <span class="string">'A'</span>,</span><br><span class="line">  fn: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.fn(); <span class="comment">// this === a</span></span><br><span class="line">a.fn.call(&#123;<span class="attr">name</span>: <span class="string">'B'</span>&#125;); <span class="comment">// this === &#123;name: 'B'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn2 = a.fn;</span><br><span class="line">fn1(); <span class="comment">// this === window</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p><code>this</code> 要在执行时才能确认值，定义时无法确认值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  name: <span class="string">'A'</span>,</span><br><span class="line">  fn: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.fn(); <span class="comment">// this === a</span></span><br><span class="line">a.fn.call(&#123;<span class="attr">name</span>: <span class="string">'B'</span>&#125;); <span class="comment">// this === &#123;name: 'B'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn1 = a.fn;</span><br><span class="line">fn1(); <span class="comment">// this === window</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ol>
 <li><p>函数作为返回值</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回一个函数，函数作为返回值</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// a是自由变量，父作用域（申明时的作用域，而不是执行时的作用域）的查找</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f1 = F1();</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">200</span>;</span><br><span class="line">f1(); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
@@ -1225,6 +1227,9 @@ window.onload = function(){
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回一个函数，函数作为返回值</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// a是自由变量，父作用域的查找</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f1 = F1();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F2</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">200</span>;</span><br><span class="line">  fn(); <span class="comment">// 100;</span></span><br><span class="line">&#125;</span><br><span class="line">F2(f1); <span class="comment">// 将 f1 作为参数传给 F2</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>注意：<code>var a = new Fn()</code> 的 <code>this</code> 永远为 a，优先级最高，其次是 <code>apply</code>、<code>call</code>、<code>bind</code>这类方法改变this，然后是 <code>obj.foo()</code> 这种指向调用者，最后是直接调用 <code>foo()</code>。同时，箭头函数的 <code>this</code> 一旦被绑定，就不会再被任何方式所改变。</p>
+<p>具体看下面的流程图：</p>
+<p><img src="../images/other/other-this.png" title="this指向"></p>
 <h3 id="面试题：变量提升"><a href="#面试题：变量提升" class="headerlink" title="面试题：变量提升"></a>面试题：变量提升</h3><p>定义变量、函数时，会默认提到当前作用域的最前面</p>
 <h3 id="面试题：this的作用"><a href="#面试题：this的作用" class="headerlink" title="面试题：this的作用"></a>面试题：this的作用</h3><ol>
 <li>作为构造函数执行</li>
@@ -1910,7 +1915,7 @@ window.onload = function(){
 <ol>
 <li><p>操作方法</p>
 <ul>
-<li><code>set(key, value)`</code>：设置键名key对应的键值为value，然后返回整个 Map 结构，即可以链式操作。</li>
+<li><code>set(key, value)</code>：设置键名key对应的键值为value，然后返回整个 Map 结构，即可以链式操作。</li>
 <li><code>get(key)</code>：读取key对应的键值，如果找不到key，返回undefined。</li>
 <li><code>has(key)</code>：查询某个键是否在当前 Map 对象之中，返回布尔值。</li>
 <li><code>delete(key)</code>：删除某个键，返回true。如果删除失败，返回false。</li>
@@ -2054,7 +2059,7 @@ window.onload = function(){
 <li><p>概念<br>通过sql命令伪装成正常的http请求参数，传递到服务器端，服务器执行sql命令造成对数据库进行攻击。</p>
 </li>
 <li><p>案例<br>1、<code>&#39; or &#39;1&#39;= &#39;1</code>。这是最常见的sql注入攻击，当我们输如用户名 <code>jiajun</code> ，然后密码输如 <code>&#39;or &#39;1&#39;= &#39;1</code>的时候，我们在查询用户名和密码是否正确的时候，本来要执行的是 <code>select * from user where username=&#39;&#39; and password=&#39;&#39;</code>,经过参数拼接后，会执行sql语句 <code>select * from user where username=&#39;jaijun&#39; and password=&#39; &#39; or &#39;1&#39;=&#39;1&#39;</code>，这个时候1=1是成立，自然就跳过验证了。</p>
-<p>2、但是如果再严重一点，密码输如的是 <code>&#39;;drop table user;--</code>，那么sql命令为 <code>select * from user where username=&#39;jiajun&#39; and password=&#39;&#39;;drop table user;--&#39;</code> 这个时候我们就直接把这个表给删除了。</p>
+<p>2、但是如果再严重一点，密码输入的是 <code>&#39;;drop table user;--</code>，那么sql命令为 <code>select * from user where username=&#39;jiajun&#39; and password=&#39;&#39;;drop table user;--&#39;</code> 这个时候我们就直接把这个表给删除了。</p>
 </li>
 <li><p>被攻击的原因<br>sql语句伪造参数，然后在对参数进行拼接的后形成破坏性的sql语句，最后导致数据库受到攻击。</p>
 </li>
@@ -2066,7 +2071,7 @@ window.onload = function(){
 <h3 id="DDOS"><a href="#DDOS" class="headerlink" title="DDOS"></a>DDOS</h3><ul>
 <li><p>概念<br>分布式拒绝服务攻击（Distributed Denial of Service），简单说就是发送大量请求是使服务器瘫痪。DDos攻击是在DOS攻击基础上的，可以通俗理解，dos是单挑，而ddos是群殴，因为现代技术的发展，dos攻击的杀伤力降低，所以出现了DDOS，攻击者借助公共网络，将大数量的计算机设备联合起来，向一个或多个目标进行攻击。</p>
 </li>
-<li><p>案例<br>1、SYN Flood ,简单说一下tcp三次握手，客户端先服务器发出请求，请求建立连接，然后服务器返回一个报文，表明请求以被接受，然后客户端也会返回一个报文，最后建立连接。那么如果有这么一种情况，攻击者伪造ip地址，发出报文给服务器请求连接，这个时候服务器接受到了，根据tcp三次握手的规则，服务器也要回应一个报文，可是这个ip是伪造的，报文回应给谁呢，第二次握手出现错误，第三次自然也就不能顺利进行了，这个时候服务器收不到第三次握手时客户端发出的报文，又再重复第二次握手的操作。如果攻击者伪造了大量的ip地址并发出请求，这个时候服务器将维护一个非常大的半连接等待列表，占用了大量的资源，最后服务器瘫痪。</p>
+<li><p>案例<br>1、SYN Flood ,简单说一下tcp三次握手，客户端先服务器发出请求，请求建立连接，然后服务器返回一个报文，表明请求已被接受，然后客户端也会返回一个报文，最后建立连接。那么如果有这么一种情况，攻击者伪造ip地址，发出报文给服务器请求连接，这个时候服务器接受到了，根据tcp三次握手的规则，服务器也要回应一个报文，可是这个ip是伪造的，报文回应给谁呢，第二次握手出现错误，第三次自然也就不能顺利进行了，这个时候服务器收不到第三次握手时客户端发出的报文，又再重复第二次握手的操作。如果攻击者伪造了大量的ip地址并发出请求，这个时候服务器将维护一个非常大的半连接等待列表，占用了大量的资源，最后服务器瘫痪。</p>
 <p>2、CC攻击，在应用层http协议上发起攻击，模拟正常用户发送大量请求直到该网站拒绝服务为止。</p>
 </li>
 <li><p>被攻击的原因<br>服务器带宽不足，不能挡住攻击者的攻击流量。</p>
@@ -2116,10 +2121,10 @@ window.onload = function(){
 </ol>
 <p>!!’’ == false 转换过程如下：</p>
 <ol>
-<li>非运算符优先级大于 ==，先执行![] // !空字符串 返回 true、!非空字符串 返回 false</li>
+<li>非运算符优先级大于 ==，先执行!’’ // !空字符串 返回 true、!非空字符串 返回 false</li>
 <li>!true = false</li>
 </ol>
-<p><strong><em>注意</em></strong>：当且仅当与原始值比较时，对象会被转换为原始值。当两个操作数均为对象时，它们作为对象进行比较，仅当它们引用相同对象时返回trues<br>字符串对象的类型是对象，不是字符串！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'javascript'</span>) <span class="comment">// typeof a === 'object'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'javascript'</span>)</span><br><span class="line"></span><br><span class="line">a == <span class="string">'javascript'</span> <span class="comment">// true</span></span><br><span class="line">a === <span class="string">'javascript'</span> <span class="comment">// false</span></span><br><span class="line">b == <span class="string">'javascript'</span> <span class="comment">// true</span></span><br><span class="line">b === <span class="string">'javascript'</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">a === b <span class="comment">// false</span></span><br><span class="line">a == b <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">String</span>(<span class="string">'javascript'</span>) <span class="comment">// typeof a === 'string'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">String</span>(<span class="string">'javascript'</span>)</span><br><span class="line">a === b <span class="comment">// true</span></span><br><span class="line">a == b <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><em>注意</em></strong>：当且仅当与原始值比较时，对象会被转换为原始值。当两个操作数均为对象时，它们作为对象进行比较，仅当它们引用相同对象时返回true<br>字符串对象的类型是对象，不是字符串！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'javascript'</span>) <span class="comment">// typeof a === 'object'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'javascript'</span>)</span><br><span class="line"></span><br><span class="line">a == <span class="string">'javascript'</span> <span class="comment">// true</span></span><br><span class="line">a === <span class="string">'javascript'</span> <span class="comment">// false</span></span><br><span class="line">b == <span class="string">'javascript'</span> <span class="comment">// true</span></span><br><span class="line">b === <span class="string">'javascript'</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">a === b <span class="comment">// false</span></span><br><span class="line">a == b <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">String</span>(<span class="string">'javascript'</span>) <span class="comment">// typeof a === 'string'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">String</span>(<span class="string">'javascript'</span>)</span><br><span class="line">a === b <span class="comment">// true</span></span><br><span class="line">a == b <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
 <p>效果如下：<br><img src="../images/tools/string_newstring.png" title="String和new String()的区别"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"><span class="keyword">var</span> b = &#123;&#125;</span><br><span class="line"><span class="keyword">var</span> c = a</span><br><span class="line">a == b <span class="comment">// false</span></span><br><span class="line">a === b <span class="comment">// false</span></span><br><span class="line">a == c <span class="comment">// true</span></span><br><span class="line">a == c <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// a、b为引用类型，判断时看引用的地址，a、b地址不同，a、c地址相同</span></span><br></pre></td></tr></table></figure>
 <hr>
@@ -2145,7 +2150,9 @@ window.onload = function(){
 <p>C.0.9855</p>
 <p>D.0.96</p>
 <p>答案:B</p>
-<p>分析条件得到：<br>真的新闻：98%<br>假的新闻：2%<br>真的-&gt;假的：2%<br>假的-&gt;真的：5%</p>
+<p>分析条件得到：<br>真的新闻：98%，包含 真的-&gt;真的，假的-&gt;假的<br>假的新闻：2%，包含 真的-&gt;假的，假的-&gt;真的</p>
+<p>因为：<br>真的-&gt;假的：2%<br>假的-&gt;真的：5%</p>
+<p>所以：<br>真的-&gt;真的：1 - 2% = 98%<br>假的-&gt;假的：1 - 5% = 95%</p>
 <p>分析要求：被检验为真实的新闻确实是真实的新闻</p>
 <p>首先要明确被检验为真实的新闻包括了（本来是真的和本来是假的）所以分子为（真-&gt;真），分母为（真-&gt;真 + 假-&gt;真）</p>
 <p>结果为：（真-&gt;真）/（真-&gt;真 + 假-&gt;真） = (98%<em>(1-2%)) / (98%</em>(1-2%) + 2%*5%) = 0.9604/0.9614 = 0.9989……</p>
@@ -2235,7 +2242,7 @@ window.onload = function(){
 <ul>
 <li><p>定义<br>重绘是指css样式的改变，但元素的大小和尺寸不变，而导致节点的重新绘制。</p>
 </li>
-<li><p>触发Repaint<br>任何对元素样式，如 <code>background-color</code>、<code>border-color</code>、<code>visibility</code> 等属性的改变。css 和 js 都可能引起重绘。</p>
+<li><p>触发Repaint<br>任何的元素样式，如 <code>background-color</code>、<code>border-color</code>、<code>visibility</code> 等属性的改变。css 和 js 都可能引起重绘。</p>
 </li>
 <li><p>面试提示：如何最小程度的降低Repaint<br>1.) DOM离线修改，先display:none，改完之后再显示<br>2.) 样式集中改变或切换class</p>
 </li>
@@ -2475,7 +2482,7 @@ window.onload = function(){
 </ol>
 <ol start="2">
 <li><p>业务数据<br>1.）首屏直出<br>为了提升用户体验，我们认为首屏的渲染速度是极为重要的，用户进来页面，首页可见区域的加载可以由服务端渲染，保证了首屏加载速度，而不可见的部分则可以异步加载，甚至做到子路由页面的预加载。</p>
-<p>2.）接口合并<br>前端经常有这样的场景，完成一个功能需要先请求第一个接口获得数据，然后再根据数据请求第二个接口获取第二个数据，然后第三、第四…前端通常需要通过promise或者回调，一层一层的then下去，这样显然是很消耗性能的。<br>应该有服务端处理中间的流程，前端只发一次请求。</p>
+<p>2.）接口合并<br>前端经常有这样的场景，完成一个功能需要先请求第一个接口获得数据，然后再根据数据请求第二个接口获取第二个数据，然后第三、第四…前端通常需要通过promise或者回调，一层一层的then下去，这样显然是很消耗性能的。<br>应该由服务端处理中间的流程，前端只发一次请求。</p>
 </li>
 </ol>
 <h4 id="页面渲染性能的优化"><a href="#页面渲染性能的优化" class="headerlink" title="页面渲染性能的优化"></a>页面渲染性能的优化</h4><ol>
@@ -2500,10 +2507,10 @@ window.onload = function(){
 <p>2.) 对于首屏的关键css 可以使用style标签内联</p>
 </li>
 <li><p>js<br>1.) 减少通过 <code>JavaScript</code> 代码修改元素样式，尽量使用修改class名方式操作样式或动画。</p>
-<p>2.) 访问dom节点时需要对dom节点转存，防止循环中重复访问dom节点造成性能损耗。</p>
+<p>2.) 访问dom节点时需要对dom节点缓存，防止循环中重复访问dom节点造成性能损耗。</p>
 <p>3.) 慎用 定时器 和 计时器， 使用完后需要销毁。</p>
 <p>4.) 用于复杂计算的js代码可以放在worker进程中运行</p>
-<p>5.) 对于一些高频的回调需要对其节流和消抖，就是 <code>throttle</code> 和 <code>debounce</code> 这两个函数。比如 <code>scroll</code> 和 <code>touch</code> 事件。</p>
+<p>5.) 对于一些高频的回调需要对其节流和防抖，就是 <code>throttle</code> 和 <code>debounce</code> 这两个函数。比如 <code>scroll</code> 和 <code>touch</code> 事件。</p>
 </li>
 </ul>
 </li>
@@ -2617,7 +2624,7 @@ window.onload = function(){
 <h3 id="面试流程"><a href="#面试流程" class="headerlink" title="面试流程"></a>面试流程</h3><ol>
 <li>一面<br>重基础<br>懂原理<br>要思考（不会的话不能直接回答不会，一定要深入思考）<br>知进退（不懂的话，可以问面试官能不能给个指导方向、查询的资料等）<br>势不可挡</li>
 <li>二面<br>横向扩展<br>项目结合</li>
-<li>三面<br>有经验<br>懂合作<br>有担当<br>动规矩<br>察言观色</li>
+<li>三面<br>有经验<br>懂合作<br>有担当<br>懂规矩<br>察言观色</li>
 <li>终面<br>会沟通<br>要上进<br>好性格<br>有主见<br>强逻辑<br>无可挑剔</li>
 <li>复盘<br>胜不骄，败不馁<br>总结经验<br>步步为营<br>多拿几个offer</li>
 </ol>
@@ -3273,7 +3280,7 @@ window.onload = function(){
   
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/blog/sw.js?t=1665419661579')
+  navigator.serviceWorker.register('/blog/sw.js?t=1666261793985')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
