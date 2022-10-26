@@ -2223,7 +2223,7 @@ window.onload = function(){
 <p>C.0.9855</p>
 <p>D.0.96</p>
 <p>答案:B</p>
-<p>分析条件得到：<br>真的新闻：98%，包含 真的-&gt;真的，假的-&gt;假的<br>假的新闻：2%，包含 真的-&gt;假的，假的-&gt;真的</p>
+<p>分析条件得到：<br>真的新闻：98%，包含 【真的-&gt;真的，假的-&gt;假的】<br>假的新闻：2%，包含 【真的-&gt;假的，假的-&gt;真的】</p>
 <p>因为：<br>真的-&gt;假的：2%<br>假的-&gt;真的：5%</p>
 <p>所以：<br>真的-&gt;真的：1 - 2% = 98%<br>假的-&gt;假的：1 - 5% = 95%</p>
 <p>分析要求：被检验为真实的新闻确实是真实的新闻</p>
@@ -3363,7 +3363,7 @@ window.onload = function(){
   
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/blog/sw.js?t=1666792862347')
+  navigator.serviceWorker.register('/blog/sw.js?t=1666793547916')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
