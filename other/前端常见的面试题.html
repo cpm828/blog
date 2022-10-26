@@ -2109,7 +2109,7 @@ window.onload = function(){
 <h3 id="CSRF-跨站请求伪造"><a href="#CSRF-跨站请求伪造" class="headerlink" title="CSRF(跨站请求伪造)"></a>CSRF(跨站请求伪造)</h3><ul>
 <li><p>概念<br>全称是跨站请求伪造(cross-site request forgery),指通过伪装成受信任用户的进行访问，通俗的讲就是说我访问了A网站，然后cookie存在了浏览器，然后我又访问了一个流氓网站，不小心点了流氓网站一个链接（向A发送请求），这个时候流氓网站利用了我的身份对A进行了访问。</p>
 </li>
-<li><p>案例<br>1、这个例子可能现实中不会存在，但是攻击的方式是一样的。比如说我登录了A银行网站，然后我又访问了室友给的一个流氓网站，然后点了里面的一个链接 <a href="http://www.A.com/transfer?account=666&amp;money=10000,那么这个时候很可能我就向账号为666的人转了1w。" target="_blank" rel="noopener">www.A.com/transfer?account=666&amp;money=10000,那么这个时候很可能我就向账号为666的人转了1w。</a><br>2、注意这个攻击方式不一定是我点了这个链接，也可以是这个网站里面一些资源请求指向了这个转账链接。</p>
+<li><p>案例<br>1、这个例子可能现实中不会存在，但是攻击的方式是一样的。比如说我登录了A银行网站，此时存储了cookie。然后我又访问了另一个网站B，然后点了里面的一个链接 <a href="http://www.A.com/transfer?account=666&amp;money=10000。这个时候A没有校验该请求是B发起的，那么很可能就向账号为666的人转了1w。" target="_blank" rel="noopener">www.A.com/transfer?account=666&amp;money=10000。这个时候A没有校验该请求是B发起的，那么很可能就向账号为666的人转了1w。</a><br>2、注意这个攻击方式不一定是我点了这个链接，也可以是这个网站里面一些资源请求指向了这个转账链接。</p>
 </li>
 <li><p>被攻击的原因<br>用户本地存储cookie，攻击者利用用户的cookie进行认证，然后伪造用户发出请求。</p>
 </li>
@@ -3362,7 +3362,7 @@ window.onload = function(){
   
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/blog/sw.js?t=1666757187915')
+  navigator.serviceWorker.register('/blog/sw.js?t=1666758678391')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
